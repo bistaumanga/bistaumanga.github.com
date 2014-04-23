@@ -6,14 +6,13 @@ url: "http://bistaumanga.com.np"
 author_name: Umanga Bista
 author_image_path: /images/author-image.jpg
 author_bio: |
-    Research Assistant at <a href=http://www.logpoint.com/>LogPoint</a>.
+    Research Assistant at <a href=http://www.logpoint.com/>LogPoint</a>.<br>
     Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Institute of Engineering, Central Campus</a>.
 
 # External services
 github_url: "https://github.com/bistaumanga"
-twitter_url: ""
 linkedin_url: "https://np.linkedin.com/in/bistaumanga"
-feed_url: ""
+researchgate_url: "https://www.researchgate.net/profile/Umanga_Bista"
 email: "bistaumanga@gmail.com"
 
 # Markdown rendering
@@ -23,6 +22,6 @@ kramdown:
   parse_block_html: true
 
 # Site settings
-permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 relative_permalinks: false
 pygments: true

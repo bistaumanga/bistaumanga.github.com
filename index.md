@@ -5,7 +5,7 @@ permalink: /
 ---
  
 {: style="margin-top:0; margin-bottom: 0;"}
-## Research Assistant at [Logpoint](http://www.logpoint.com/en/)
+## Research Assistant @[LogPoint](http://www.logpoint.com/en/)
 
 {: style="font-weight: normal; margin-top:0.5em; margin-bottom: 0;"}
 #### Lalitpur, Nepal.
@@ -13,7 +13,7 @@ permalink: /
 {: style="font-weight: normal; margin-top:0.5em; margin-bottom: 0;"}
 #### umanga.bista@logpoint.com
 
-### and Student at [Coursera](www.coursera.org)
+###Student @[Coursera](www.coursera.org)
 
 I was a computer engineering student at [Institute of Engineering, Central Campus Pulchowk, Lalitpur, Nepal][1].
 
