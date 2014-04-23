@@ -15,7 +15,7 @@ permalink: /
 
 ### and Student at [Coursera](www.coursera.org)
 
-I was a computer engineering student at [Institute of Engineering, Central Calpus, Pulchowk][1].
+I was a computer engineering student at [Institute of Engineering, Central Campus Pulchowk, Lalitpur, Nepal][1].
 
 ### Research Interests
 
