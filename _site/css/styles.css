@@ -1,15 +1,27 @@
 a {
-    color: #000;
+    color: #208060;
 }
 
 body {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-h1, h2, h3, h4 {
+h1{
     font-family: Arial, Verdana, sans-serif;
     line-height: 1em;
-    color: #000;
+    color: #206060;
+}
+
+h2{
+    font-family: Arial, Verdana, sans-serif;
+    line-height: 1em;
+    color: #604020;
+}
+
+h3, h4 {
+    font-family: Arial, Verdana, sans-serif;
+    line-height: 1em;
+    color: #608020;
 }
 
 i {
@@ -21,6 +33,7 @@ blockquote {
     font-style: italic;
     padding-left: 1em;
     margin-left: 1em;
+    color: #606030;
 }
 
 table {
@@ -77,11 +90,11 @@ p code, ul code {
 }
 
 .author-image {
-    -webkit-border-radius: 95px;
-    -moz-border-radius: 95px;
-    border-radius: 95px;
-    height: 70px;
-    width: 70px;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+    height: 120px;
+    width: 120px;
 }
 
 .author-name {
@@ -98,7 +111,7 @@ p code, ul code {
 }
 
 .author-bio {
-    color: #666;
+    color: #686;
     font-style: italic;
     line-height: 1.4em;
     margin-top: 0.5em;
