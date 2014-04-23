@@ -28,8 +28,6 @@ I'm currently working on distrbuted streaming algorithms for log mining. I work 
 
 Previously, I have worked on financial data representation and mining using [XBRL][6] for annual financial statements collected by [Office of Company Registrar, Nepal][7].
 
-[Blog](/blog/) / [Resume](/about/) / [Publications](/publications)
-
 [1]: http://ioe.edu.np
 [2]: http://en.wikipedia.org/wiki/Streaming_algorithm
 [3]: http://en.wikipedia.org/wiki/Data_stream_mining
