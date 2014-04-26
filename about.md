@@ -60,7 +60,9 @@ Tribhuvan University, **Institute of Engineering, Central Campus Pulchowk**
 
 
 ##Projects
-####UnderGrad Major Project : XBRL Implementation for financial Reporting to Office of Company Registrar
+
+####UnderGrad Major Project, XBRL Implementation for financial Reporting to Office of Company Registrar
+
 A research project carrying out the study of prospects and implementation of XBRL for representation , open data initiation and mining of financial reports submitted to the Office of Company Registrar.
 
 
