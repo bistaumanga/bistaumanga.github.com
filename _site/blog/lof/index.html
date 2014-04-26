@@ -92,14 +92,11 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
 
     <h1 class=title-large>Improving performance of Local outlier factor with KD-Trees</h1>
     <div class=content>
-        <h4 id="download-this-post-as">Download this post as:</h4>
-<p><a href="/files/lof.ipynb">Ipython Notebook</a> | <a href="/files/lof/pdf">PDF</a></p>
-
-<p>Local outlier factor (LOF) is an outlier detection algorithm, that detects
+        <p>Local outlier factor (LOF) is an outlier detection algorithm, that detects
 outliers based on comparing local density of data instance with its neighbors.
 It does so to decide if data instance belongs to region of similar density. It
 can detect an outlier in a dataset, for which number of clusters is unknown, and
-clusters are of different density and size. It's inspired from KNN (K-Nearest
+clusters are of different density and size. It’s inspired from KNN (K-Nearest
 Neighbors) algorithm, and is widely used. There is a <a href="http://www.rdatamining.com/examples/outlier-detection">R implemantation
 available.</a></p>
 
@@ -112,8 +109,7 @@ in python, thanks to scipy, so lets use this to find outliers.</p>
 
 <h4 id="synthetic-dataset">Synthetic dataset</h4>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
+<div class="highlight"><pre><code class="python">    <span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c"># to reproduce the result</span>
 
@@ -153,8 +149,7 @@ in python, thanks to scipy, so lets use this to find outliers.</p>
 scikit-learn. In this, we just compute all-pair euclidean distance, i.e. $d(i,
 j) = |x(i)-x(j)|_2$.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">DistanceMetric</span>
+<div class="highlight"><pre><code class="python">    <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">DistanceMetric</span>
      <span class="c"># distance between points</span>
     <span class="kn">import</span> <span class="nn">time</span>
     <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -164,8 +159,7 @@ j) = |x(i)-x(j)|_2$.</p>
 </code></pre>
 </div>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="o">++</span> <span class="n">took</span> <span class="mi">740</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Distance</span> <span class="n">computation</span>
+<div class="highlight"><pre><code class="python">    <span class="o">++</span> <span class="n">took</span> <span class="mi">740</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Distance</span> <span class="n">computation</span>
     
 </code></pre>
 </div>
@@ -174,8 +168,7 @@ j) = |x(i)-x(j)|_2$.</p>
 $N_k(i)$, and radius is the distance of k-th rearest neighbor of a datapoint.
 <script type="math/tex"> r(i) = \max_{k \in N_k(i)} d(i, k) </script></p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<div class="highlight"><pre><code class="python">    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">k</span> <span class="o">=</span> <span class="mi">17</span> <span class="c"># number of neighbors to consider</span>
     <span class="c"># get the radius for each point in dataset (distance to kth nearest neighbor)</span>
     <span class="c"># radius is the distance of kth nearest point for each point in dataset        </span>
@@ -186,8 +179,7 @@ $N_k(i)$, and radius is the distance of k-th rearest neighbor of a datapoint.
 </code></pre>
 </div>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="o">+++</span> <span class="n">took</span> <span class="mi">4800</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">KNN</span> <span class="n">Querying</span>
+<div class="highlight"><pre><code class="python">    <span class="o">+++</span> <span class="n">took</span> <span class="mi">4800</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">KNN</span> <span class="n">Querying</span>
     
 </code></pre>
 </div>
@@ -200,8 +192,7 @@ k-neighbors of each point.
 <script type="math/tex"> rd(i, j) = \max{\{d(i, j), r(i) }\} for\ j\in N_k(i) </script>
 <script type="math/tex">LRD(i) = \frac{|N_k(i)|}{ \sum_{j \in N_k(i) }{rd(i, j)}} </script></p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="c"># calculate the local reachability density</span>
+<div class="highlight"><pre><code class="python">    <span class="c"># calculate the local reachability density</span>
     <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">LRD</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx_knn</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
@@ -211,8 +202,7 @@ k-neighbors of each point.
 </code></pre>
 </div>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="o">++++</span> <span class="n">took</span> <span class="mi">429</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">LRD</span> <span class="n">computation</span>
+<div class="highlight"><pre><code class="python">    <span class="o">++++</span> <span class="n">took</span> <span class="mi">429</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">LRD</span> <span class="n">computation</span>
     
 </code></pre>
 </div>
@@ -220,8 +210,7 @@ k-neighbors of each point.
 <p>finally, the outlier score $LOF$ is calsulated.
 <script type="math/tex"> LOF(i) = \frac { \sum_{j \in N_k(i)} {\frac{LRD(j)}{LRD(i)} }} { |N_k(i)|} </script></p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="c"># calculating the outlier score</span>
+<div class="highlight"><pre><code class="python">    <span class="c"># calculating the outlier score</span>
     <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">LRD</span><span class="p">)</span> <span class="c"># inverse of density</span>
     <span class="n">outlier_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="n">idx_knn</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
@@ -231,8 +220,7 @@ k-neighbors of each point.
 </code></pre>
 </div>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="o">+++++</span> <span class="n">took</span> <span class="mf">9.99999</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Outlier</span> <span class="n">scoring</span>
+<div class="highlight"><pre><code class="python">    <span class="o">+++++</span> <span class="n">took</span> <span class="mf">9.99999</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Outlier</span> <span class="n">scoring</span>
     
 </code></pre>
 </div>
@@ -240,16 +228,14 @@ k-neighbors of each point.
 <p>Now lets se the histogram of Outlier score, to choose the optimal threshold to
 decid weather a data-point is outlier is not.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">outlier_score</span><span class="p">)</span><span class="o">/</span><span class="n">outlier_score</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># to normalize the histogram to probability plot</span>
+<div class="highlight"><pre><code class="python">    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">outlier_score</span><span class="p">)</span><span class="o">/</span><span class="n">outlier_score</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># to normalize the histogram to probability plot</span>
     <span class="n">hist</span><span class="p">(</span><span class="n">outlier_score</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;cyan&#39;</span><span class="p">)</span>
     <span class="n">title</span><span class="p">(</span><span class="s">&#39;Distribution of outlier score&#39;</span><span class="p">)</span>
     
 </code></pre>
 </div>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="n">at</span> <span class="mh">0x36030588</span><span class="o">&gt;</span>
+<div class="highlight"><pre><code class="python">    <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="n">at</span> <span class="mh">0x36030588</span><span class="o">&gt;</span>
     
 </code></pre>
 </div>
@@ -260,8 +246,7 @@ decid weather a data-point is outlier is not.</p>
 data-point is outlier is outlier or not is around 2 for most of the cases, so
 lets use it to see our sesults.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="n">threshold</span> <span class="o">=</span> <span class="mf">2.</span>
+<div class="highlight"><pre><code class="python">    <span class="n">threshold</span> <span class="o">=</span> <span class="mf">2.</span>
     <span class="c"># plot non outliers as green</span>
     <span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#39;green&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
     <span class="c"># find the outliers and plot te outliers</span>
@@ -271,8 +256,7 @@ lets use it to see our sesults.</p>
 </code></pre>
 </div>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">collections</span><span class="o">.</span><span class="n">PathCollection</span> <span class="n">at</span> <span class="mh">0x3640e6a0</span><span class="o">&gt;</span>
+<div class="highlight"><pre><code class="python">    <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">collections</span><span class="o">.</span><span class="n">PathCollection</span> <span class="n">at</span> <span class="mh">0x3640e6a0</span><span class="o">&gt;</span>
     
 </code></pre>
 </div>
@@ -286,8 +270,7 @@ optimisations with KD-Trees.</p>
 
 <p>KD-Trees insertion and KNN query.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KDTree</span> <span class="k">as</span> <span class="n">Tree</span>
+<div class="highlight"><pre><code class="python">    <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KDTree</span> <span class="k">as</span> <span class="n">Tree</span>
     <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">BT</span> <span class="o">=</span> <span class="n">Tree</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">leaf_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="c"># Query for k nearest, k + 1 because one of the returnee is self</span>
@@ -302,8 +285,7 @@ optimisations with KD-Trees.</p>
 
 <p>LRD computation.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<div class="highlight"><pre><code class="python">    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">dx</span><span class="p">,</span> <span class="n">idx_knn</span> <span class="o">=</span> <span class="n">dx</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">idx_knn</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
     <span class="c"># get the radius for each point in dataset</span>
     <span class="c"># radius is the distance of kth nearest point for each point in dataset        </span>
@@ -318,10 +300,9 @@ optimisations with KD-Trees.</p>
 </code></pre>
 </div>
 
-<p>Now, rest is same, so, i'm just replicating the rsult for completion.</p>
+<p>Now, rest is same, so, i’m just replicating the rsult for completion.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="c"># calculating the outlier score</span>
+<div class="highlight"><pre><code class="python">    <span class="c"># calculating the outlier score</span>
     <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">LRD</span><span class="p">)</span> <span class="c"># inverse of density</span>
     <span class="n">outlier_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="n">idx_knn</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
@@ -361,8 +342,7 @@ optimisations with KD-Trees.</p>
 evaluating performance. From above results, we note that the most time is spent
 for KNN querying.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><code class="python">    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
     <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
     <span class="kn">import</span> <span class="nn">sys</span>
     <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">DistanceMetric</span>
@@ -506,8 +486,7 @@ for KNN querying.</p>
 
 <p>Lets create a function to evaluate te performance.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="k">def</span> <span class="nf">perf_test</span><span class="p">(</span><span class="n">n_list</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Tree&#39;</span><span class="p">,</span> <span class="s">&#39;Naive&#39;</span><span class="p">],</span> <span class="n">plot</span> <span class="o">=</span> <span class="bp">False</span><span class="p">):</span>
+<div class="highlight"><pre><code class="python">    <span class="k">def</span> <span class="nf">perf_test</span><span class="p">(</span><span class="n">n_list</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Tree&#39;</span><span class="p">,</span> <span class="s">&#39;Naive&#39;</span><span class="p">],</span> <span class="n">plot</span> <span class="o">=</span> <span class="bp">False</span><span class="p">):</span>
         
         <span class="kn">import</span> <span class="nn">time</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">n_list</span><span class="p">:</span> <span class="n">n_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">)]</span>
@@ -544,8 +523,7 @@ for KNN querying.</p>
 
 <p>Now, lets compare the performace of 2 methods- Naive and KDTree implementations.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="n">perf_test</span><span class="p">(</span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Tree&#39;</span><span class="p">,</span> <span class="s">&#39;Naive&#39;</span><span class="p">],</span> <span class="n">n_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">14</span><span class="p">)],</span> <span class="n">plot</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<div class="highlight"><pre><code class="python">    <span class="n">perf_test</span><span class="p">(</span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Tree&#39;</span><span class="p">,</span> <span class="s">&#39;Naive&#39;</span><span class="p">],</span> <span class="n">n_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">14</span><span class="p">)],</span> <span class="n">plot</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 
     <span class="n">Took</span> <span class="mf">2.00009</span> <span class="n">msecs</span> <span class="k">with</span> <span class="n">Tree</span> <span class="n">method</span> <span class="k">for</span> <span class="mi">16</span> <span class="n">datapoints</span>
     <span class="n">Took</span> <span class="mf">1.99986</span> <span class="n">msecs</span> <span class="k">with</span> <span class="n">Tree</span> <span class="n">method</span> <span class="k">for</span> <span class="mi">32</span> <span class="n">datapoints</span>
@@ -578,8 +556,7 @@ well for small number of datasets. In my PC, i cannot run Naive method beyond
 $2^{13}$ datapoints, or else i receie MemoryError. So, lets evauate te
 performance of KDTrees upto 1Million datapoints.</p>
 
-<div class="highlight">
-  <pre><code class="python">    <span class="n">perf_test</span><span class="p">(</span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Tree&#39;</span><span class="p">],</span> <span class="n">n_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">)],</span> <span class="n">plot</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<div class="highlight"><pre><code class="python">    <span class="n">perf_test</span><span class="p">(</span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Tree&#39;</span><span class="p">],</span> <span class="n">n_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">)],</span> <span class="n">plot</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 
     <span class="n">Took</span> <span class="mf">2.00009</span> <span class="n">msecs</span> <span class="k">with</span> <span class="n">Tree</span> <span class="n">method</span> <span class="k">for</span> <span class="mi">16</span> <span class="n">datapoints</span>
     <span class="n">Took</span> <span class="mf">2.00009</span> <span class="n">msecs</span> <span class="k">with</span> <span class="n">Tree</span> <span class="n">method</span> <span class="k">for</span> <span class="mi">32</span> <span class="n">datapoints</span>
@@ -606,6 +583,9 @@ performance of KDTrees upto 1Million datapoints.</p>
 
 <p>We can see, algorithm is scaling well with data-set size $n$. If we analyse the
 complexity of algorithm, its linearithmin , i.e. $\Theta (n\log{n})$.</p>
+
+<h4 id="download-this-post-as">Download this post as:</h4>
+<p><a href="/files/lof.ipynb">Ipython Notebook</a> | <a href="/files/lof.pdf">PDF</a></p>
 
         <p class=discuss>
             Discuss this post via <a href="mailto:bistaumanga@gmail.com">e-mail</a>

@@ -36,6 +36,7 @@ a {
 
 body {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 10pt;
 }
 
 h1{
@@ -70,6 +71,7 @@ blockquote {
 
 table {
     width: 100%;
+    font-size: 10pt;
 }
 
 .table-wrapper {
