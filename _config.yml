@@ -19,9 +19,12 @@ email: "bistaumanga@gmail.com"
 markdown: kramdown
 kramdown:
   smart_quotes: apos,apos,quot,quot
-  parse_block_html: true
+  parse_block_html: false
 
 # Site settings
 permalink: /blog/:title/
 relative_permalinks: false
 pygments: true
+
+## Publications and citations
+

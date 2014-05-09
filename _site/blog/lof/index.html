@@ -11,23 +11,20 @@
           
           Umanga Bista
         </title>
-         <script type="text/x-mathjax-config">
-//MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-MathJax.Hub.Config({
-extensions: ["tex2jax.js"],
-jax: ["input/TeX", "output/HTML-CSS"],
-tex2jax: {
-inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-processEscapes: true
-},
-"HTML-CSS": { availableFonts: ["TeX"] }
-});
-</script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX", "output/HTML-CSS"],
+          tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+          },
+          "HTML-CSS": { availableFonts: ["TeX"] }
+          });
+        </script>
  
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-            
- 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
                 
         <link rel=stylesheet type=text/css href=/css/pure-min.css>
         <link rel=stylesheet type=text/css href=/css/github.css>
@@ -96,7 +93,7 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
 outliers based on comparing local density of data instance with its neighbors.
 It does so to decide if data instance belongs to region of similar density. It
 can detect an outlier in a dataset, for which number of clusters is unknown, and
-clusters are of different density and size. It’s inspired from KNN (K-Nearest
+clusters are of different density and size. It's inspired from KNN (K-Nearest
 Neighbors) algorithm, and is widely used. There is a <a href="http://www.rdatamining.com/examples/outlier-detection">R implemantation
 available.</a></p>
 
@@ -140,8 +137,7 @@ in python, thanks to scipy, so lets use this to find outliers.</p>
     <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">zipf</span><span class="p">(</span><span class="n">zipf_alpha</span><span class="p">,</span> <span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="n">dim</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">))</span>
     <span class="n">data</span> <span class="o">+=</span> <span class="n">noise</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <h4 id="naive-approach-to-lof">Naive approach to LOF</h4>
 
@@ -156,13 +152,11 @@ j) = |x(i)-x(j)|_2$.</p>
     <span class="n">dist</span> <span class="o">=</span> <span class="n">DistanceMetric</span><span class="o">.</span><span class="n">get_metric</span><span class="p">(</span><span class="s">&#39;euclidean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pairwise</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="k">print</span> <span class="s">&#39;++ took </span><span class="si">%g</span><span class="s"> msecs for Distance computation&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <div class="highlight"><pre><code class="python">    <span class="o">++</span> <span class="n">took</span> <span class="mi">740</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Distance</span> <span class="n">computation</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>Performing KNN query.In this step, the nearest k neighbors are identified
 $N_k(i)$, and radius is the distance of k-th rearest neighbor of a datapoint.
@@ -176,13 +170,11 @@ $N_k(i)$, and radius is the distance of k-th rearest neighbor of a datapoint.
     <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">idx_knn</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># radius</span>
     <span class="k">print</span> <span class="s">&#39;+++ took </span><span class="si">%g</span><span class="s"> msecs for KNN Querying&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <div class="highlight"><pre><code class="python">    <span class="o">+++</span> <span class="n">took</span> <span class="mi">4800</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">KNN</span> <span class="n">Querying</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>Then LRD(Local Reachability distance) is calculated. For this, first reach
 distance $rd(i, j)$ is computed between point concern $x(i)$ and its neighbors $
@@ -199,13 +191,11 @@ k-neighbors of each point.
         <span class="n">LRD</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">idx_knn</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">radius</span><span class="p">[</span><span class="n">idx_knn</span><span class="p">[</span><span class="n">i</span><span class="p">]])))</span>
     <span class="k">print</span> <span class="s">&#39;++++ took </span><span class="si">%g</span><span class="s"> msecs for LRD computation&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <div class="highlight"><pre><code class="python">    <span class="o">++++</span> <span class="n">took</span> <span class="mi">429</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">LRD</span> <span class="n">computation</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>finally, the outlier score $LOF$ is calsulated.
 <script type="math/tex"> LOF(i) = \frac { \sum_{j \in N_k(i)} {\frac{LRD(j)}{LRD(i)} }} { |N_k(i)|} </script></p>
@@ -217,13 +207,11 @@ k-neighbors of each point.
     <span class="n">outlier_score</span> <span class="o">*=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">k</span>
     <span class="k">print</span> <span class="s">&#39;+++++ took </span><span class="si">%g</span><span class="s"> msecs for Outlier scoring&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <div class="highlight"><pre><code class="python">    <span class="o">+++++</span> <span class="n">took</span> <span class="mf">9.99999</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Outlier</span> <span class="n">scoring</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>Now lets se the histogram of Outlier score, to choose the optimal threshold to
 decid weather a data-point is outlier is not.</p>
@@ -232,13 +220,11 @@ decid weather a data-point is outlier is not.</p>
     <span class="n">hist</span><span class="p">(</span><span class="n">outlier_score</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;cyan&#39;</span><span class="p">)</span>
     <span class="n">title</span><span class="p">(</span><span class="s">&#39;Distribution of outlier score&#39;</span><span class="p">)</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <div class="highlight"><pre><code class="python">    <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="n">at</span> <span class="mh">0x36030588</span><span class="o">&gt;</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p><img src="/images/lof_files/lof_16_1.png" alt="png" /></p>
 
@@ -253,13 +239,11 @@ lets use it to see our sesults.</p>
     <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">outlier_score</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">)</span>
     <span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <div class="highlight"><pre><code class="python">    <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">collections</span><span class="o">.</span><span class="n">PathCollection</span> <span class="n">at</span> <span class="mh">0x3640e6a0</span><span class="o">&gt;</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p><img src="/images/lof_files/lof_18_1.png" alt="png" /></p>
 
@@ -280,8 +264,7 @@ optimisations with KD-Trees.</p>
 
     <span class="o">++</span> <span class="n">took</span> <span class="mi">122</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Tree</span> <span class="n">KNN</span> <span class="n">Querying</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>LRD computation.</p>
 
@@ -297,10 +280,9 @@ optimisations with KD-Trees.</p>
 
     <span class="o">++</span> <span class="n">took</span> <span class="mf">8.99982</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">LRD</span> <span class="n">computation</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
-<p>Now, rest is same, so, i’m just replicating the rsult for completion.</p>
+<p>Now, rest is same, so, i'm just replicating the rsult for completion.</p>
 
 <div class="highlight"><pre><code class="python">    <span class="c"># calculating the outlier score</span>
     <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -327,8 +309,7 @@ optimisations with KD-Trees.</p>
 
     <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">collections</span><span class="o">.</span><span class="n">PathCollection</span> <span class="n">at</span> <span class="mh">0x36ad0b38</span><span class="o">&gt;</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p><img src="/images/lof_files/lof_26_2.png" alt="png" /></p>
 
@@ -479,8 +460,7 @@ for KNN querying.</p>
             <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;cyan&#39;</span><span class="p">)</span>
             <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Distribution of outlier score&#39;</span><span class="p">)</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <h4 id="performance-evaluation">Performance Evaluation</h4>
 
@@ -518,8 +498,7 @@ for KNN querying.</p>
             <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">methods</span><span class="p">,</span> <span class="s">&#39;upper left&#39;</span><span class="p">)</span>
             <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>Now, lets compare the performace of 2 methods- Naive and KDTree implementations.</p>
 
@@ -546,8 +525,7 @@ for KNN querying.</p>
     <span class="n">Took</span> <span class="mi">3734</span> <span class="n">msecs</span> <span class="k">with</span> <span class="n">Naive</span> <span class="n">method</span> <span class="k">for</span> <span class="mi">4096</span> <span class="n">datapoints</span>
     <span class="n">Took</span> <span class="mi">15796</span> <span class="n">msecs</span> <span class="k">with</span> <span class="n">Naive</span> <span class="n">method</span> <span class="k">for</span> <span class="mi">8192</span> <span class="n">datapoints</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p><img src="/images/lof_files/lof_35_1.png" alt="png" /></p>
 
@@ -576,8 +554,7 @@ performance of KDTrees upto 1Million datapoints.</p>
     <span class="n">Took</span> <span class="mi">18207</span> <span class="n">msecs</span> <span class="k">with</span> <span class="n">Tree</span> <span class="n">method</span> <span class="k">for</span> <span class="mi">524288</span> <span class="n">datapoints</span>
     <span class="n">Took</span> <span class="mi">40017</span> <span class="n">msecs</span> <span class="k">with</span> <span class="n">Tree</span> <span class="n">method</span> <span class="k">for</span> <span class="mi">1048576</span> <span class="n">datapoints</span>
     
-</code></pre>
-</div>
+</code></pre></div>
 
 <p><img src="/images/lof_files/lof_37_1.png" alt="png" /></p>
 

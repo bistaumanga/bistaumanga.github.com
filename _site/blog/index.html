@@ -11,23 +11,20 @@
           
           Umanga Bista
         </title>
-         <script type="text/x-mathjax-config">
-//MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-MathJax.Hub.Config({
-extensions: ["tex2jax.js"],
-jax: ["input/TeX", "output/HTML-CSS"],
-tex2jax: {
-inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-processEscapes: true
-},
-"HTML-CSS": { availableFonts: ["TeX"] }
-});
-</script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX", "output/HTML-CSS"],
+          tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+          },
+          "HTML-CSS": { availableFonts: ["TeX"] }
+          });
+        </script>
  
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-            
- 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
                 
         <link rel=stylesheet type=text/css href=/css/pure-min.css>
         <link rel=stylesheet type=text/css href=/css/github.css>
@@ -73,7 +70,15 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
     
     <h1 class=title><a href="/blog/lof/">Improving performance of Local outlier factor with KD-Trees</a></h1>
     <div class=content>
-        Liquid error: undefined method `gsub' for nil:NilClass
+        <p>Local outlier factor (LOF) is an outlier detection algorithm, that detects
+outliers based on comparing local density of data instance with its neighbors.
+It does so to decide if data instance belongs to region of similar density. It
+can detect an outlier in a dataset, for which number of clusters is unknown, and
+clusters are of different density and size. It's inspired from KNN (K-Nearest
+Neighbors) algorithm, and is widely used. There is a <a href="http://www.rdatamining.com/examples/outlier-detection">R implemantation
+available.</a></p>
+
+
     </div>
     <ul class=post-meta>
     
