@@ -30,13 +30,7 @@ Tribhuvan University, **Institute of Engineering, Central Campus Pulchowk**
 
 ##Projects
 
-####UnderGrad Major Project
-{% bibtex _plugins/style.bst _publications/reports.bib %}
+####UnderGrad Major Project : XBRL Implementation for financial reporting to the Office of Company Registrar
+<!-- {% bibtex _plugins/style.bst _publications/reports.bib %} -->
 
 A research project carrying out the study of prospects and implementation of XBRL for representation , open data initiation and mining of financial reports submitted to the Office of Company Registrar.
-
-
-##Interests
-* Watching Movies - I like Western, Suspense and Crime thrillers. I especially watch hollywood, and south indian movies.
-* Visiting New places
-* Learning New things - I'm always a student at Coursera.
