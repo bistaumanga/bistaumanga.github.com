@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta name=viewport content="width=device-width, initial-scale=1.0">
+        <meta name=description content="Personal website and blog of Umanga Bista">
+        
+        <title>
+          
+            Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data | 
+          
+          Umanga Bista
+        </title>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX", "output/HTML-CSS"],
+          tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+          },
+          "HTML-CSS": { availableFonts: ["TeX"] }
+          });
+        </script>
+ 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+                
+        <link rel=stylesheet type=text/css href=/css/pure-min.css>
+        <link rel=stylesheet type=text/css href=/css/github.css>
+        <link rel=stylesheet type=text/css href=/css/styles.css>
+        <link rel=stylesheet type=text/css href=/css/font-awesome/css/font-awesome.min.css>
+    </head>
+        <div id='menu'>
+<ul>
+   <li><a href='/'>Home</a></li>
+   <li><a href='/blog'>Blog</a></li>
+   <li><a href='/publications'>Publications</a></li>
+   <li><a href='/about'>Resume</a></li>
+</ul>
+</div>
+    <body>
+        <div class="container pure-g-r">
+            <div class=pure-u-1-6>
+                <div class=author-info>
+
+    <img src="/images/author-image.jpg" class=author-image />
+    <h1 class=author-name><a href=/>Umanga Bista</a></h1>
+    <div class=nav>
+        <a href="https://github.com/bistaumanga"><i class=icon-github-alt></i></a>
+        <a href=""><i class=icon-twitter></i></a>
+        <a href="https://np.linkedin.com/in/bistaumanga"><i class=icon-linkedin></a></i>
+        <a href="https://www.researchgate.net/profile/Umanga_Bista"><i class=icon-bookmark-empty></i></a>
+    </div>
+    
+    <p class=author-bio>Research Assistant at <a href=http://www.logpoint.com/>LogPoint</a>.<br>
+Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Institute of Engineering, Central Campus</a>.
+</p>
+    
+
+    
+</div>
+
+
+            </div>
+            <div class=pure-u-5-6>
+                <div class=right-column>
+                    <div class=post>
+    
+    <ul class=post-meta>
+    
+        
+    
+    <li class=publish-time><i class=icon-calendar></i>May 13, 2014</li>
+    
+        <li>&middot;</li>
+        <li><a href="/tags/#robust-ref">#robust</a></li>
+    
+        <li>&middot;</li>
+        <li><a href="/tags/#statistic,-ref">#statistic,</a></li>
+    
+        <li>&middot;</li>
+        <li><a href="/tags/#anomaly-ref">#anomaly</a></li>
+    
+        <li>&middot;</li>
+        <li><a href="/tags/#detection,-ref">#detection,</a></li>
+    
+        <li>&middot;</li>
+        <li><a href="/tags/#time-ref">#time</a></li>
+    
+        <li>&middot;</li>
+        <li><a href="/tags/#series,-ref">#series,</a></li>
+    
+        <li>&middot;</li>
+        <li><a href="/tags/#streaming-ref">#streaming</a></li>
+    
+        <li>&middot;</li>
+        <li><a href="/tags/#algorithm-ref">#algorithm</a></li>
+    
+</ul>
+
+    <h1 class=title-large>Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data</h1>
+    <div class=content>
+        <p>Identifying the anomalous observations in time series data can be very important for <a href="http://en.wikipedia.org/wiki/Siem">SIEM</a> solutions. An example is a system tracks the records of number of user-logins per minute. The anomalous entries in this case can be when the count becomes unexpecteadly higher or lower than normal trend.</p>
+
+<p>This can be detected by simpler approach such as standard deviation method, i.e. an entry in time-series is anomaly when its not in range <strong>$ [\mu - k * \sigma, \mu + k * \sigma] $</strong>. The typical value of <strong>$ k $</strong> is <strong>3, 3.5, 4</strong>, which has to be set manually. There are three problems with this approach. The problems and the possible solutions are enumerated below:</p>
+
+<ul>
+  <li>the statistics $ \mu $ and $ \sigma $ both are not robust, outliers have huge affect on them.</li>
+</ul>
+
+<blockquote>
+  <p>We have to use roubust statistics such as <strong>$ M_d $</strong>:[Median], <strong>$ IQR $</strong> :[Inter Quartile Range], in favour of <strong>$ \mu $</strong> and <strong>$ \sigma $</strong>. The time series should be smoothened by <strong><a href="http://en.wikipedia.org/wiki/Causal_system">causal</a></strong> version of <strong>Moving Median</strong> or <strong>Causal 1-D Moving Median Filter</strong>.</p>
+</blockquote>
+
+<ul>
+  <li>It dows not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.</li>
+</ul>
+
+<blockquote>
+  <p>We have to capture the trend. One way to do this is smooth the time series signal, and model the residual for anomaly detection. The residual will have $ \mu = 0 $ and some standard deviation.</p>
+</blockquote>
+
+<ul>
+  <li>Anomalous time-series entries have to be identified in real-time, so we cannot use batch algorithms that calculates the parameters <em>$ \mu, \sigma $</em> in first pass and filters out the anomalous data in second pass. But this can be solved by streaming algorithm for $ \mu, \sigma $ <a href="#knuth2">(Knuth, 1998, p. 232)</a>.</li>
+</ul>
+
+<blockquote>
+  <p>But since we are using robust statistics <em>$ [M_d, IQR] $</em>, we have to use streaming version of that. Luckily, there exist an awesome algorithms for this : <strong>QDigest</strong> <a href="#qdigest">(Shrivastava, Buragohain, Agrawal, &amp; Suri, 2004)</a> and <strong>TDigest</strong> <a href="#tdigest">(Dunning, 2014)</a>.</p>
+</blockquote>
+
+<p>Using these concepts, to decide weather a data from real-time stream if it is an anomaly- We first predict the value using Causal Moving Median algorithm. Then the residual, which is a difference between predicted and observed value is used to compute the Streaming $ M_d,  IQR $. These Robust statistics are used to estimate the robust $ \mu , \sigma $ using Equations [<a href="http://en.wikipedia.org/wiki/Robust_measures_of_scale#Estimation">wiki : Robust Scale Estimation</a>]:</p>
+
+<script type="math/tex; mode=display">
+\mu = M_d \\
+\sigma = 0.74 * IQR
+</script>
+
+<p>With these estimates for robust mean and standard deviation, we will calculate the two-tailed $p-value$ as :</p>
+
+<script type="math/tex; mode=display"> p_{value} = 1 - Erf \frac{\mid residual - \mu  \mid}{2\sigma^2} </script>
+
+<p>and we can give the score to anomalous entries as <a href="#pvalprelert">(Thomas J. Veasey, n.d.)</a>:</p>
+
+<script type="math/tex; mode=display"> anomaly\_score = - \log{p_{value}} </script>
+
+<p>So, Let us use overall Discussion to sketch an algorithm for real time Anomaly Detection in time-series data.
+<img src="/files/tsanomaly/algorithm.png" alt="png" /></p>
+
+<h2 id="references">References</h2>
+<ol class="bibliography"><li><span id="knuth2">Knuth, D. (1998). <i>The Art of Computer Programming</i> (3rd ed., Vol. II - Seminumerical Algorithms). Addison Wesley Longman. Retrieved from http://www.amazon.com/gp/product/0201896842/104-5257411-2220725?ie=UTF8&amp;tag=theende-20&amp;linkCode=xm2&amp;camp=1789&amp;creativeASIN=0201896842</span></li>
+<li><span id="qdigest">Shrivastava, N., Buragohain, C., Agrawal, D., &amp; Suri, S. (2004). Medians and Beyond: New Aggregation Techniques for Sensor Networks. In <i>Proceedings of the 2Nd International Conference on Embedded Networked Sensor Systems</i> (pp. 239–249). New York, NY, USA: ACM. doi:10.1145/1031495.1031524</span></li>
+<li><span id="tdigest">Dunning, T. (2014). Computing Extremely Accurate Quantiles Using t-Digests. Retrieved from https://github.com/tdunning/t-digest</span></li>
+<li><span id="pvalprelert">Thomas J. Veasey, S. J. D. Anomaly Detection in Application Performance Monitoring Data. Retrieved from http://www.prelert.com/resources/Anomaly_Detection_In_APM_Data.pdf</span></li></ol>
+
+
+        <p class=discuss>
+            Discuss this post via <a href="mailto:bistaumanga@gmail.com">e-mail</a>
+            or <a href="">Twitter</a>.
+        </p>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

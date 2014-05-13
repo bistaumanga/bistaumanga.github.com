@@ -113,7 +113,8 @@ p code, ul code {
 }
 
 .container {
-    margin: 9em 0 3em 0;
+    margin: 5em 15em 5em 10em;
+    max-width: 85%;
 }
 
 .author-info {
@@ -160,8 +161,8 @@ p code, ul code {
 }
 
 .right-column {
-    max-width: 40em;
     padding: 0 4em;
+    text-align: justify;
 }
 
 .post-meta {
@@ -240,7 +241,7 @@ p.feature-image img {
 
 .title-large {
     clear: left;
-    font-size: 3em;
+    font-size: 2.4em;
     letter-spacing: -2px;
     margin: 0;
 }
