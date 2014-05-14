@@ -53,12 +53,16 @@ Here are the results of algorithm for time series datasets with
 #### Trend and Seasonality
 ![png](/files/tsanomaly/sintrend.png)
 
-The results shows that the algorith was able to detect the anomalous entries in a time series with trend or seasonality or both.
+#### Level Shift
+![png](/files/tsanomaly/shift.png)
+
+The results shows that the algorithm was able to detect the anomalous entries in a time series with trend or seasonality or both or Level shifts.
 
 
 References
 --------------
 {% bibliography %}
+{: style="font-size:12pt; text-align:left;"}
 
 [siem]: http://en.wikipedia.org/wiki/Siem
 [causal]: http://en.wikipedia.org/wiki/Causal_system
