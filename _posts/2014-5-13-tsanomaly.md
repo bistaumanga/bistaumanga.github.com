@@ -5,7 +5,7 @@ meta: Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series 
 tags: robust statistic, anomaly detection, time series, streaming algorithm
 ---
 
-Identifying the anomalous observations in time series data can be very important for [SIEM][siem] solutions. An example is a system tracks the records of number of user-logins per minute. The anomalous entries in this case can be when the count becomes unexpecteadly higher or lower than normal trend.
+Identifying the anomalous observations in time series data can be very important for [SIEM][siem] solutions. An example is a system that tracks the records of number of user-logins per minute. The anomalous entries in this case can be when the count becomes unexpecteadly higher or lower than normal trend.
 
 This can be detected by simpler approach such as standard deviation method, i.e. an entry in time-series is anomaly when its not in range **$ [\mu - k * \sigma, \mu + k * \sigma] $**. The typical value of **$ k $** is **3, 3.5, 4**, which has to be set manually. There are three problems with this approach. The problems and the possible solutions are enumerated below:
 
@@ -13,7 +13,7 @@ This can be detected by simpler approach such as standard deviation method, i.e.
 
 > We have to use roubust statistics such as **$ M_d $**:[Median], **$ IQR $** :[Inter Quartile Range], in favour of **$ \mu $** and **$ \sigma $**. The time series should be smoothened by **[causal][causal]** version of **Moving Median** or **Causal 1-D Moving Median Filter**.
 
-* It dows not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.
+* It does not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.
 
 > We have to capture the trend. One way to do this is smooth the time series signal, and model the residual for anomaly detection. The residual will have $ \mu = 0 $ and some standard deviation.
 
@@ -21,7 +21,8 @@ This can be detected by simpler approach such as standard deviation method, i.e.
 
 > But since we are using robust statistics *$ [M_d, IQR] $*, we have to use streaming version of that. Luckily, there exist an awesome algorithms for this : **QDigest** {% cite qdigest %} and **TDigest** {% cite tdigest %}.
 
-Using these concepts, to decide weather a data from real-time stream if it is an anomaly- We first predict the value using Causal Moving Median algorithm. Then the residual, which is a difference between predicted and observed value is used to compute the Streaming $ M_d,  IQR $. These Robust statistics are used to estimate the robust $ \mu , \sigma $ using Equations [[wiki : Robust Scale Estimation][wikiRobustStddev]]:
+Using these concepts to decide whether a data from real-time is an anomaly or not, we first predict
+the value using Causal Moving Median algorithm. Then the residual, which is a difference between predicted and observed value is used to compute the Streaming $ M_d,  IQR $. These Robust statistics are used to estimate the robust $ \mu , \sigma $ using Equations [[wiki : Robust Scale Estimation][wikiRobustStddev]]:
 
 $$
 \mu = M_d \\
@@ -36,11 +37,23 @@ and we can give the score to anomalous entries as {% cite pvalprelert %}:
 
 $$ anomaly\_score = - \log{p_{value}} $$
 
-So, Let us use overall Discussion to sketch an algorithm for real time Anomaly Detection in time-series data.
-![png](/files/tsanomaly/algorithm.png)
+<!--- So, Let us use overall Discussion to sketch an algorithm for real time Anomaly Detection in time-series data.
+![png](/files/tsanomaly/algorithm.png) -->
 
+Results
+--------
+Here are the results of algorithm for time series datasets with
 
+#### Trend
+![png](/files/tsanomaly/trend.png)
 
+#### Seasonality
+![png](/files/tsanomaly/sin.png)
+
+#### Trend and Seasonality
+![png](/files/tsanomaly/sintrend.png)
+
+The results shows that the algorith was able to detect the anomalous entries in a time series with trend or seasonality or both.
 References
 --------------
 {% bibliography %}
