@@ -101,7 +101,7 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
 
     <h1 class=title-large>Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data</h1>
     <div class=content>
-        <p>Identifying the anomalous observations in time series data can be very important for <a href="http://en.wikipedia.org/wiki/Siem">SIEM</a> solutions. An example is a system tracks the records of number of user-logins per minute. The anomalous entries in this case can be when the count becomes unexpecteadly higher or lower than normal trend.</p>
+        <p>Identifying the anomalous observations in time series data can be very important for <a href="http://en.wikipedia.org/wiki/Siem">SIEM</a> solutions. An example is a system that tracks the records of number of user-logins per minute. The anomalous entries in this case can be when the count becomes unexpecteadly higher or lower than normal trend.</p>
 
 <p>This can be detected by simpler approach such as standard deviation method, i.e. an entry in time-series is anomaly when its not in range <strong>$ [\mu - k * \sigma, \mu + k * \sigma] $</strong>. The typical value of <strong>$ k $</strong> is <strong>3, 3.5, 4</strong>, which has to be set manually. There are three problems with this approach. The problems and the possible solutions are enumerated below:</p>
 
@@ -114,7 +114,7 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
 </blockquote>
 
 <ul>
-  <li>It dows not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.</li>
+  <li>It does not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.</li>
 </ul>
 
 <blockquote>
@@ -129,7 +129,8 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
   <p>But since we are using robust statistics <em>$ [M_d, IQR] $</em>, we have to use streaming version of that. Luckily, there exist an awesome algorithms for this : <strong>QDigest</strong> <a href="#qdigest">(Shrivastava, Buragohain, Agrawal, &amp; Suri, 2004)</a> and <strong>TDigest</strong> <a href="#tdigest">(Dunning, 2014)</a>.</p>
 </blockquote>
 
-<p>Using these concepts, to decide weather a data from real-time stream if it is an anomaly- We first predict the value using Causal Moving Median algorithm. Then the residual, which is a difference between predicted and observed value is used to compute the Streaming $ M_d,  IQR $. These Robust statistics are used to estimate the robust $ \mu , \sigma $ using Equations [<a href="http://en.wikipedia.org/wiki/Robust_measures_of_scale#Estimation">wiki : Robust Scale Estimation</a>]:</p>
+<p>Using these concepts to decide whether a data from real-time is an anomaly or not, we first predict
+the value using Causal Moving Median algorithm. Then the residual, which is a difference between predicted and observed value is used to compute the Streaming $ M_d,  IQR $. These Robust statistics are used to estimate the robust $ \mu , \sigma $ using Equations [<a href="http://en.wikipedia.org/wiki/Robust_measures_of_scale#Estimation">wiki : Robust Scale Estimation</a>]:</p>
 
 <script type="math/tex; mode=display">
 \mu = M_d \\
@@ -144,14 +145,29 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
 
 <script type="math/tex; mode=display"> anomaly\_score = - \log{p_{value}} </script>
 
-<p>So, Let us use overall Discussion to sketch an algorithm for real time Anomaly Detection in time-series data.
-<img src="/files/tsanomaly/algorithm.png" alt="png" /></p>
+<!--- So, Let us use overall Discussion to sketch an algorithm for real time Anomaly Detection in time-series data.
+![png](/files/tsanomaly/algorithm.png) -->
 
-<h2 id="references">References</h2>
-<ol class="bibliography"><li><span id="knuth2">Knuth, D. (1998). <i>The Art of Computer Programming</i> (3rd ed., Vol. II - Seminumerical Algorithms). Addison Wesley Longman. Retrieved from http://www.amazon.com/gp/product/0201896842/104-5257411-2220725?ie=UTF8&amp;tag=theende-20&amp;linkCode=xm2&amp;camp=1789&amp;creativeASIN=0201896842</span></li>
+<h2 id="results">Results</h2>
+<p>Here are the results of algorithm for time series datasets with</p>
+
+<h4 id="trend">Trend</h4>
+<p><img src="/files/tsanomaly/trend.png" alt="png" /></p>
+
+<h4 id="seasonality">Seasonality</h4>
+<p><img src="/files/tsanomaly/sin.png" alt="png" /></p>
+
+<h4 id="trend-and-seasonality">Trend and Seasonality</h4>
+<p><img src="/files/tsanomaly/sintrend.png" alt="png" /></p>
+
+<p>The results shows that the algorith was able to detect the anomalous entries in a time series with trend or seasonality or both.
+References
+————–
+&lt;ol class="bibliography"&gt;&lt;li&gt;<span id="knuth2">Knuth, D. (1998). <i>The Art of Computer Programming</i> (3rd ed., Vol. II - Seminumerical Algorithms). Addison Wesley Longman. Retrieved from http://www.amazon.com/gp/product/0201896842/104-5257411-2220725?ie=UTF8&amp;tag=theende-20&amp;linkCode=xm2&amp;camp=1789&amp;creativeASIN=0201896842</span>&lt;/li&gt;</p>
 <li><span id="qdigest">Shrivastava, N., Buragohain, C., Agrawal, D., &amp; Suri, S. (2004). Medians and Beyond: New Aggregation Techniques for Sensor Networks. In <i>Proceedings of the 2Nd International Conference on Embedded Networked Sensor Systems</i> (pp. 239–249). New York, NY, USA: ACM. doi:10.1145/1031495.1031524</span></li>
 <li><span id="tdigest">Dunning, T. (2014). Computing Extremely Accurate Quantiles Using t-Digests. Retrieved from https://github.com/tdunning/t-digest</span></li>
-<li><span id="pvalprelert">Thomas J. Veasey, S. J. D. Anomaly Detection in Application Performance Monitoring Data. Retrieved from http://www.prelert.com/resources/Anomaly_Detection_In_APM_Data.pdf</span></li></ol>
+<li><span id="pvalprelert">Thomas J. Veasey, S. J. D. Anomaly Detection in Application Performance Monitoring Data. Retrieved from http://www.prelert.com/resources/Anomaly_Detection_In_APM_Data.pdf</span></li>
+<p>&lt;/ol&gt;</p>
 
 
         <p class=discuss>
