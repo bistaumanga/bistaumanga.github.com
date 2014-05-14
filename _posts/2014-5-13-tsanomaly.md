@@ -46,16 +46,16 @@ Results
 Here are the results of algorithm for time series datasets with
 
 #### Trend
-![png](/files/tsanomaly/trend.png)
+![png](/images/tsanomaly/trend.png)
 
 #### Seasonality
-![png](/files/tsanomaly/sin.png)
+![png](/images/tsanomaly/sin.png)
 
 #### Trend and Seasonality
-![png](/files/tsanomaly/sintrend.png)
+![png](/images/tsanomaly/sintrend.png)
 
 #### Level Shift
-![png](/files/tsanomaly/shift.png)
+![png](/images/tsanomaly/shift.png)
 
 The results shows that the algorithm was able to detect the anomalous entries in a time series with trend or seasonality or both or Level shifts.
 

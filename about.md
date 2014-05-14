@@ -8,7 +8,7 @@ permalink: /about/
 
 ####For Detailed Resume : 
 
-[$ \TeX$ ](https://github.com/bistaumanga/resume/blob/master/cv.tex){:style="color: blue; font-size:20"}  |  [PDF](https://github.com/bistaumanga/resume/blob/master/cv.pdf){:style="color: blue; font-size:20"}
+[$ \TeX$ ](/files/cv/cv.tex){:style="color: blue; font-size:20"}  |  [PDF](/files/cv/cv.pdf){:style="color: blue; font-size:20"}
 
 
 ##Professional Experience
