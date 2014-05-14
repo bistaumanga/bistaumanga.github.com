@@ -4,7 +4,7 @@
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width, initial-scale=1.0">
   <meta name=description content="Personal website and blog of Umanga Bista">
-  
+
   <title>
     
     Umanga Bista's Blog | 
@@ -23,9 +23,20 @@
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
   </script>
-  
+
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50991800-1', 'bistaumanga.com.np');
+  ga('send', 'pageview');
+
+  </script>
+
   <link rel=stylesheet type=text/css href=/css/pure-min.css>
   <link rel=stylesheet type=text/css href=/css/github.css>
   <link rel=stylesheet type=text/css href=/css/styles.css>
@@ -48,7 +59,7 @@
     <h1 class=author-name><a href=/>Umanga Bista</a></h1>
     <div class=nav>
         <a href="https://github.com/bistaumanga"><i class=icon-github-alt></i></a>
-        <a href=""><i class=icon-twitter></i></a>
+        <a href="mailto:bistaumanga@gmail.com"><i class=icon-google-plus></i></a>
         <a href="https://np.linkedin.com/in/bistaumanga"><i class=icon-linkedin></a></i>
         <a href="https://www.researchgate.net/profile/Umanga_Bista"><i class=icon-bookmark-empty></i></a>
     </div>
@@ -73,6 +84,7 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
         <p>Identifying the anomalous observations in time series data can be very important for <a href="http://en.wikipedia.org/wiki/Siem">SIEM</a> solutions. An example is a system that tracks the records of number of user-logins per minute. The anomalous entries in this case can be when the count becomes unexpecteadly higher or lower than normal trend.</p>
 
 
+        <a href="/blog/tsanomaly/#disqus_thread" data-disqus-identifier="2014-5-13-tsanomaly.md">View Comments</a>
     </div>
     <ul class=post-meta>
     
@@ -81,28 +93,16 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
     <li class=publish-time><i class=icon-calendar></i>May 13, 2014</li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#robust-ref">#robust</a></li>
+        <li><a href="/tags/#robust-statistic,-ref">#robust-statistic,</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#statistic,-ref">#statistic,</a></li>
+        <li><a href="/tags/#anomaly-detection,-ref">#anomaly-detection,</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#anomaly-ref">#anomaly</a></li>
+        <li><a href="/tags/#time-series,-ref">#time-series,</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#detection,-ref">#detection,</a></li>
-    
-        <li>&middot;</li>
-        <li><a href="/tags/#time-ref">#time</a></li>
-    
-        <li>&middot;</li>
-        <li><a href="/tags/#series,-ref">#series,</a></li>
-    
-        <li>&middot;</li>
-        <li><a href="/tags/#streaming-ref">#streaming</a></li>
-    
-        <li>&middot;</li>
-        <li><a href="/tags/#algorithm-ref">#algorithm</a></li>
+        <li><a href="/tags/#streaming-algorithm-ref">#streaming-algorithm</a></li>
     
 </ul>
 
@@ -121,6 +121,7 @@ Neighbors) algorithm, and is widely used. There is a <a href="http://www.rdatami
 available.</a></p>
 
 
+        <a href="/blog/lof/#disqus_thread" data-disqus-identifier="2014-4-21-lof.md">View Comments</a>
     </div>
     <ul class=post-meta>
     
@@ -132,10 +133,7 @@ available.</a></p>
         <li><a href="/tags/#outlier,-ref">#outlier,</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#local-ref">#local</a></li>
-    
-        <li>&middot;</li>
-        <li><a href="/tags/#outlier,-ref">#outlier,</a></li>
+        <li><a href="/tags/#local-outlier,-ref">#local-outlier,</a></li>
     
         <li>&middot;</li>
         <li><a href="/tags/#kd-tree-ref">#kd-tree</a></li>
@@ -159,6 +157,24 @@ available.</a></p>
       s.src = '//' + disqus_shortname + '.disqus.com/count.js';
       (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
+    </script>
+
+    
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
     </script>
   </body>
   </html>

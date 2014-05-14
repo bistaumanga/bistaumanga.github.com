@@ -4,7 +4,7 @@
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width, initial-scale=1.0">
   <meta name=description content="Personal website and blog of Umanga Bista">
-  
+
   <title>
     
     Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data | 
@@ -23,9 +23,20 @@
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
   </script>
-  
+
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50991800-1', 'bistaumanga.com.np');
+  ga('send', 'pageview');
+
+  </script>
+
   <link rel=stylesheet type=text/css href=/css/pure-min.css>
   <link rel=stylesheet type=text/css href=/css/github.css>
   <link rel=stylesheet type=text/css href=/css/styles.css>
@@ -48,7 +59,7 @@
     <h1 class=author-name><a href=/>Umanga Bista</a></h1>
     <div class=nav>
         <a href="https://github.com/bistaumanga"><i class=icon-github-alt></i></a>
-        <a href=""><i class=icon-twitter></i></a>
+        <a href="mailto:bistaumanga@gmail.com"><i class=icon-google-plus></i></a>
         <a href="https://np.linkedin.com/in/bistaumanga"><i class=icon-linkedin></a></i>
         <a href="https://www.researchgate.net/profile/Umanga_Bista"><i class=icon-bookmark-empty></i></a>
     </div>
@@ -74,33 +85,31 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
     <li class=publish-time><i class=icon-calendar></i>May 13, 2014</li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#robust-ref">#robust</a></li>
+        <li><a href="/tags/#robust-statistic,-ref">#robust-statistic,</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#statistic,-ref">#statistic,</a></li>
+        <li><a href="/tags/#anomaly-detection,-ref">#anomaly-detection,</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#anomaly-ref">#anomaly</a></li>
+        <li><a href="/tags/#time-series,-ref">#time-series,</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#detection,-ref">#detection,</a></li>
-    
-        <li>&middot;</li>
-        <li><a href="/tags/#time-ref">#time</a></li>
-    
-        <li>&middot;</li>
-        <li><a href="/tags/#series,-ref">#series,</a></li>
-    
-        <li>&middot;</li>
-        <li><a href="/tags/#streaming-ref">#streaming</a></li>
-    
-        <li>&middot;</li>
-        <li><a href="/tags/#algorithm-ref">#algorithm</a></li>
+        <li><a href="/tags/#streaming-algorithm-ref">#streaming-algorithm</a></li>
     
 </ul>
 
     <h1 class=title-large>Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data</h1>
     <div class=content>
+        <br>
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">
+        lang: en_US
+        </script>
+        <script type="IN/Share" data-counter="right"></script>
+        <div class="g-plus" data-action="share" data-height="24"></div>
+        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+
+        
+
         <p>Identifying the anomalous observations in time series data can be very important for <a href="http://en.wikipedia.org/wiki/Siem">SIEM</a> solutions. An example is a system that tracks the records of number of user-logins per minute. The anomalous entries in this case can be when the count becomes unexpecteadly higher or lower than normal trend.</p>
 
 <p>This can be detected by simpler approach such as standard deviation method, i.e. an entry in time-series is anomaly when its not in range <strong>$ [\mu - k * \sigma, \mu + k * \sigma] $</strong>. The typical value of <strong>$ k $</strong> is <strong>3, 3.5, 4</strong>, which has to be set manually. There are three problems with this approach. The problems and the possible solutions are enumerated below:</p>
@@ -172,15 +181,18 @@ the value using Causal Moving Median algorithm. Then the residual, which is a di
 <li><span id="pvalprelert">Thomas J. Veasey, S. J. D. Anomaly Detection in Application Performance Monitoring Data. Retrieved from http://www.prelert.com/resources/Anomaly_Detection_In_APM_Data.pdf</span></li></ol>
 
 
-        <p class=discuss>
-            Discuss this post via <a href="mailto:bistaumanga@gmail.com">e-mail</a>
-        </p>
-    </div>
 
-    
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    <p class=discuss>
+        Discuss this post via <a href="mailto:bistaumanga@gmail.com">e-mail</a>
+    </p>
+
+
+</div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'bistaumanga'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -192,7 +204,7 @@ the value using Causal Moving Median algorithm. Then the residual, which is a di
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        
+
         
 
     </div>
@@ -211,6 +223,24 @@ the value using Causal Moving Median algorithm. Then the residual, which is a di
       s.src = '//' + disqus_shortname + '.disqus.com/count.js';
       (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
+    </script>
+
+    
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
     </script>
   </body>
   </html>
