@@ -54,6 +54,8 @@ Here are the results of algorithm for time series datasets with
 ![png](/files/tsanomaly/sintrend.png)
 
 The results shows that the algorith was able to detect the anomalous entries in a time series with trend or seasonality or both.
+
+
 References
 --------------
 {% bibliography %}
