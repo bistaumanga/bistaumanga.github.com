@@ -292,7 +292,7 @@ p.feature-image img {
 }
 
 .top-bar{
-    height: auto;
+    height: 128;
     padding: 0 0 0 2em;
     width: auto;
     background: #f4f1e5;

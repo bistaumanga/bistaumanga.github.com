@@ -39,7 +39,8 @@
 
   <link rel=stylesheet type=text/css href=/css/github.css>
   <link rel=stylesheet type=text/css href=/css/styles.css>
-  <link rel=stylesheet type=text/css href=/css/font-awesome/css/font-awesome.min.css>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
   <link rel=stylesheet type=text/css href=/css/pure-min.css>
 </head>
 
@@ -47,18 +48,21 @@
   <div class='container top-bar'>
 
     <div class="pure-g">
-      <div class=pure-u-7-12>
-        <h1>UmB : Umanga Bista's personal site</h1>
-      </div>
       <div class=pure-u-5-12>
-      <div class="pure-menu pure-menu-open pure-menu-horizontal">
-        <ul>
-          <li class="pure-menu-selected"><a href="/">Home</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/publications">publications</a></li>
-          <li><a href="/about">Resume</a></li>
-        </ul>
+        <a href="{{ site.url }}">
+          <img id="logo" src="/images/logo.svg" alt="" />
+        </a>
       </div>
+
+      <div class=pure-u-7-12>
+        <div class="pure-menu pure-menu-open pure-menu-horizontal">
+          <ul>
+            <li class="pure-menu-selected"><a href="/"><i class="fa fa-home fa-2x"></i> Home</a></li>
+            <li><a href="/blog"><i class="fa fa-pencil fa-2x"></i> Blog</a></li>
+            <li><a href="/publications"><i class="fa fa-file-text fa-2x"></i> Publications</a></li>
+            <li><a href="/about"><i class="fa fa-info-circle fa-2x"></i> Resume</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 

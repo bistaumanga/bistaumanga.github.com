@@ -4,14 +4,12 @@ title: Resume
 permalink: /about/
 ---
 
-##Download Resume
+####<i class="fa fa-download fa-2x"></i> For Detailed Resume : 
 
-####For Detailed Resume : 
-
-[$ \TeX$ ](/files/cv/cv.tex){:style="color: blue; font-size:20"}  |  [PDF](/files/cv/cv.pdf){:style="color: blue; font-size:20"}
+[<i class="fa fa-file-code-o fa-2x"></i>  [$\TeX$] ](/files/cv/cv.tex){:style="color: blue; font-size:20"}  |  [<i class="fa fa-file-pdf-o fa-2x"></i> [PDF]](/files/cv/cv.pdf){:style="color: blue; font-size:20"}
 
 
-##Professional Experience
+##<i class="fa fa-institution fa-2x"></i> Professional Experience
 
 #### **Intern at Office of Company Registrar**{: style="color: teal; font-size:12pt;"}
 * *2013 Feb - Sept*{: style="color: brown"}
@@ -23,12 +21,12 @@ permalink: /about/
 
 
 
-##Education
+##<i class="fa fa-graduation-cap fa-2x"></i> Education 
 Bachelors in **Computer Engineering**, <br>
 Tribhuvan University, **Institute of Engineering, Central Campus Pulchowk**
 
 
-##Projects
+##<i class="fa fa-code fa-2x"></i> Projects
 
 ####UnderGrad Major Project : XBRL Implementation for financial reporting to the Office of Company Registrar
 
