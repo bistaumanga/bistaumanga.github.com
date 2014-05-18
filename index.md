@@ -11,7 +11,7 @@ permalink: /
 #### Lalitpur, Nepal.
 
 {: style="font-weight: normal; margin-top:0.5em; margin-bottom: 0;"}
-#### umanga.bista@logpoint.com
+#### umanga.bista [at] logpoint.com
 
 ###Student @[Coursera](www.coursera.org)
 
