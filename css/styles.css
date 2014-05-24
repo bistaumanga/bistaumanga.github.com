@@ -7,7 +7,7 @@ a {
  
 body {
    width: auto;
-   background: #eee;
+   background: #A59E43;
    font-size:10pt;
    font-family: helvetica, sans-serif;
 }
@@ -92,6 +92,8 @@ p code, ul code {
     padding: 1em;
     background: #fff;
     border-radius: 0 0 0 25px;
+    border-top-style:solid;
+    border-top-width:1px;
 }
 
 .author-info {
@@ -295,7 +297,6 @@ p.feature-image img {
     height: 128;
     padding: 0 0 0 2em;
     width: auto;
-    background: #f4f1e5;
+    background: #fff;
     margin: 0 10em 0 10em;
-    border-radius: 0 25px 0 0;
 }
