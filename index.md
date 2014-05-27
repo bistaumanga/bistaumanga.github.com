@@ -13,7 +13,7 @@ permalink: /
 {: style="font-weight: normal; margin-top:0.5em; margin-bottom: 0;"}
 #### umanga.bista [at] logpoint.com
 
-###Student @[Coursera](www.coursera.org)
+###Student @[Coursera](http://www.coursera.org)
 
 I was a computer engineering student at [Institute of Engineering, Central Campus Pulchowk, Lalitpur, Nepal][1].
 
@@ -32,6 +32,6 @@ Previously, I have worked on financial data representation and mining using [XBR
 [2]: http://en.wikipedia.org/wiki/Streaming_algorithm
 [3]: http://en.wikipedia.org/wiki/Data_stream_mining
 [4]: http://en.wikipedia.org/wiki/Discrete_optimization‎
-[5]: en.wikipedia.org/wiki/Distributed_algorithm‎
+[5]: http://en.wikipedia.org/wiki/Distributed_algorithm‎
 [6]: http://en.wikipedia.org/wiki/XBRL
 [7]: http://www.ocr.gov.np

@@ -24,7 +24,7 @@ kramdown:
 # Site settings
 permalink: /blog/:title/
 relative_permalinks: false
-pygments: true
+highlighter: pygments
 
 ## Publications and citations
 scholar:
