@@ -61,10 +61,10 @@
       <div class=pure-u-1-3>
         <div class="pure-menu pure-menu-open pure-menu-horizontal">
           <ul>
-            <li class="pure-menu-selected"><a href="/"><i class="fa fa-home fa-3x"></i> </a></li>
-            <li class="pure-menu-selected"><a href="/blog"><i class="fa fa-pencil fa-3x"> </i></a></li>
-            <li class="pure-menu-selected"><a href="/publications"><i class="fa fa-file-text fa-3x"> </i></a></li>
-            <li class="pure-menu-selected"><a href="/about"><i class="fa fa-info fa-3x"> </i></a></li>
+            <li class="pure-menu-selected"><a href="/"><h4><i class="fa fa-home fa-3x"></i> </h4></a></li>
+            <li class="pure-menu-selected"><a href="/blog"><h4><i class="fa fa-pencil fa-3x"></i></h4></a></li>
+            <li class="pure-menu-selected"><a href="/publications"><h4><i class="fa fa-file-text fa-3x"></i></h4></a></li>
+            <li class="pure-menu-selected"><a href="/about"><h4><i class="fa fa-info fa-3x"></i></h4></a></li>
           </ul>
         </div>
       </div>
@@ -72,23 +72,6 @@
 
 
   <div class="container pure-g">
-    <div class=pure-u-1-5>
-      <div class=author-info>
-    <img src="/images/author-image.jpg" class=author-image />
-    <h1 class=author-name><a href=/>Umanga Bista</a></h1>
-    <div class=nav>
-        <a href="https://github.com/bistaumanga"><i class="fa fa-github-alt fa-2x"></i></a>
-        <a href="mailto:bistaumanga@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
-        <a href="https://np.linkedin.com/in/bistaumanga"><i class="fa fa-linkedin-square fa-2x"></a></i>
-        <a href="https://www.researchgate.net/profile/Umanga_Bista"><i class="fa fa-flask fa-2x"></i></a>
-    </div>
-    
-    <p class=author-bio>Research Assistant at <a href=http://www.logpoint.com/>LogPoint</a>.<br>
-Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Institute of Engineering, Central Campus</a>.
-</p>
-    
-</div>
-    </div>
     <div class=pure-u-4-5>
       <div class=right-column>
         <div class=post>
@@ -139,38 +122,36 @@ in python, thanks to scipy, so lets use this to find outliers.</p>
 
 <h4 id="synthetic-dataset">Synthetic dataset</h4>
 
-<div class="highlight"><pre><code class="python">    <span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c"># to reproduce the result</span>
+<div class="highlight"><pre><code class="python">%pylab inline
+    import numpy as np
+    np.random.seed(2) # to reproduce the result
 
-    <span class="n">Populating</span> <span class="n">the</span> <span class="n">interactive</span> <span class="n">namespace</span> <span class="kn">from</span> <span class="nn">numpy</span> <span class="nn">and</span> <span class="nn">matplotlib</span>
-
-
-    <span class="n">WARNING</span><span class="p">:</span> <span class="n">pylab</span> <span class="kn">import</span> <span class="nn">has</span> <span class="nn">clobbered</span> <span class="nn">these</span> <span class="nn">variables</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;dist&#39;</span><span class="p">]</span>
-    <span class="sb">`%pylab --no-import-all`</span> <span class="n">prevents</span> <span class="n">importing</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">pylab</span> <span class="nn">and</span> <span class="nn">numpy</span>
+    Populating the interactive namespace from numpy and matplotlib
 
 
+    WARNING: pylab import has clobbered these variables: [&#39;dist&#39;]
+    `%pylab --no-import-all` prevents importing * from pylab and numpy
 
-    <span class="n">dim</span> <span class="o">=</span> <span class="mi">2</span> <span class="c"># number of dimensions of dataset = 2</span>
-    <span class="c"># cluster of normal random variable moderately dense</span>
-    <span class="n">data1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1500</span><span class="p">],</span> <span class="p">[[</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100000</span><span class="p">]],</span> <span class="mi">2000</span><span class="p">)</span>
+
+
+    dim = 2 # number of dimensions of dataset = 2
+    # cluster of normal random variable moderately dense
+    data1 = np.random.np.random.multivariate_normal([0, 1500], [[100000, 0], [0, 100000]], 2000)
     
-    <span class="c"># very dense</span>
-    <span class="n">data2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[[</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]],</span> <span class="mi">2500</span><span class="p">)</span>
+    # very dense
+    data2 = np.random.np.random.multivariate_normal([2000, 0], [[10000, 0], [0, 10000]], 2500)
     
-    <span class="c"># sparse</span>
-    <span class="n">data3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">2500</span><span class="p">,</span> <span class="mi">2500</span><span class="p">],</span> <span class="p">[[</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100000</span><span class="p">]],</span> <span class="mi">500</span><span class="p">)</span>
+    # sparse
+    data3 = np.random.np.random.multivariate_normal([2500, 2500], [[100000, 0], [0, 100000]], 500)
     
-    <span class="c"># mix the three dataset and shuffle</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)),</span> <span class="n">data3</span><span class="p">))</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    # mix the three dataset and shuffle
+    data = np.vstack((np.vstack((data1, data2)), data3))
+    np.random.shuffle(data)
     
-    <span class="c"># add some noise : zipf is skewed distribution and can have extreme values(outliers)</span>
-    <span class="n">zipf_alpha</span> <span class="o">=</span> <span class="mf">2.25</span>
-    <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">zipf</span><span class="p">(</span><span class="n">zipf_alpha</span><span class="p">,</span> <span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="n">dim</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">))</span>
-    <span class="n">data</span> <span class="o">+=</span> <span class="n">noise</span>
-    
-</code></pre></div>
+    # add some noise : zipf is skewed distribution and can have extreme values(outliers)
+    zipf_alpha = 2.25
+    noise = np.random.zipf(zipf_alpha, (5000,dim)) * np.sign((np.random.randint(2, size = (5000, dim)) - 0.5))
+    data += noise</code></pre></div>
 
 <h4 id="naive-approach-to-lof">Naive approach to LOF</h4>
 
@@ -178,36 +159,28 @@ in python, thanks to scipy, so lets use this to find outliers.</p>
 scikit-learn. In this, we just compute all-pair euclidean distance, i.e. $d(i,
 j) = |x(i)-x(j)|_2$.</p>
 
-<div class="highlight"><pre><code class="python">    <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">DistanceMetric</span>
-     <span class="c"># distance between points</span>
-    <span class="kn">import</span> <span class="nn">time</span>
-    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">dist</span> <span class="o">=</span> <span class="n">DistanceMetric</span><span class="o">.</span><span class="n">get_metric</span><span class="p">(</span><span class="s">&#39;euclidean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pairwise</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&#39;++ took </span><span class="si">%g</span><span class="s"> msecs for Distance computation&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">from sklearn.neighbors import DistanceMetric
+     # distance between points
+    import time
+    tic = time.time()
+    dist = DistanceMetric.get_metric(&#39;euclidean&#39;).pairwise(data)
+    print &#39;++ took %g msecs for Distance computation&#39; %  ((time.time() - tic)* 1000)</code></pre></div>
 
-<div class="highlight"><pre><code class="python">    <span class="o">++</span> <span class="n">took</span> <span class="mi">740</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Distance</span> <span class="n">computation</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">++ took 740 msecs for Distance computation</code></pre></div>
 
 <p>Performing KNN query.In this step, the nearest k neighbors are identified
 $N_k(i)$, and radius is the distance of k-th rearest neighbor of a datapoint.
 <script type="math/tex"> r(i) = \max_{k \in N_k(i)} d(i, k) </script></p>
 
-<div class="highlight"><pre><code class="python">    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="mi">17</span> <span class="c"># number of neighbors to consider</span>
-    <span class="c"># get the radius for each point in dataset (distance to kth nearest neighbor)</span>
-    <span class="c"># radius is the distance of kth nearest point for each point in dataset        </span>
-    <span class="n">idx_knn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span><span class="mi">1</span> <span class="p">:</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c"># by row&#39; get k nearest neighbour   </span>
-    <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">idx_knn</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># radius</span>
-    <span class="k">print</span> <span class="s">&#39;+++ took </span><span class="si">%g</span><span class="s"> msecs for KNN Querying&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">tic = time.time()
+    k = 17 # number of neighbors to consider
+    # get the radius for each point in dataset (distance to kth nearest neighbor)
+    # radius is the distance of kth nearest point for each point in dataset        
+    idx_knn = np.argsort(dist, axis=1)[:,1 : k + 1] # by row&#39; get k nearest neighbour   
+    radius = np.linalg.norm(data - data[idx_knn[:, -1]], axis = 1) # radius
+    print &#39;+++ took %g msecs for KNN Querying&#39; %  ((time.time() - tic)* 1000)</code></pre></div>
 
-<div class="highlight"><pre><code class="python">    <span class="o">+++</span> <span class="n">took</span> <span class="mi">4800</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">KNN</span> <span class="n">Querying</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">+++ took 4800 msecs for KNN Querying</code></pre></div>
 
 <p>Then LRD(Local Reachability distance) is calculated. For this, first reach
 distance $rd(i, j)$ is computed between point concern $x(i)$ and its neighbors $
@@ -217,47 +190,35 @@ k-neighbors of each point.
 <script type="math/tex"> rd(i, j) = \max{\{d(i, j), r(i) }\} for\ j\in N_k(i) </script>
 <script type="math/tex">LRD(i) = \frac{|N_k(i)|}{ \sum_{j \in N_k(i) }{rd(i, j)}} </script></p>
 
-<div class="highlight"><pre><code class="python">    <span class="c"># calculate the local reachability density</span>
-    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">LRD</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx_knn</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="n">LRD</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">idx_knn</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">radius</span><span class="p">[</span><span class="n">idx_knn</span><span class="p">[</span><span class="n">i</span><span class="p">]])))</span>
-    <span class="k">print</span> <span class="s">&#39;++++ took </span><span class="si">%g</span><span class="s"> msecs for LRD computation&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python"># calculate the local reachability density
+    tic = time.time()
+    LRD = []
+    for i in range(idx_knn.shape[0]):
+        LRD.append(np.mean(np.maximum(dist[i, idx_knn[i]], radius[idx_knn[i]])))
+    print &#39;++++ took %g msecs for LRD computation&#39; %  ((time.time() - tic)* 1000)</code></pre></div>
 
-<div class="highlight"><pre><code class="python">    <span class="o">++++</span> <span class="n">took</span> <span class="mi">429</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">LRD</span> <span class="n">computation</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">++++ took 429 msecs for LRD computation</code></pre></div>
 
 <p>finally, the outlier score $LOF$ is calsulated.
 <script type="math/tex"> LOF(i) = \frac { \sum_{j \in N_k(i)} {\frac{LRD(j)}{LRD(i)} }} { |N_k(i)|} </script></p>
 
-<div class="highlight"><pre><code class="python">    <span class="c"># calculating the outlier score</span>
-    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">LRD</span><span class="p">)</span> <span class="c"># inverse of density</span>
-    <span class="n">outlier_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="n">idx_knn</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
-    <span class="n">outlier_score</span> <span class="o">*=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">k</span>
-    <span class="k">print</span> <span class="s">&#39;+++++ took </span><span class="si">%g</span><span class="s"> msecs for Outlier scoring&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python"># calculating the outlier score
+    tic = time.time()
+    rho = 1. / np.array(LRD) # inverse of density
+    outlier_score = np.sum(rho[idx_knn], axis = 1)/ np.array(rho, dtype = np.float16)
+    outlier_score *= 1./k
+    print &#39;+++++ took %g msecs for Outlier scoring&#39; %  ((time.time() - tic)* 1000)</code></pre></div>
 
-<div class="highlight"><pre><code class="python">    <span class="o">+++++</span> <span class="n">took</span> <span class="mf">9.99999</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Outlier</span> <span class="n">scoring</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">+++++ took 9.99999 msecs for Outlier scoring</code></pre></div>
 
 <p>Now lets se the histogram of Outlier score, to choose the optimal threshold to
 decid weather a data-point is outlier is not.</p>
 
-<div class="highlight"><pre><code class="python">    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">outlier_score</span><span class="p">)</span><span class="o">/</span><span class="n">outlier_score</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># to normalize the histogram to probability plot</span>
-    <span class="n">hist</span><span class="p">(</span><span class="n">outlier_score</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;cyan&#39;</span><span class="p">)</span>
-    <span class="n">title</span><span class="p">(</span><span class="s">&#39;Distribution of outlier score&#39;</span><span class="p">)</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">weights = np.ones_like(outlier_score)/outlier_score.shape[0] # to normalize the histogram to probability plot
+    hist(outlier_score, bins = 50, weights = weights, histtype = &#39;stepfilled&#39;, color = &#39;cyan&#39;)
+    title(&#39;Distribution of outlier score&#39;)</code></pre></div>
 
-<div class="highlight"><pre><code class="python">    <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span> <span class="n">at</span> <span class="mh">0x36030588</span><span class="o">&gt;</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">&lt;matplotlib.text.Text at 0x36030588&gt;</code></pre></div>
 
 <p><img src="/images/lof_files/lof_16_1.png" alt="png" /></p>
 
@@ -265,18 +226,14 @@ decid weather a data-point is outlier is not.</p>
 data-point is outlier is outlier or not is around 2 for most of the cases, so
 lets use it to see our sesults.</p>
 
-<div class="highlight"><pre><code class="python">    <span class="n">threshold</span> <span class="o">=</span> <span class="mf">2.</span>
-    <span class="c"># plot non outliers as green</span>
-    <span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#39;green&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="c"># find the outliers and plot te outliers</span>
-    <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">outlier_score</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">)</span>
-    <span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">threshold = 2.
+    # plot non outliers as green
+    scatter(data[:, 0], data[:, 1], c = &#39;green&#39;, s = 10, edgecolors=&#39;None&#39;, alpha=0.5)
+    # find the outliers and plot te outliers
+    idx = np.where(outlier_score &gt; threshold)
+    scatter(data[idx, 0], data[idx, 1], c = &#39;red&#39;, s = 10, edgecolors=&#39;None&#39;, alpha=0.5)</code></pre></div>
 
-<div class="highlight"><pre><code class="python">    <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">collections</span><span class="o">.</span><span class="n">PathCollection</span> <span class="n">at</span> <span class="mh">0x3640e6a0</span><span class="o">&gt;</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">&lt;matplotlib.collections.PathCollection at 0x3640e6a0&gt;</code></pre></div>
 
 <p><img src="/images/lof_files/lof_18_1.png" alt="png" /></p>
 
@@ -287,62 +244,56 @@ optimisations with KD-Trees.</p>
 
 <p>KD-Trees insertion and KNN query.</p>
 
-<div class="highlight"><pre><code class="python">    <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KDTree</span> <span class="k">as</span> <span class="n">Tree</span>
-    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">BT</span> <span class="o">=</span> <span class="n">Tree</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">leaf_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="c"># Query for k nearest, k + 1 because one of the returnee is self</span>
-    <span class="n">dx</span><span class="p">,</span> <span class="n">idx_knn</span> <span class="o">=</span> <span class="n">BT</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="p">:],</span> <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre><code class="python">from sklearn.neighbors import KDTree as Tree
+    tic = time.time()
+    BT = Tree(data, leaf_size=5, p=2)
+    # Query for k nearest, k + 1 because one of the returnee is self
+    dx, idx_knn = BT.query(data[:, :], k = k + 1)
     
-    <span class="k">print</span> <span class="s">&#39;++ took </span><span class="si">%g</span><span class="s"> msecs for Tree KNN Querying&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+    print &#39;++ took %g msecs for Tree KNN Querying&#39; %  ((time.time() - tic)* 1000)
 
-    <span class="o">++</span> <span class="n">took</span> <span class="mi">122</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Tree</span> <span class="n">KNN</span> <span class="n">Querying</span>
-    
-</code></pre></div>
+    ++ took 122 msecs for Tree KNN Querying</code></pre></div>
 
 <p>LRD computation.</p>
 
-<div class="highlight"><pre><code class="python">    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">dx</span><span class="p">,</span> <span class="n">idx_knn</span> <span class="o">=</span> <span class="n">dx</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">idx_knn</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
-    <span class="c"># get the radius for each point in dataset</span>
-    <span class="c"># radius is the distance of kth nearest point for each point in dataset        </span>
-    <span class="n">radius</span> <span class="o">=</span> <span class="n">dx</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="c"># calculate the local reachability density</span>
-    <span class="n">LRD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">radius</span><span class="p">[</span><span class="n">idx_knn</span><span class="p">]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre><code class="python">tic = time.time()
+    dx, idx_knn = dx[:, 1:], idx_knn[:, 1:]
+    # get the radius for each point in dataset
+    # radius is the distance of kth nearest point for each point in dataset        
+    radius = dx[:, -1]
+    # calculate the local reachability density
+    LRD = np.mean(np.maximum(dx, radius[idx_knn]), axis = 1)
     
-    <span class="k">print</span> <span class="s">&#39;++ took </span><span class="si">%g</span><span class="s"> msecs for LRD computation&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+    print &#39;++ took %g msecs for LRD computation&#39; %  ((time.time() - tic)* 1000)
 
-    <span class="o">++</span> <span class="n">took</span> <span class="mf">8.99982</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">LRD</span> <span class="n">computation</span>
-    
-</code></pre></div>
+    ++ took 8.99982 msecs for LRD computation</code></pre></div>
 
 <p>Now, rest is same, so, i'm just replicating the rsult for completion.</p>
 
-<div class="highlight"><pre><code class="python">    <span class="c"># calculating the outlier score</span>
-    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">LRD</span><span class="p">)</span> <span class="c"># inverse of density</span>
-    <span class="n">outlier_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rho</span><span class="p">[</span><span class="n">idx_knn</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
-    <span class="n">outlier_score</span> <span class="o">*=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">k</span>
-    <span class="k">print</span> <span class="s">&#39;+++++ took </span><span class="si">%g</span><span class="s"> msecs for Outlier scoring&#39;</span> <span class="o">%</span>  <span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span><span class="p">)</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+<div class="highlight"><pre><code class="python"># calculating the outlier score
+    tic = time.time()
+    rho = 1. / np.array(LRD) # inverse of density
+    outlier_score = np.sum(rho[idx_knn], axis = 1)/ np.array(rho, dtype = np.float16)
+    outlier_score *= 1./k
+    print &#39;+++++ took %g msecs for Outlier scoring&#39; %  ((time.time() - tic)* 1000)
     
-    <span class="c"># plotiing the histogram of outlier score</span>
-    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">outlier_score</span><span class="p">)</span><span class="o">/</span><span class="n">outlier_score</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># to normalize the histogram to probability plot</span>
-    <span class="n">hist</span><span class="p">(</span><span class="n">outlier_score</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;cyan&#39;</span><span class="p">)</span>
-    <span class="n">title</span><span class="p">(</span><span class="s">&#39;Distribution of outlier score&#39;</span><span class="p">)</span>
+    # plotiing the histogram of outlier score
+    weights = np.ones_like(outlier_score)/outlier_score.shape[0] # to normalize the histogram to probability plot
+    hist(outlier_score, bins = 50, weights = weights, histtype = &#39;stepfilled&#39;, color = &#39;cyan&#39;)
+    title(&#39;Distribution of outlier score&#39;)
     
-    <span class="c">#plotting the result</span>
-    <span class="n">threshold</span> <span class="o">=</span> <span class="mf">2.</span>
-    <span class="c"># plot non outliers as green</span>
-    <span class="n">figure</span><span class="p">()</span>
-    <span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#39;green&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="c"># find the outliers and plot te outliers</span>
-    <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">outlier_score</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">)</span>
-    <span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s">&#39;None&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    #plotting the result
+    threshold = 2.
+    # plot non outliers as green
+    figure()
+    scatter(data[:, 0], data[:, 1], c = &#39;green&#39;, s = 10, edgecolors=&#39;None&#39;, alpha=0.5)
+    # find the outliers and plot te outliers
+    idx = np.where(outlier_score &gt; threshold)
+    scatter(data[idx, 0], data[idx, 1], c = &#39;red&#39;, s = 10, edgecolors=&#39;None&#39;, alpha=0.5)
 
-    <span class="o">+++++</span> <span class="n">took</span> <span class="mf">4.00019</span> <span class="n">msecs</span> <span class="k">for</span> <span class="n">Outlier</span> <span class="n">scoring</span>
+    +++++ took 4.00019 msecs for Outlier scoring
 
-    <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">collections</span><span class="o">.</span><span class="n">PathCollection</span> <span class="n">at</span> <span class="mh">0x36ad0b38</span><span class="o">&gt;</span>
-    
-</code></pre></div>
+    &lt;matplotlib.collections.PathCollection at 0x36ad0b38&gt;</code></pre></div>
 
 <p><img src="/images/lof_files/lof_26_2.png" alt="png" /></p>
 
@@ -360,9 +311,7 @@ for KNN querying. Also, i will create a method to compare the performances and s
 
 <p>Now, lets compare the performace of 2 methods- Naive and KDTree implementations.</p>
 
-<div class="highlight"><pre><code class="python">    <span class="n">perf_test</span><span class="p">(</span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Tree&#39;</span><span class="p">,</span> <span class="s">&#39;Naive&#39;</span><span class="p">],</span> <span class="n">n_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">14</span><span class="p">)],</span> <span class="n">plot</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">perf_test(methods = [&#39;Tree&#39;, &#39;Naive&#39;], n_list = [2 ** i for i in range(4, 14)], plot = True)</code></pre></div>
 
 <p><img src="/images/lof_files/lof_35_1.png" alt="png" /></p>
 
@@ -371,9 +320,7 @@ well for small number of datasets. In my PC, i cannot run Naive method beyond
 $2^{13}$ datapoints, or else i receie MemoryError. So, lets evauate te
 performance of KDTrees upto 1Million datapoints.</p>
 
-<div class="highlight"><pre><code class="python">    <span class="n">perf_test</span><span class="p">(</span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Tree&#39;</span><span class="p">],</span> <span class="n">n_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">)],</span> <span class="n">plot</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="python">perf_test(methods = [&#39;Tree&#39;], n_list = [2 ** i for i in range(4, 21)], plot = True)</code></pre></div>
 
 <p><img src="/images/lof_files/lof_37_1.png" alt="png" /></p>
 
@@ -412,6 +359,23 @@ complexity of algorithm, its linearithmin , i.e. $\Theta (n\log{n})$.</p>
     </div>
 
       </div>
+    </div>
+    <div class=pure-u-1-5>
+      <div class=author-info>
+    <img src="/images/author-image.jpg" class=author-image />
+    <h1 class=author-name><a href=/>Umanga Bista</a></h1>
+    <div class=nav>
+        <a href="https://github.com/bistaumanga"><i class="fa fa-github-alt fa-2x"></i></a>
+        <a href="mailto:bistaumanga@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+        <a href="https://np.linkedin.com/in/bistaumanga"><i class="fa fa-linkedin-square fa-2x"></a></i>
+        <a href="https://www.researchgate.net/profile/Umanga_Bista"><i class="fa fa-flask fa-2x"></i></a>
+    </div>
+    
+    <p class=author-bio>Research Assistant at <a href=http://www.logpoint.com/>LogPoint</a>.<br>
+Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Institute of Engineering, Central Campus</a>.
+</p>
+    
+</div>
     </div>
   </div>
   <script type="text/javascript">

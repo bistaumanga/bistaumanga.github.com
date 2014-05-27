@@ -1,13 +1,13 @@
 
 
 a {
-    color: #208060;
+    color: #333;
 }
 
  
 body {
    width: auto;
-   background: #A59E43;
+   background: #fff;
    font-size:10pt;
    font-family: helvetica, sans-serif;
 }
@@ -24,10 +24,20 @@ h2{
     color: #604020;
 }
 
-h3, h4 {
+h3 {
     font-family: Arial, Verdana, sans-serif;
     line-height: 1em;
-    color: #608020;
+    color: #608080;
+}
+
+h4 {
+    font-family: Arial, Verdana, sans-serif;
+    line-height: 1em;
+    color: #606020;
+}
+
+h5 {
+    color: #007bb6;
 }
 
 
@@ -96,6 +106,7 @@ p code, ul code {
     border-top-width:1px;
 }
 
+
 .author-info {
     font-size: 0.9em;
     float: right;
@@ -121,6 +132,7 @@ p code, ul code {
 
 .nav a {
     padding-left: 1em;
+    color: #007bb6;
     text-decoration: none;
 }
 
@@ -143,6 +155,7 @@ p code, ul code {
     padding: 0 2em;
     text-align: justify;
 }
+
 
 .post-meta {
     font-size: 0.9em;
@@ -285,6 +298,7 @@ p.feature-image img {
     }
 
     .nav a {
+        color: #007bb6;
         padding: 0.5em;
     }
 
