@@ -75,7 +75,7 @@
 
 
   <div class="container pure-g">
-    <div class=pure-u-4-5>
+    <div class=pure-u-3-4>
       <div class=right-column>
         <div class=post>
     
@@ -128,7 +128,8 @@
 </ul>
 
 <blockquote>
-  <p>We have to capture the trend. One way to do this is smooth the time series signal, and model the residual for anomaly detection. The residual will have $ \mu = 0 $ and some standard deviation.</p>
+  <p>We have to capture the trend. One way to do this is smooth the time series signal, and model the residual for anomaly detection. The residual will have $ \mu = 0 $ and some standard deviation.
+<img src="/images/tsanomaly/residual_plot.png" alt="center" /></p>
 </blockquote>
 
 <ul>
@@ -151,7 +152,7 @@ the value using Causal Moving Median algorithm. Then the residual, which is a di
 
 <script type="math/tex; mode=display"> p_{value} = 1 - Erf \frac{\mid residual - \mu  \mid}{2\sigma^2} </script>
 
-<p>and we can give the score to anomalous entries as <a href="#pvalprelert">(Thomas J. Veasey, n.d.)</a>:</p>
+<p>and we can give the score to anomalous entries as <a href="#pvalprelert">(Veasey &amp; Dodson, n.d.)</a>:</p>
 
 <script type="math/tex; mode=display"> anomaly\_score = - \log{p_{value}} </script>
 
@@ -162,16 +163,16 @@ the value using Causal Moving Median algorithm. Then the residual, which is a di
 <p>Here are the results of algorithm for time series datasets with</p>
 
 <h4 id="trend">Trend</h4>
-<p><img src="/images/tsanomaly/trend.png" alt="png" /></p>
+<p><img src="/images/tsanomaly/trend.png" alt="center" /></p>
 
 <h4 id="seasonality">Seasonality</h4>
-<p><img src="/images/tsanomaly/sin.png" alt="png" /></p>
+<p><img src="/images/tsanomaly/sin.png" alt="center" /></p>
 
 <h4 id="trend-and-seasonality">Trend and Seasonality</h4>
-<p><img src="/images/tsanomaly/sintrend.png" alt="png" /></p>
+<p><img src="/images/tsanomaly/sintrend.png" alt="center" /></p>
 
 <h4 id="level-shift">Level Shift</h4>
-<p><img src="/images/tsanomaly/shift.png" alt="png" /></p>
+<p><img src="/images/tsanomaly/shift.png" alt="center" /></p>
 
 <p>The results shows that the algorithm was able to detect the anomalous entries in a time series with trend or seasonality or both or Level shifts.</p>
 
@@ -179,7 +180,9 @@ the value using Causal Moving Median algorithm. Then the residual, which is a di
 <ol class="bibliography" style="font-size:12pt; text-align:left;"><li><span id="knuth2">Knuth, D. (1998). <i>The Art of Computer Programming</i> (3rd ed., Vol. II - Seminumerical Algorithms). Addison Wesley Longman. Retrieved from http://www.amazon.com/gp/product/0201896842/104-5257411-2220725?ie=UTF8&amp;tag=theende-20&amp;linkCode=xm2&amp;camp=1789&amp;creativeASIN=0201896842</span></li>
 <li><span id="qdigest">Shrivastava, N., Buragohain, C., Agrawal, D., &amp; Suri, S. (2004). Medians and Beyond: New Aggregation Techniques for Sensor Networks. In <i>Proceedings of the 2Nd International Conference on Embedded Networked Sensor Systems</i> (pp. 239–249). New York, NY, USA: ACM. doi:10.1145/1031495.1031524</span></li>
 <li><span id="tdigest">Dunning, T. (2014). Computing Extremely Accurate Quantiles Using t-Digests. Retrieved from https://github.com/tdunning/t-digest</span></li>
-<li><span id="pvalprelert">Thomas J. Veasey, S. J. D. Anomaly Detection in Application Performance Monitoring Data. Retrieved from http://www.prelert.com/resources/Anomaly_Detection_In_APM_Data.pdf</span></li></ol>
+<li><span id="pvalprelert">Veasey, T. J., &amp; Dodson, S. J. Anomaly Detection in Application Performance Monitoring Data. Retrieved from http://www.prelert.com/resources/Anomaly_Detection_In_APM_Data.pdf</span></li>
+<li><span id="pcc-anomaly">Shyu, M.-L., Chen, S.-C., Sarinnapakorn, K., &amp; Chang, L. W. A Novel Anomaly Detection Scheme based on Principal Component Classifier. Retrieved from http://users.cis.fiu.edu/~chens/PDF/ICDM03_WS.pdf</span></li>
+<li><span id="charuoutlier">Aggarwal, C. C. (2013). <i>Outlier Analysis</i> (3rd ed.). Springer. Retrieved from http://link.springer.com/book/10.1007/978-1-4614-6396-2</span></li></ol>
 
 
 
@@ -212,10 +215,11 @@ the value using Causal Moving Median algorithm. Then the residual, which is a di
 
       </div>
     </div>
-    <div class=pure-u-1-5>
+    <div class=pure-u-1-4>
       <div class=author-info>
     <img src="/images/author-image.jpg" class=author-image />
     <h1 class=author-name><a href=/>Umanga Bista</a></h1>
+    <h2 class=author-name><a href=/>उमङ्ग बिष्ट</a></h2>
     <div class=nav>
         <a href="https://github.com/bistaumanga"><i class="fa fa-github-alt fa-2x" style="color:#000"></i></a>
         <a href="mailto:bistaumanga@gmail.com"><i class="fa fa-envelope fa-2x" style="color:#6E329D"></i></a>
