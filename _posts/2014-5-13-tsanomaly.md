@@ -3,6 +3,7 @@ layout: post
 title: Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data
 meta: Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data
 comments: true
+category: anomaly-detection
 tags: robust-statistic, anomaly-detection, time-series, streaming-algorithm
 ---
 
@@ -17,6 +18,7 @@ This can be detected by simpler approach such as standard deviation method, i.e.
 * It does not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.
 
 > We have to capture the trend. One way to do this is smooth the time series signal, and model the residual for anomaly detection. The residual will have $ \mu = 0 $ and some standard deviation.
+![center](/images/tsanomaly/residual_plot.png)
 
 * Anomalous time-series entries have to be identified in real-time, so we cannot use batch algorithms that calculates the parameters *$ \mu, \sigma $* in first pass and filters out the anomalous data in second pass. But this can be solved by streaming algorithm for $ \mu, \sigma $ {% cite knuth2 -l 232 %}.
 
@@ -46,23 +48,23 @@ Results
 Here are the results of algorithm for time series datasets with
 
 #### Trend
-![png](/images/tsanomaly/trend.png)
+![center](/images/tsanomaly/trend.png)
 
 #### Seasonality
-![png](/images/tsanomaly/sin.png)
+![center](/images/tsanomaly/sin.png)
 
 #### Trend and Seasonality
-![png](/images/tsanomaly/sintrend.png)
+![center](/images/tsanomaly/sintrend.png)
 
 #### Level Shift
-![png](/images/tsanomaly/shift.png)
+![center](/images/tsanomaly/shift.png)
 
 The results shows that the algorithm was able to detect the anomalous entries in a time series with trend or seasonality or both or Level shifts.
 
 
 References
 --------------
-{% bibliography %}
+{% bibliography --cited %}
 {: style="font-size:12pt; text-align:left;"}
 
 [siem]: http://en.wikipedia.org/wiki/Siem

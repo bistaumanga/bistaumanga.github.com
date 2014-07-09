@@ -56,6 +56,9 @@ Tribhuvan University, **Institute of Engineering, Central Campus Pulchowk**<br>
 
 7. [**Data Analysis and Statistical Inference**](https://www.coursera.org/course/statistics), *Dr. Mine Çetinkaya-Rundel, Duke University* [<i class="fa fa-file-pdf-o "></i>](https://www.dropbox.com/s/l00avomjt2jcidx/Coursera%20statistics%202014.pdf)
 
+8. [**Exploratory Dat Analysis**](https://www.coursera.org/course/exdata), *Roger D. Peng, Jeff Leek, Brian Caffo, John Hopkins University* [<i class="fa fa-file-pdf-o "></i>](https://www.dropbox.com/s/sl5h9dsdc2xmkmk/Coursera%20exdata%202014.pdf)
+
+
 ____
 
 ##<i class="fa fa-code fa-2x"></i> Projects

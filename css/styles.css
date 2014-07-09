@@ -1,5 +1,4 @@
 
-
 a {
     color: #333;
 }
@@ -7,7 +6,7 @@ a {
  
 body {
    width: auto;
-   background: #fff;
+   background: #efefef;
    font-size:10pt;
    font-family: helvetica, sans-serif;
 }
@@ -101,7 +100,10 @@ p code, ul code {
     max-width: auto;
     padding: 1em;
     background: #fff;
-    border-radius: 0 0 0 25px;
+    border: 1px solid #ddd;
+    -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
+    box-shadow: 3px 3px rgba(0,0,0,0.1);
     border-top-style:solid;
     border-top-width:1px;
 }
@@ -109,27 +111,28 @@ p code, ul code {
 
 .author-info {
     font-size: 0.9em;
-    float: right;
+    margin :0.2em;
     text-align: right;
-    width: 165px;
 }
 
 .author-image {
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     border-radius: 60px;
-    height: 170px;
-    width: 140px;
+    width: 60%;
 }
 
 .author-name {
-    margin: 0.2em 0;
+    margin-bottom: .5em;
 }
 
 .author-name a {
     text-decoration: none;
 }
 
+.nav{
+    padding-left: 1em;
+}
 .nav a {
     padding-left: 1em;
     text-decoration: none;
@@ -141,7 +144,7 @@ p code, ul code {
     font-size: 14px;
     font-weight: bold;
     line-height: 1.4em;
-    margin-top: 0.5em;
+    margin-top: 1em;
 }
 
 .author-bio a {
@@ -289,7 +292,6 @@ p.feature-image img {
         float: none;
         margin: 0 auto 3em auto;
         text-align: center;
-        width: 80%;
     }
 
     .nav {
@@ -307,9 +309,13 @@ p.feature-image img {
 }
 
 .top-bar{
-    height: 128;
+    height: auto;
     padding: 0 0 0 2em;
     width: auto;
     background: #fff;
     margin: 0 10em 0 10em;
+    border: 1px solid #ddd;
+    -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
+    box-shadow: 3px 3px rgba(0,0,0,0.1);
 }
