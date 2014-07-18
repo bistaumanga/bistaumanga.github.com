@@ -58,6 +58,8 @@ Tribhuvan University, **Institute of Engineering, Central Campus Pulchowk**<br>
 
 8. [**Exploratory Dat Analysis**](https://www.coursera.org/course/exdata), *Roger D. Peng, Jeff Leek, Brian Caffo, John Hopkins University* [<i class="fa fa-file-pdf-o "></i>](https://www.dropbox.com/s/sl5h9dsdc2xmkmk/Coursera%20exdata%202014.pdf)
 
+9. [**Functional Programming Principles with Scala**](https://www.coursera.org/course/progfun), *Martin Odersky, École Polytechnique Fédérale de Lausanne* [<i class="fa fa-file-pdf-o "></i>](https://www.dropbox.com/s/j8tab3g4vnnmu7c/Coursera%20progfun%202014.pdf)
+
 
 ____
 

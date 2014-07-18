@@ -3,6 +3,9 @@ layout: page
 homepage: True
 permalink: /
 ---
+
+### bistaumanga [at] gmail.com
+
 {: style="margin-top:0; margin-bottom: 0;"}
 ## Research Assistant @[LogPoint](http://www.logpoint.com/en/)
 
