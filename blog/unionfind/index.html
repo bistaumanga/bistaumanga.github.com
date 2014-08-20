@@ -7,7 +7,7 @@
 
   <title>
     
-    Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data | 
+    Union Find | 
     
     Umanga Bista
   </title>
@@ -83,23 +83,26 @@
     
         
     
-    <li class=publish-time><i class=icon-calendar></i>May 13, 2014</li>
+    <li class=publish-time><i class=icon-calendar></i>August 18, 2014</li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#robust-statistic,-ref">#robust-statistic,</a></li>
+        <li><a href="/tags/#union-ref">#union</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#anomaly-detection,-ref">#anomaly-detection,</a></li>
+        <li><a href="/tags/#find,-ref">#find,</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#time-series,-ref">#time-series,</a></li>
+        <li><a href="/tags/#scala,-ref">#scala,</a></li>
     
         <li>&middot;</li>
-        <li><a href="/tags/#streaming-algorithm-ref">#streaming-algorithm</a></li>
+        <li><a href="/tags/#disjoint-ref">#disjoint</a></li>
+    
+        <li>&middot;</li>
+        <li><a href="/tags/#set-ref">#set</a></li>
     
 </ul>
 
-    <h1 class=title-large>Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data</h1>
+    <h1 class=title-large>Union Find</h1>
     <div class=content>
         <br>
         <script src="//platform.linkedin.com/in.js" type="text/javascript">
@@ -111,77 +114,34 @@
         <div class="fb-like" data-href=  data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
         
 
-        <p>Identifying the anomalous observations in time series data can be very important for <a href="http://en.wikipedia.org/wiki/Siem">SIEM</a> solutions. An example is a system that tracks the records of number of user-logins per minute. The anomalous entries in this case can be when the count becomes unexpecteadly higher or lower than normal trend.</p>
+        <p><strong>Disjoint Set</strong> or <strong>Union Find</strong> is a data structures that tracks a set of keys/elements which are partitioned into number of disjoint sets. It is useful in number of applications such as speeding up <strong>Kruskal's Minimum Spanning Tree</strong>, <strong>maximal k space clustering</strong> etc. It basically supports two operations:</p>
 
-<p>This can be detected by simpler approach such as standard deviation method, i.e. an entry in time-series is anomaly when its not in range <strong>$ [\mu - k * \sigma, \mu + k * \sigma] $</strong>. The typical value of <strong>$ k $</strong> is <strong>3, 3.5, 4</strong>, which has to be set manually. There are three problems with this approach. The problems and the possible solutions are enumerated below:</p>
+<ol>
+  <li><strong>Find(x)</strong>: finds the subset in which element <strong>x</strong> belongs.</li>
+  <li><strong>Union(x, y)</strong>: Merges the subsets in which <strong>x</strong> and <strong>y</strong> belongs to a single subset.</li>
+</ol>
 
-<ul>
-  <li>the statistics $ \mu $ and $ \sigma $ both are not robust, outliers have huge affect on them.</li>
-</ul>
+<h2 id="data-structure">Data Structure</h2>
+<p>The data structure accomplishes the operations by representing as tree and thus maintaining the two invariants.</p>
 
-<blockquote>
-  <p>We have to use roubust statistics such as <strong>$ M_d $</strong>:[Median], <strong>$ IQR $</strong> :[Inter Quartile Range], in favour of <strong>$ \mu $</strong> and <strong>$ \sigma $</strong>. The time series should be smoothened by <strong><a href="http://en.wikipedia.org/wiki/Causal_system">causal</a></strong> version of <strong>Moving Median</strong> or <strong>Causal 1-D Moving Median Filter</strong>.</p>
-</blockquote>
+<ol>
+  <li><strong>Parent pointers</strong> : The pointer to the parent of each element <strong>x</strong></li>
+  <li><strong>Rank</strong>: The rank of <strong>x</strong> is the maximum distance among all paths from x to the leaves</li>
+</ol>
 
-<ul>
-  <li>It does not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.</li>
-</ul>
+<p>For the detail [see here][http://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/UnionFind.pdf].</p>
 
-<blockquote>
-  <p>We have to capture the trend. One way to do this is smooth the time series signal, and model the residual for anomaly detection. The residual will have $ \mu = 0 $ and some standard deviation.
-<img src="/images/tsanomaly/residual_plot.png" alt="center" /></p>
-</blockquote>
+<p>A quick aimplementation of Union Find, optimized with lazy unions, path compression and Union By Rank is given here. 
+<script src="https://gist.github.com/bistaumanga/f4ec43701fc5b5552ebd.js"></script></p>
 
-<ul>
-  <li>Anomalous time-series entries have to be identified in real-time, so we cannot use batch algorithms that calculates the parameters <em>$ \mu, \sigma $</em> in first pass and filters out the anomalous data in second pass. But this can be solved by streaming algorithm for $ \mu, \sigma $ <a href="#knuth2">(Knuth, 1998, p. 232)</a>.</li>
-</ul>
+<h2 id="runtime">Runtime</h2>
+<p>The runtime of Union Find is very hard to analyze. There is a theorem for this by Ullman-HopCroft:</p>
 
 <blockquote>
-  <p>But since we are using robust statistics <em>$ [M_d, IQR] $</em>, we have to use streaming version of that. Luckily, there exist an awesome algorithms for this : <strong>QDigest</strong> <a href="#qdigest">(Shrivastava, Buragohain, Agrawal, &amp; Suri, 2004)</a> and <strong>TDigest</strong> <a href="#tdigest">(Dunning, 2014)</a>.</p>
+  <p>Starting from an empty data structure, Union By Rank with path compression performs any intermixed sequence of $m \geq n$ FIND and $n – 1$ UNION operations in $\mathcal{O}(m \log^*{n} )$ time. </p>
 </blockquote>
 
-<p>Using these concepts to decide whether a data from real-time is an anomaly or not, we first predict
-the value using Causal Moving Median algorithm. Then the residual, which is a difference between predicted and observed value is used to compute the Streaming $ M_d,  IQR $. These Robust statistics are used to estimate the robust $ \mu , \sigma $ using Equations [<a href="http://en.wikipedia.org/wiki/Robust_measures_of_scale#Estimation">wiki : Robust Scale Estimation</a>]:</p>
-
-<script type="math/tex; mode=display">
-\mu = M_d \\
-\sigma = 0.74 * IQR
-</script>
-
-<p>With these estimates for robust mean and standard deviation, we will calculate the two-tailed $p-value$ as :</p>
-
-<script type="math/tex; mode=display"> p_{value} = 1 - Erf \frac{\mid residual - \mu  \mid}{\sqrt{2\sigma^2}} </script>
-
-<p>and we can give the score to anomalous entries as <a href="#pvalprelert">(Veasey &amp; Dodson, n.d.)</a>:</p>
-
-<script type="math/tex; mode=display"> anomaly\_score = - \log{p_{value}} </script>
-
-<!--- So, Let us use overall Discussion to sketch an algorithm for real time Anomaly Detection in time-series data.
-![png](/files/tsanomaly/algorithm.png) -->
-
-<h2 id="results">Results</h2>
-<p>Here are the results of algorithm for time series datasets with</p>
-
-<h4 id="trend">Trend</h4>
-<p><img src="/images/tsanomaly/trend.png" alt="center" /></p>
-
-<h4 id="seasonality">Seasonality</h4>
-<p><img src="/images/tsanomaly/sin.png" alt="center" /></p>
-
-<h4 id="trend-and-seasonality">Trend and Seasonality</h4>
-<p><img src="/images/tsanomaly/sintrend.png" alt="center" /></p>
-
-<h4 id="level-shift">Level Shift</h4>
-<p><img src="/images/tsanomaly/shift.png" alt="center" /></p>
-
-<p>The results shows that the algorithm was able to detect the anomalous entries in a time series with trend or seasonality or both or Level shifts.</p>
-
-<h2 id="references">References</h2>
-<ol class="bibliography" style="font-size:12pt; text-align:left;"><li><span id="knuth2">Knuth, D. (1998). <i>The Art of Computer Programming</i> (3rd ed., Vol. II - Seminumerical Algorithms). Addison Wesley Longman. Retrieved from http://www.amazon.com/gp/product/0201896842/104-5257411-2220725?ie=UTF8&amp;tag=theende-20&amp;linkCode=xm2&amp;camp=1789&amp;creativeASIN=0201896842</span></li>
-<li><span id="qdigest">Shrivastava, N., Buragohain, C., Agrawal, D., &amp; Suri, S. (2004). Medians and Beyond: New Aggregation Techniques for Sensor Networks. In <i>Proceedings of the 2Nd International Conference on Embedded Networked Sensor Systems</i> (pp. 239–249). New York, NY, USA: ACM. doi:10.1145/1031495.1031524</span></li>
-<li><span id="tdigest">Dunning, T. (2014). Computing Extremely Accurate Quantiles Using t-Digests. Retrieved from https://github.com/tdunning/t-digest</span></li>
-<li><span id="pvalprelert">Veasey, T. J., &amp; Dodson, S. J. Anomaly Detection in Application Performance Monitoring Data. Retrieved from http://www.prelert.com/resources/Anomaly_Detection_In_APM_Data.pdf</span></li></ol>
-
+<p>where $\log^*{n}$ is number of times we need to apply $\log$ before the final result reaches 1.</p>
 
 
     <p class=discuss>
