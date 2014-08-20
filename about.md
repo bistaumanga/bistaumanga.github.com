@@ -10,7 +10,7 @@ permalink: /about/
 
 ____
 
-##<i class="fa fa-institution fa-2x"></i> Professional Experience
+##<i class="fa fa-institution fa-1x"></i> Professional Experience
 
 #### **Intern at Office of Company Registrar**{: style="color: teal; font-size:12pt;"}
 * *2013 Feb - Sept*{: style="color: brown"}
@@ -23,7 +23,7 @@ ____
 ____
 
 
-##<i class="fa fa-graduation-cap fa-2x"></i> Education 
+##<i class="fa fa-graduation-cap fa-1x"></i> Education 
 
 ### **UnderGrad**{: style="color: teal; font-size:15pt;"}
 
@@ -60,10 +60,11 @@ Tribhuvan University, **Institute of Engineering, Central Campus Pulchowk**<br>
 
 9. [**Functional Programming Principles with Scala**](https://www.coursera.org/course/progfun), *Martin Odersky, École Polytechnique Fédérale de Lausanne* [<i class="fa fa-file-pdf-o "></i>](https://www.dropbox.com/s/j8tab3g4vnnmu7c/Coursera%20progfun%202014.pdf)
 
+10. [**Design and Analysis of Algorithms, Part II**](https://www.coursera.org/course/algo2), *Tim RoughGarden, Stanford University* [<i class="fa fa-file-pdf-o "></i>](#)
 
 ____
 
-##<i class="fa fa-code fa-2x"></i> Projects
+##<i class="fa fa-code fa-1x"></i> Projects
 
 ####UnderGrad Major Project : XBRL Implementation for financial reporting to the Office of Company Registrar
 

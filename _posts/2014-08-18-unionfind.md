@@ -19,7 +19,7 @@ The data structure accomplishes the operations by representing as tree and thus 
 1. **Parent pointers** : The pointer to the parent of each element **x**
 2. **Rank**: The rank of **x** is the maximum distance among all paths from x to the leaves
 
-For the detail [see here][http://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/UnionFind.pdf].
+For the detail [see here](http://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/UnionFind.pdf).
 
 A quick aimplementation of Union Find, optimized with lazy unions, path compression and Union By Rank is given here. 
 <script src="https://gist.github.com/bistaumanga/f4ec43701fc5b5552ebd.js"></script>

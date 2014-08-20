@@ -4,7 +4,7 @@ homepage: True
 permalink: /
 ---
 
-### bistaumanga [at] gmail.com
+### mail [at] [bistaumanga.com.np](bistaumanga.com.np)
 
 {: style="margin-top:0; margin-bottom: 0;"}
 ## Research Assistant @[LogPoint](http://www.logpoint.com/en/)
@@ -23,7 +23,7 @@ I was a computer engineering student at [Institute of Engineering, Central Campu
 
    * Machine Learning, Data analysis and Anomaly Detection
    * [Streaming Algorithms][2] and [Mining][3]
-   * Algorithms and [Optimisation][4]
+   * Algorithms and [Optimization][4]
    * [Distributed Algorithms][5]
 
 I'm currently working on distrbuted streaming algorithms for log mining. I work on clustering of log messages in real time, and anomaly detection based on statistical techniques for [SIEM solutions][3].
