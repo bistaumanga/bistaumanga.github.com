@@ -34,7 +34,7 @@ $$
 
 With these estimates for robust mean and standard deviation, we will calculate the two-tailed $p-value$ as :
 
-$$ p_{value} = 1 - Erf \frac{\mid residual - \mu  \mid}{2\sigma^2} $$
+$$ p_{value} = 1 - Erf \frac{\mid residual - \mu  \mid}{\sqrt{2\sigma^2}} $$
 
 and we can give the score to anomalous entries as {% cite pvalprelert %}:
 
