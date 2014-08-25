@@ -4,11 +4,18 @@
 
   <url>
     <loc>http://bistaumanga.com.np</loc>
-    <lastmod>2014-08-20</lastmod>
+    <lastmod>2014-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>http://bistaumanga.com.np/blog/ioe_results2071/</loc>
+    <lastmod>2014-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>http://bistaumanga.com.np/blog/unionfind/</loc>
@@ -43,7 +50,7 @@
     
       <url>
         <loc>http://bistaumanga.com.np/404/</loc>
-        <lastmod>2014-08-20</lastmod>
+        <lastmod>2014-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
       </url>
@@ -52,7 +59,7 @@
     
       <url>
         <loc>http://bistaumanga.com.np/about/</loc>
-        <lastmod>2014-08-20</lastmod>
+        <lastmod>2014-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
       </url>
@@ -63,7 +70,7 @@
     
       <url>
         <loc>http://bistaumanga.com.np/</loc>
-        <lastmod>2014-08-20</lastmod>
+        <lastmod>2014-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
       </url>
@@ -72,7 +79,7 @@
     
       <url>
         <loc>http://bistaumanga.com.np/publications/</loc>
-        <lastmod>2014-08-20</lastmod>
+        <lastmod>2014-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
       </url>
