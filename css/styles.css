@@ -6,7 +6,7 @@ a {
  
 body {
    width: auto;
-   background: #efefef;
+   background: #f8f8f8;
    font-size:10pt;
    font-family: helvetica, sans-serif;
 }
@@ -68,7 +68,7 @@ th {
 }
 
 td {
-    padding 0.4em 0 0 10px;
+    padding: 0.4em 0 0 10px;
 }
 
 thead {
@@ -96,21 +96,17 @@ p code, ul code {
 }
 
 .container {
-    margin: 0em 10em 1em 10em;
+    margin: 0em 5em 0 5em;
     max-width: auto;
     padding: 1em;
     background: #fff;
-    border: 1px solid #ddd;
-    -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
-    -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
-    box-shadow: 3px 3px rgba(0,0,0,0.1);
     border-top-style:solid;
     border-top-width:1px;
 }
 
 
 .author-info {
-    font-size: 0.9em;
+    font-size: 0.8em;
     margin :0.2em;
     text-align: right;
 }
@@ -119,7 +115,7 @@ p code, ul code {
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     border-radius: 60px;
-    width: 60%;
+    width: 40%;
 }
 
 .author-name {
@@ -141,7 +137,7 @@ p code, ul code {
 .author-bio {
     color: #642;
     font-style: italic;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     line-height: 1.4em;
     margin-top: 1em;
@@ -285,7 +281,7 @@ p.feature-image img {
 
 @media (max-width: 767px) {
     .container {
-        margin: 3em 0;
+        margin: 1em 0;
     }
     
     .author-info {
@@ -313,9 +309,6 @@ p.feature-image img {
     padding: 0 0 0 2em;
     width: auto;
     background: #fff;
-    margin: 0 10em 0 10em;
-    border: 1px solid #ddd;
-    -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
-    -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
-    box-shadow: 3px 3px rgba(0,0,0,0.1);
+    margin: 0 5em 0 5em;
+
 }

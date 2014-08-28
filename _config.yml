@@ -25,6 +25,7 @@ kramdown:
 permalink: /blog/:title/
 relative_permalinks: false
 highlighter: pygments
+rel: "canonical"
 
 ## Publications and citations
 scholar:
