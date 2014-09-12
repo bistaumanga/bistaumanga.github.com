@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset=utf-8>
-  <meta name=viewport content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name=description content="Personal website and blog of Umanga Bista">
+
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <title>
     
     Umanga Bista's Blog | 
     
     Umanga Bista
+
   </title>
+
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -39,192 +46,215 @@
 
   <link rel=stylesheet type=text/css href=/css/github.css>
   <link rel=stylesheet type=text/css href=/css/styles.css>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel=stylesheet type=text/css href=/css/highlight.css>
-  <link rel=stylesheet type=text/css href=/css/pure-min.css>
 
   
 
-</head>
+  </head>
 
-<body>
+  <body>
 
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
+    <div class="container-fluid">
 
-  <div class="top-bar pure-g">
-    <div class=pure-u-1-2>
-      <a href="http://bistaumanga.com.np">
-        <img id="logo" src="/images/logo.svg" alt="" />
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="/"><img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=40" class="img-circle" /></a>
+
+    <div class="navbar-header visible-xs">
+      <a type="button" class="navbar-toggle nav-link" href="https://github.com/bistaumanga" style="color:#000;">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+
+      <a type="button" class="navbar-toggle nav-link" href="https://np.linkedin.com/in/bistaumanga" style="color:#007bb6;">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+      </a>
+
+      <a type="button" class="navbar-toggle nav-link" href="mailto:mail@bistaumanga.com.np" style="color:#6E329D;">
+        <i class="fa fa-envelope fa-2x"></i>
+      </a>
+      
       </a>
     </div>
 
-
-
-    <div class=pure-u-1-2>
-      <div class="pure-menu pure-menu-open pure-menu-horizontal">
-        <ul>
-          <li class="pure-menu-selected"><a href="/"><h4><i class="fa fa-home fa-3x"></i> </h4></a></li>
-          <li class="pure-menu-selected"><a href="/blog"><h4><i class="fa fa-pencil fa-2x"></i> Blog</h4></a></li>
-          <li class="pure-menu-selected"><a href="/publications"><h4><i class="fa fa-file-text fa-2x"></i> Publications</h4></a></li>
-          <li class="pure-menu-selected"><a href="/about"><h4><i class="fa fa-info fa-3x"></i></h4></a></li>
-        </ul>
-      </div>
     </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/"><i class="fa fa-home fa-2x"></i></a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+    
+
   </div>
 
+  </nav>
 
-  <div class="container pure-g">
-    <div class=pure-u-1-5>
-      <div class=author-info>
-    <img src="/images/author-image.jpg" class=author-image />
-    <h1 class=author-name><a href=/>Umanga Bista</a></h1>
-    <h1 class=author-name><a href=/>उमङ्ग बिष्ट</a></h1>
-    <div class=nav>
-        <a href="https://github.com/bistaumanga"><i class="fa fa-github-alt fa-2x" style="color:#000"></i></a>
-        <a href="mailto:mail@bistaumanga.com.np"><i class="fa fa-envelope fa-2x" style="color:#6E329D"></i></a>
-        <a href="https://np.linkedin.com/in/bistaumanga"><i class="fa fa-linkedin-square fa-2x" style="color:#007bb6"></a></i>
-        <a href="https://www.researchgate.net/profile/Umanga_Bista"><i class="fa fa-flask fa-2x" style="color:#CBEE70"></i></a>
-    </div>
+    <div class="col-sm-3 sidebar hidden-xs" style = "height: 100%;">
+        <header class="sidebar-header">
+    <img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=160" class="img-circle" />
+    <h2><a href=/>Umanga Bista<br>(उमङ्ग बिष्ट)</a></h1>
+</header>
     
-    <p class=author-bio>Research Assistant at <a href=http://www.logpoint.com/>LogPoint</a>.<br>
-Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Institute of Engineering, Central Campus</a>.
-</p>
-    
+<!-- 
+<p class=author-bio></p>
+ -->
 
-
-    <br>
-    <br>
-    <a href="https://db.tt/rJjB3Llm"> <i class="fa fa-dropbox fa-2x"></i>  Free Online Storage <br> upto 22GB</a>
+<div class="btn-group btn-group-justified">
+    <a class="btn btn-default btn-sm" href="https://github.com/bistaumanga" style="color:#000;" target="_blank">
+        <i class="fa fa-github-alt fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="https://np.linkedin.com/in/bistaumanga" style="color:#007bb6;" target="_blank">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="mailto:mail@bistaumanga.com.np" style="color:#6E329D;" target="_blank">
+        <i class="fa fa-envelope fa-2x"></i>
+    </a>
 </div>
-    </div>
+
+<br>
+
+<div align=center><a class="btn btn-default btn-sm" href="files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-2x"></i> CV</a>
+<br>
+<br>
+<a class="btn btn-default btn-sm" href="https://db.tt/rJjB3Llm" style="color: #3d9ae8;align: center;" target="_blank"> <i class="fa fa-dropbox fa-2x"></i> Free Online Storage </a></div>
+    </div>  
+
+    <div class="col-xs-18 col-sm-9 col-sm-offset-3" style="padding:1em 1em 1em 2em;">    
+      
+<div>
     
-    <div class=pure-u-4-5>
-      <div class=right-column>
-        
-<div class=post>
-    
-    <h1 class=title><a href="/blog/ioe_results2071/">Issues with IoE Revised entrance results</a></h1>
-    <div class=content>
+    <div class="jumbotron" style="padding: 0 0 .5em .5em;">
+  <h2 ><a href="/blog/ioe_results2071/">Issues with IoE Revised entrance results</a></h2>
         <p>IoE has published its <a href="http://ioe.edu.np/wp-content/uploads/2014/08/BE-Entrance-2071-Result-Roll-Wise-with-Rank.pdf">first entrance results few days ago</a>, and then later <a href="http://ioe.edu.np/wp-content/uploads/2014/08/BE-Entrance-Result-2071-Revised-List-Roll-Wise-with-Rank.pdf">republished the entrance results</a> citing some technical mistakes. The results contrasts for following few cases.</p>
 
 
-        <a href="/blog/ioe_results2071/#disqus_thread" data-disqus-identifier="2014-08-25-ioe_results2071.md">View Comments</a>
-    </div>
+        <!-- <a href="/blog/ioe_results2071/#disqus_thread" data-disqus-identifier="2014-08-25-ioe_results2071.md">View Comments</a> -->
     <ul class=post-meta>
     
         
     
-    <li class=publish-time><i class=icon-calendar></i>August 25, 2014</li>
+    <li><i class="fa fa-calendar" style="color:#ff2288;"></i>August 25, 2014</li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#ioe-ref">#ioe</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#ioe-ref">ioe</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#entrance-ref">#entrance</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#entrance-ref">entrance</a></li>
     
 </ul>
 
+  <p><a class="btn btn-primary btn-sx" role="button">view more</a></p>
 </div>
 
-<div class=post>
     
-    <h1 class=title><a href="/blog/unionfind/">Union Find</a></h1>
-    <div class=content>
+    
+</div>
+
+<div>
+    
+    <div class="jumbotron" style="padding: 0 0 .5em .5em;">
+  <h2 ><a href="/blog/unionfind/">Union Find</a></h2>
         <p><strong>Disjoint Set</strong> or <strong>Union Find</strong> is a data structures that tracks a set of keys/elements which are partitioned into number of disjoint sets. It is useful in number of applications such as speeding up <strong>Kruskal's Minimum Spanning Tree</strong>, <strong>maximal k space clustering</strong> etc. It basically supports two operations:</p>
 
 
-        <a href="/blog/unionfind/#disqus_thread" data-disqus-identifier="2014-08-18-unionfind.md">View Comments</a>
-    </div>
+        <!-- <a href="/blog/unionfind/#disqus_thread" data-disqus-identifier="2014-08-18-unionfind.md">View Comments</a> -->
     <ul class=post-meta>
     
         
     
-    <li class=publish-time><i class=icon-calendar></i>August 18, 2014</li>
+    <li><i class="fa fa-calendar" style="color:#ff2288;"></i>August 18, 2014</li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#union-ref">#union</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#union-ref">union</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#find,-ref">#find,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#find,-ref">find,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#scala,-ref">#scala,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#scala,-ref">scala,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#disjoint-ref">#disjoint</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#disjoint-ref">disjoint</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#set-ref">#set</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#set-ref">set</a></li>
     
 </ul>
 
+  <p><a class="btn btn-primary btn-sx" role="button">view more</a></p>
 </div>
 
-<div class=post>
     
-    <h1 class=title><a href="/blog/pccAnomalyProbe/">Principal Component Analysis Based Unsupervised Anomaly Detection</a></h1>
-    <div class=content>
+    
+</div>
+
+<div>
+    
+    <div class="jumbotron" style="padding: 0 0 .5em .5em;">
+  <h2 ><a href="/blog/pccAnomalyProbe/">Principal Component Analysis Based Unsupervised Anomaly Detection</a></h2>
         <p>Unsupervised anomaly detection has its importance in the cases where we need to detect novilities from the unlabeled dataset of iids (independent and identically distributed). There has been different approaches to this problem such as Statistical Outlier Detection approaches e.g regression, gaussian density estimation, density based outlier detection e.g. <a href="/blog/lof/">Local Outlier Factor</a>, Kernel density estimation etc.. <a href="#charuoutlier">(Aggarwal, 2013)</a>.</p>
 
 
-        <a href="/blog/pccAnomalyProbe/#disqus_thread" data-disqus-identifier="2014-05-29-pccAnomalyProbe.md">View Comments</a>
-    </div>
+        <!-- <a href="/blog/pccAnomalyProbe/#disqus_thread" data-disqus-identifier="2014-05-29-pccAnomalyProbe.md">View Comments</a> -->
     <ul class=post-meta>
     
         
     
-    <li class=publish-time><i class=icon-calendar></i>May 29, 2014</li>
+    <li><i class="fa fa-calendar" style="color:#ff2288;"></i>May 29, 2014</li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#anomaly,-ref">#anomaly,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#anomaly,-ref">anomaly,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#principal-component-classifier,-ref">#principal-component-classifier,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#principal-component-classifier,-ref">principal-component-classifier,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#PCA,-ref">#PCA,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#PCA,-ref">PCA,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#unsupervised-ref">#unsupervised</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#unsupervised-ref">unsupervised</a></li>
     
 </ul>
 
+  <p><a class="btn btn-primary btn-sx" role="button">view more</a></p>
 </div>
 
-<div class=post>
     
-    <h1 class=title><a href="/blog/tsanomaly/">Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data</a></h1>
-    <div class=content>
+    
+</div>
+
+<div>
+    
+    <div class="jumbotron" style="padding: 0 0 .5em .5em;">
+  <h2 ><a href="/blog/tsanomaly/">Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data</a></h2>
         <p>Identifying the anomalous observations in time series data can be very important for <a href="http://en.wikipedia.org/wiki/Siem">SIEM</a> solutions. An example is a system that tracks the records of number of user-logins per minute. The anomalous entries in this case can be when the count becomes unexpecteadly higher or lower than normal trend.</p>
 
 
-        <a href="/blog/tsanomaly/#disqus_thread" data-disqus-identifier="2014-5-13-tsanomaly.md">View Comments</a>
-    </div>
+        <!-- <a href="/blog/tsanomaly/#disqus_thread" data-disqus-identifier="2014-5-13-tsanomaly.md">View Comments</a> -->
     <ul class=post-meta>
     
         
     
-    <li class=publish-time><i class=icon-calendar></i>May 13, 2014</li>
+    <li><i class="fa fa-calendar" style="color:#ff2288;"></i>May 13, 2014</li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#robust-statistic,-ref">#robust-statistic,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#robust-statistic,-ref">robust-statistic,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#anomaly-detection,-ref">#anomaly-detection,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#anomaly-detection,-ref">anomaly-detection,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#time-series,-ref">#time-series,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#time-series,-ref">time-series,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#streaming-algorithm-ref">#streaming-algorithm</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#streaming-algorithm-ref">streaming-algorithm</a></li>
     
 </ul>
 
+  <p><a class="btn btn-primary btn-sx" role="button">view more</a></p>
 </div>
 
-<div class=post>
     
-    <h1 class=title><a href="/blog/lof/">Improving performance of Local outlier factor with KD-Trees</a></h1>
-    <div class=content>
+    
+</div>
+
+<div>
+    
+    <div class="jumbotron" style="padding: 0 0 .5em .5em;">
+  <h2 ><a href="/blog/lof/">Improving performance of Local outlier factor with KD-Trees</a></h2>
         <p>Local outlier factor (LOF) is an outlier detection algorithm, that detects
 outliers based on comparing local density of data instance with its neighbors.
 It does so to decide if data instance belongs to region of similar density. It
@@ -234,34 +264,36 @@ Neighbors) algorithm, and is widely used. There is a <a href="http://www.rdatami
 available.</a></p>
 
 
-        <a href="/blog/lof/#disqus_thread" data-disqus-identifier="2014-4-21-lof.md">View Comments</a>
-    </div>
+        <!-- <a href="/blog/lof/#disqus_thread" data-disqus-identifier="2014-4-21-lof.md">View Comments</a> -->
     <ul class=post-meta>
     
         
     
-    <li class=publish-time><i class=icon-calendar></i>April 21, 2014</li>
+    <li><i class="fa fa-calendar" style="color:#ff2288;"></i>April 21, 2014</li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#outlier,-ref">#outlier,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#outlier,-ref">outlier,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#local-outlier,-ref">#local-outlier,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#local-outlier,-ref">local-outlier,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#kd-tree-ref">#kd-tree</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#kd-tree-ref">kd-tree</a></li>
     
 </ul>
 
+  <p><a class="btn btn-primary btn-sx" role="button">view more</a></p>
+</div>
+
+    
+    
 </div>
 
 
-      </div>
     </div>
-    
-  </div>
-  <script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'bistaumanga'; // required: replace example with your forum shortname
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -291,14 +323,13 @@ available.</a></p>
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     })();
     </script>
+
+
   </body>
 
-  <div class="top-bar pure-g">
-    <div class=pure-u-1-2 align = "center">
-      <h4> Copyright @ <a href = "/">Umanga Bista </a></h4>
-    </div>
-    <div class=pure-u-1-2 align = "center">
-      <h4> Created with <a href = "http://jekyllrb.com/">Jekyll</a>, hosted @ <a href = "https://pages.github.com/"> Github </a> </h4>
-    </div>
-
-    </html>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4"><h5> Copyright @ <a href = "/">Umanga Bista </a></h5></div>
+  <div class="col-sm-4"><h5> Created with <a href = "http://jekyllrb.com/">Jekyll</a>, hosted @ <a href = "https://pages.github.com/"> Github </a> </h5></div>
+</div>
+ 
+  </html>

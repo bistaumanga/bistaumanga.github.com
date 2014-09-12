@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset=utf-8>
-  <meta name=viewport content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name=description content="Personal website and blog of Umanga Bista">
+
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <title>
     
     Robust Statistic based Streaming Anomaly Detection Scheme for Time-Series Data | 
     
     Umanga Bista
+
   </title>
+
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -39,85 +46,103 @@
 
   <link rel=stylesheet type=text/css href=/css/github.css>
   <link rel=stylesheet type=text/css href=/css/styles.css>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel=stylesheet type=text/css href=/css/highlight.css>
-  <link rel=stylesheet type=text/css href=/css/pure-min.css>
 
   
 
-</head>
+  </head>
 
-<body>
+  <body>
 
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
+    <div class="container-fluid">
 
-  <div class="top-bar pure-g">
-    <div class=pure-u-1-2>
-      <a href="http://bistaumanga.com.np">
-        <img id="logo" src="/images/logo.svg" alt="" />
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="/"><img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=40" class="img-circle" /></a>
+
+    <div class="navbar-header visible-xs">
+      <a type="button" class="navbar-toggle nav-link" href="https://github.com/bistaumanga" style="color:#000;">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+
+      <a type="button" class="navbar-toggle nav-link" href="https://np.linkedin.com/in/bistaumanga" style="color:#007bb6;">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+      </a>
+
+      <a type="button" class="navbar-toggle nav-link" href="mailto:mail@bistaumanga.com.np" style="color:#6E329D;">
+        <i class="fa fa-envelope fa-2x"></i>
+      </a>
+      
       </a>
     </div>
 
-
-
-    <div class=pure-u-1-2>
-      <div class="pure-menu pure-menu-open pure-menu-horizontal">
-        <ul>
-          <li class="pure-menu-selected"><a href="/"><h4><i class="fa fa-home fa-3x"></i> </h4></a></li>
-          <li class="pure-menu-selected"><a href="/blog"><h4><i class="fa fa-pencil fa-2x"></i> Blog</h4></a></li>
-          <li class="pure-menu-selected"><a href="/publications"><h4><i class="fa fa-file-text fa-2x"></i> Publications</h4></a></li>
-          <li class="pure-menu-selected"><a href="/about"><h4><i class="fa fa-info fa-3x"></i></h4></a></li>
-        </ul>
-      </div>
     </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/"><i class="fa fa-home fa-2x"></i></a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+    
+
   </div>
 
+  </nav>
 
-  <div class="container pure-g">
-    <div class=pure-u-1-5>
-      <div class=author-info>
-    <img src="/images/author-image.jpg" class=author-image />
-    <h1 class=author-name><a href=/>Umanga Bista</a></h1>
-    <h1 class=author-name><a href=/>उमङ्ग बिष्ट</a></h1>
-    <div class=nav>
-        <a href="https://github.com/bistaumanga"><i class="fa fa-github-alt fa-2x" style="color:#000"></i></a>
-        <a href="mailto:mail@bistaumanga.com.np"><i class="fa fa-envelope fa-2x" style="color:#6E329D"></i></a>
-        <a href="https://np.linkedin.com/in/bistaumanga"><i class="fa fa-linkedin-square fa-2x" style="color:#007bb6"></a></i>
-        <a href="https://www.researchgate.net/profile/Umanga_Bista"><i class="fa fa-flask fa-2x" style="color:#CBEE70"></i></a>
-    </div>
+    <div class="col-sm-3 sidebar hidden-xs" style = "height: 100%;">
+        <header class="sidebar-header">
+    <img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=160" class="img-circle" />
+    <h2><a href=/>Umanga Bista<br>(उमङ्ग बिष्ट)</a></h1>
+</header>
     
-    <p class=author-bio>Research Assistant at <a href=http://www.logpoint.com/>LogPoint</a>.<br>
-Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Institute of Engineering, Central Campus</a>.
-</p>
-    
+<!-- 
+<p class=author-bio></p>
+ -->
 
-
-    <br>
-    <br>
-    <a href="https://db.tt/rJjB3Llm"> <i class="fa fa-dropbox fa-2x"></i>  Free Online Storage <br> upto 22GB</a>
+<div class="btn-group btn-group-justified">
+    <a class="btn btn-default btn-sm" href="https://github.com/bistaumanga" style="color:#000;" target="_blank">
+        <i class="fa fa-github-alt fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="https://np.linkedin.com/in/bistaumanga" style="color:#007bb6;" target="_blank">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="mailto:mail@bistaumanga.com.np" style="color:#6E329D;" target="_blank">
+        <i class="fa fa-envelope fa-2x"></i>
+    </a>
 </div>
-    </div>
-    
-    <div class=pure-u-4-5>
-      <div class=right-column>
-        <div class=post>
+
+<br>
+
+<div align=center><a class="btn btn-default btn-sm" href="files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-2x"></i> CV</a>
+<br>
+<br>
+<a class="btn btn-default btn-sm" href="https://db.tt/rJjB3Llm" style="color: #3d9ae8;align: center;" target="_blank"> <i class="fa fa-dropbox fa-2x"></i> Free Online Storage </a></div>
+    </div>  
+
+    <div class="col-xs-18 col-sm-9 col-sm-offset-3" style="padding:1em 1em 1em 2em;">    
+      <div class=post>
     
     <ul class=post-meta>
     
         
     
-    <li class=publish-time><i class=icon-calendar></i>May 13, 2014</li>
+    <li><i class="fa fa-calendar" style="color:#ff2288;"></i>May 13, 2014</li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#robust-statistic,-ref">#robust-statistic,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#robust-statistic,-ref">robust-statistic,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#anomaly-detection,-ref">#anomaly-detection,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#anomaly-detection,-ref">anomaly-detection,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#time-series,-ref">#time-series,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#time-series,-ref">time-series,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#streaming-algorithm-ref">#streaming-algorithm</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#streaming-algorithm-ref">streaming-algorithm</a></li>
     
 </ul>
 
@@ -136,26 +161,21 @@ Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Insti
 
 <p>This can be detected by simpler approach such as standard deviation method, i.e. an entry in time-series is anomaly when its not in range <strong>$ [\mu - k * \sigma, \mu + k * \sigma] $</strong>. The typical value of <strong>$ k $</strong> is <strong>3, 3.5, 4</strong>, which has to be set manually. There are three problems with this approach. The problems and the possible solutions are enumerated below:</p>
 
-<ul>
-  <li>the statistics $ \mu $ and $ \sigma $ both are not robust, outliers have huge affect on them.</li>
-</ul>
+<div class="alert alert-danger" role="alert">the statistics $ \mu $ and $ \sigma $ both are not robust, outliers have huge affect on them.</div>
 
 <blockquote>
   <p>We have to use roubust statistics such as <strong>$ M_d $</strong>:[Median], <strong>$ IQR $</strong> :[Inter Quartile Range], in favour of <strong>$ \mu $</strong> and <strong>$ \sigma $</strong>. The time series should be smoothened by <strong><a href="http://en.wikipedia.org/wiki/Causal_system">causal</a></strong> version of <strong>Moving Median</strong> or <strong>Causal 1-D Moving Median Filter</strong>.</p>
 </blockquote>
 
-<ul>
-  <li>It does not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.</li>
-</ul>
+<div class="alert alert-danger" role="alert">It does not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.</div>
 
 <blockquote>
-  <p>We have to capture the trend. One way to do this is smooth the time series signal, and model the residual for anomaly detection. The residual will have $ \mu = 0 $ and some standard deviation.
-<img src="/images/tsanomaly/residual_plot.png" alt="center" /></p>
+  <p>We have to capture the trend. One way to do this is smooth the time series signal, and model the residual for anomaly detection. The residual will have $ \mu = 0 $ and some standard deviation.</p>
 </blockquote>
 
-<ul>
-  <li>Anomalous time-series entries have to be identified in real-time, so we cannot use batch algorithms that calculates the parameters <em>$ \mu, \sigma $</em> in first pass and filters out the anomalous data in second pass. But this can be solved by streaming algorithm for $ \mu, \sigma $ <a href="#knuth2">(Knuth, 1998, p. 232)</a>.</li>
-</ul>
+<p><img src="/images/tsanomaly/residual_plot.png" alt="center" /></p>
+
+<div class="alert alert-danger" role="alert">Anomalous time-series entries have to be identified in real-time, so we cannot use batch algorithms that calculates the parameters *$ \mu, \sigma $* in first pass and filters out the anomalous data in second pass. But this can be solved by streaming algorithm for $ \mu, \sigma $ <a href="#knuth2">(Knuth, 1998, p. 232)</a>.</div>
 
 <blockquote>
   <p>But since we are using robust statistics <em>$ [M_d, IQR] $</em>, we have to use streaming version of that. Luckily, there exist an awesome algorithms for this : <strong>QDigest</strong> <a href="#qdigest">(Shrivastava, Buragohain, Agrawal, &amp; Suri, 2004)</a> and <strong>TDigest</strong> <a href="#tdigest">(Dunning, 2014)</a>.</p>
@@ -232,12 +252,13 @@ the value using Causal Moving Median algorithm. Then the residual, which is a di
 
     </div>
 
-      </div>
     </div>
-    
-  </div>
-  <script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'bistaumanga'; // required: replace example with your forum shortname
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -267,14 +288,13 @@ the value using Causal Moving Median algorithm. Then the residual, which is a di
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     })();
     </script>
+
+
   </body>
 
-  <div class="top-bar pure-g">
-    <div class=pure-u-1-2 align = "center">
-      <h4> Copyright @ <a href = "/">Umanga Bista </a></h4>
-    </div>
-    <div class=pure-u-1-2 align = "center">
-      <h4> Created with <a href = "http://jekyllrb.com/">Jekyll</a>, hosted @ <a href = "https://pages.github.com/"> Github </a> </h4>
-    </div>
-
-    </html>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4"><h5> Copyright @ <a href = "/">Umanga Bista </a></h5></div>
+  <div class="col-sm-4"><h5> Created with <a href = "http://jekyllrb.com/">Jekyll</a>, hosted @ <a href = "https://pages.github.com/"> Github </a> </h5></div>
+</div>
+ 
+  </html>

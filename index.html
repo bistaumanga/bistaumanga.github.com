@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset=utf-8>
-  <meta name=viewport content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name=description content="Personal website and blog of Umanga Bista">
+
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <title>
     
     Umanga Bista
+
   </title>
+
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -37,100 +44,216 @@
 
   <link rel=stylesheet type=text/css href=/css/github.css>
   <link rel=stylesheet type=text/css href=/css/styles.css>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel=stylesheet type=text/css href=/css/highlight.css>
-  <link rel=stylesheet type=text/css href=/css/pure-min.css>
 
   
 
-</head>
+  </head>
 
-<body>
+  <body>
 
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
+    <div class="container-fluid">
 
-  <div class="top-bar pure-g">
-    <div class=pure-u-1-2>
-      <a href="http://bistaumanga.com.np">
-        <img id="logo" src="/images/logo.svg" alt="" />
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="/"><img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=40" class="img-circle" /></a>
+
+    <div class="navbar-header visible-xs">
+      <a type="button" class="navbar-toggle nav-link" href="https://github.com/bistaumanga" style="color:#000;">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+
+      <a type="button" class="navbar-toggle nav-link" href="https://np.linkedin.com/in/bistaumanga" style="color:#007bb6;">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+      </a>
+
+      <a type="button" class="navbar-toggle nav-link" href="mailto:mail@bistaumanga.com.np" style="color:#6E329D;">
+        <i class="fa fa-envelope fa-2x"></i>
+      </a>
+      
       </a>
     </div>
 
-
-
-    <div class=pure-u-1-2>
-      <div class="pure-menu pure-menu-open pure-menu-horizontal">
-        <ul>
-          <li class="pure-menu-selected"><a href="/"><h4><i class="fa fa-home fa-3x"></i> </h4></a></li>
-          <li class="pure-menu-selected"><a href="/blog"><h4><i class="fa fa-pencil fa-2x"></i> Blog</h4></a></li>
-          <li class="pure-menu-selected"><a href="/publications"><h4><i class="fa fa-file-text fa-2x"></i> Publications</h4></a></li>
-          <li class="pure-menu-selected"><a href="/about"><h4><i class="fa fa-info fa-3x"></i></h4></a></li>
-        </ul>
-      </div>
     </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/"><i class="fa fa-home fa-2x"></i></a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+    
+
   </div>
 
+  </nav>
 
-  <div class="container pure-g">
-    <div class=pure-u-1-5>
-      <div class=author-info>
-    <img src="/images/author-image.jpg" class=author-image />
-    <h1 class=author-name><a href=/>Umanga Bista</a></h1>
-    <h1 class=author-name><a href=/>उमङ्ग बिष्ट</a></h1>
-    <div class=nav>
-        <a href="https://github.com/bistaumanga"><i class="fa fa-github-alt fa-2x" style="color:#000"></i></a>
-        <a href="mailto:mail@bistaumanga.com.np"><i class="fa fa-envelope fa-2x" style="color:#6E329D"></i></a>
-        <a href="https://np.linkedin.com/in/bistaumanga"><i class="fa fa-linkedin-square fa-2x" style="color:#007bb6"></a></i>
-        <a href="https://www.researchgate.net/profile/Umanga_Bista"><i class="fa fa-flask fa-2x" style="color:#CBEE70"></i></a>
-    </div>
+    <div class="col-sm-3 sidebar hidden-xs" style = "height: 100%;">
+        <header class="sidebar-header">
+    <img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=160" class="img-circle" />
+    <h2><a href=/>Umanga Bista<br>(उमङ्ग बिष्ट)</a></h1>
+</header>
     
+<!--  -->
 
-
-    <br>
-    <br>
-    <a href="https://db.tt/rJjB3Llm"> <i class="fa fa-dropbox fa-2x"></i>  Free Online Storage <br> upto 22GB</a>
+<div class="btn-group btn-group-justified">
+    <a class="btn btn-default btn-sm" href="https://github.com/bistaumanga" style="color:#000;" target="_blank">
+        <i class="fa fa-github-alt fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="https://np.linkedin.com/in/bistaumanga" style="color:#007bb6;" target="_blank">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="mailto:mail@bistaumanga.com.np" style="color:#6E329D;" target="_blank">
+        <i class="fa fa-envelope fa-2x"></i>
+    </a>
 </div>
-    </div>
-    
-    <div class=pure-u-4-5>
-      <div class=right-column>
-        <div class=page>
+
+<br>
+
+<div align=center><a class="btn btn-default btn-sm" href="files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-2x"></i> CV</a>
+<br>
+<br>
+<a class="btn btn-default btn-sm" href="https://db.tt/rJjB3Llm" style="color: #3d9ae8;align: center;" target="_blank"> <i class="fa fa-dropbox fa-2x"></i> Free Online Storage </a></div>
+    </div>  
+
+    <div class="col-xs-18 col-sm-9 col-sm-offset-3" style="padding:1em 1em 1em 2em;">    
+      <div class=page>
     
     <div class=content>
-        <h3 id="mail-at-bistaumangacomnpbistaumangacomnp">mail [at] <a href="bistaumanga.com.np">bistaumanga.com.np</a></h3>
+        <ul class="nav nav-tabs" role="tablist" id="myTab">
+  <li class="active"><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
+  <li><a href="#learning" role="tab" data-toggle="tab">Learning</a></li>
+  <li><a href="#toolbox" role="tab" data-toggle="tab">Toolbox</a></li>
+</ul>
 
-<h2 style="margin-top:0; margin-bottom: 0;" id="research-assistant-logpointhttpwwwlogpointcomen">Research Assistant @<a href="http://www.logpoint.com/en/">LogPoint</a></h2>
+<div class="tab-content">
+  <div class="tab-pane active" id="profile"> 
+  	<h3>Research Assistant @<a href="http://www.logpoint.com/en/">LogPoint</a></h3>
 
-<h4 style="font-weight: normal; margin-top:0.5em; margin-bottom: 0;" id="lalitpur-nepal">Lalitpur, Nepal.</h4>
+<h4>Lalitpur, Nepal.</h4>
 
-<h4 style="font-weight: normal; margin-top:0.5em; margin-bottom: 0;" id="umangabista-at-logpointcom">umanga.bista [at] logpoint.com</h4>
+<p>umanga.bista [at] logpoint.com</p>
 
-<h3 id="student-courserahttpwwwcourseraorg">Student @<a href="http://www.coursera.org">Coursera</a></h3>
+<h3>Student @<a href="http://www.coursera.org">Coursera</a></h3>
+
+<h3>Research Interests</h3>
+
+<ul>
+<li> Machine Learning, Data analysis and Anomaly Detection</li>
+<li> <a href="http://en.wikipedia.org/wiki/Streaming_algorithm">Streaming Algorithms</a> and <a href="http://en.wikipedia.org/wiki/Data_stream_mining\">Mining</a></li>
+<li><p> <a href="http://en.wikipedia.org/wiki/Distributed_algorithm%E2%80%8E">Distributed Algorithms</a> and <a href="http://en.wikipedia.org/wiki/Big_data">Big Data</a></p>
+
+<p>I'm currently working on distrbuted streaming algorithms for log mining. I work on clustering of log messages in real time, and anomaly detection based on statistical techniques for <a href="http://en.wikipedia.org/wiki/Data_stream_mining\">SIEM solutions</a>.</p></li>
+</ul>
+
+
+<h3>Past</h3>
 
 <p>I was a computer engineering student at <a href="http://ioe.edu.np">Institute of Engineering, Central Campus Pulchowk, Lalitpur, Nepal</a>.</p>
 
-<h3 id="research-interests">Research Interests</h3>
-
-<ul>
-  <li>Machine Learning, Data analysis and Anomaly Detection</li>
-  <li><a href="http://en.wikipedia.org/wiki/Streaming_algorithm">Streaming Algorithms</a> and <a href="http://en.wikipedia.org/wiki/Data_stream_mining">Mining</a></li>
-  <li>Algorithms and <a href="http://en.wikipedia.org/wiki/Discrete_optimization‎">Optimization</a></li>
-  <li><a href="http://en.wikipedia.org/wiki/Distributed_algorithm‎">Distributed Algorithms</a></li>
-</ul>
-
-<p>I'm currently working on distrbuted streaming algorithms for log mining. I work on clustering of log messages in real time, and anomaly detection based on statistical techniques for <a href="http://en.wikipedia.org/wiki/Data_stream_mining">SIEM solutions</a>.</p>
-
 <p>Previously, I have worked on financial data representation and mining using <a href="http://en.wikipedia.org/wiki/XBRL">XBRL</a> for annual financial statements collected by <a href="http://www.ocr.gov.np">Office of Company Registrar, Nepal</a>.</p>
+  </div>
+
+  <div class="tab-pane" id="learning"> 
+	  <h3><strong>Coursera</strong></h3>
+
+<div class="panel panel-success">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Coursera 2013</div>
+
+<ul class="list-group">
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/ml"><strong>Machine Learning</strong></a>, <em>Andrew Ng, Stanford University</em> <a href="https://www.dropbox.com/s/ekv2spnt4x07ogm/machinelearning.pdf"><i class="fa fa-file-pdf-o"></i></a></p></li>
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/algo"><strong>Design and Analysis of Algorithms, Part I</strong></a>, <em>Tim RoughGarden, Stanford University</em> <a href="https://www.dropbox.com/s/w83mcmpvpa6owce/ADA%201.pdf"><i class="fa fa-file-pdf-o "></i></a></p></li>
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/datasci"><strong>Data Science</strong></a>, <em>Bill Howe, University of Washington</em> <a href="https://www.dropbox.com/s/fuy5re22eyefj80/datascience.pdf"><i class="fa fa-file-pdf-o"></i></a></p></li>
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/compdata"><strong>Computing for data Analysis</strong></a>, <em>Roger D. Peng, John Hopkins University</em> <a href="https://www.dropbox.com/s/cvkzx6dck94qe21/computing%20for%20data%20analysis.pdf"><i class="fa fa-file-pdf-o "></i></a></p></li>
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/images"><strong>Image and Video Processing</strong></a>, <em>Guillermo Sapiro, DUke University</em> <a href="https://www.dropbox.com/s/nv9adcygj1ph5o6/image%20and%20video%20processing.pdf"><i class="fa fa-file-pdf-o "></i></a></p></li>
+</ul>
+</div>
+
+
+<div class="panel panel-info">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Coursera 2014</div>
+
+<ul class="list-group">
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/randomness"><strong>Unpredictable? Randomness, Chance and Free Will</strong></a>, <em>Valerio Scarani, National University of Singapore</em> <a href="https://www.dropbox.com/s/b0nfegpbb24p24h/Coursera%20randomness%202014.pdf"><i class="fa fa-file-pdf-o "></i></a></p></li>
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/statistics"><strong>Data Analysis and Statistical Inference</strong></a>, <em>Dr. Mine Çetinkaya-Rundel, Duke University</em> <a href="https://www.dropbox.com/s/l00avomjt2jcidx/Coursera%20statistics%202014.pdf"><i class="fa fa-file-pdf-o "></i></a></p></li>
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/exdata"><strong>Exploratory Dat Analysis</strong></a>, <em>Roger D. Peng, Jeff Leek, Brian Caffo, John Hopkins University</em> <a href="https://www.dropbox.com/s/sl5h9dsdc2xmkmk/Coursera%20exdata%202014.pdf"><i class="fa fa-file-pdf-o "></i></a></p></li>
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/progfun"><strong>Functional Programming Principles with Scala</strong></a>, <em>Martin Odersky, École Polytechnique Fédérale de Lausanne</em> <a href="https://www.dropbox.com/s/j8tab3g4vnnmu7c/Coursera%20progfun%202014.pdf"><i class="fa fa-file-pdf-o "></i></a></p></li>
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/algo2"><strong>Design and Analysis of Algorithms, Part II</strong></a>, <em>Tim RoughGarden, Stanford University</em> <a href="https://www.dropbox.com/s/ilyfiwdyidtsi9g/Coursera%20algo2%202014.pdf?dl=0"><i class="fa fa-file-pdf-o "></i></a></p></li>
+<li class="list-group-item"><p><a href="https://www.coursera.org/course/learning"><strong>Learning How to Learn: Powerful mental tools to help you master tough subjects</strong></a>, <em>Barbara Oakley and Terrence Sejnowski, University of California, San Diego </em> </p></li>
+</ul>
+</div>
+
+	</div>
+
+  <div class="tab-pane" id="toolbox"> 
+  	<div class="panel panel-primary">
+  		<div class="panel-heading">Programming</div>
+		  <div class="panel-body">
+		    Python, R, Scala, Java, Octave, C, C++
+		</div>
+  	</div>
+	<div class="panel panel-success">
+		<div class="panel-heading">IDE \ Text Editors</div>
+		  <div class="panel-body">
+		    R Studio, Tex Studio, Eclipse, Sublime Text, Spyder, Mou, Vim
+		</div>
+	</div>
+	<div class="panel panel-info">
+		<div class="panel-heading">Collaboration</div>
+		  <div class="panel-body">
+		    Git (Github, BitBucket), Share Latex, Dropbox
+		</div>
+	</div>
+	<div class="panel panel-warning">
+		<div class="panel-heading">Documentation</div>
+		  <div class="panel-body">
+		    $\LaTeX$, Markdown, R Markdown, HTML, IPython
+		</div>
+	</div>
+	<div class="panel panel-danger">
+		<div class="panel-heading">Data Science</div>
+		  <div class="panel-body">
+		    R, Scipy ecosystem, Hadoop, Spark, SQL, Plotly
+		</div>
+	</div>
+
+	<div class="panel panel-info">
+		<div class="panel-heading">OS and Others</div>
+		  <div class="panel-body">
+		    Ubuntu, OS X, Terminal, Jekyll, VirtualBox, Excel...
+		</div>
+	</div>
+  </div>
+</div>
+
+<script>
+ function activaTab(tab){
+    $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+	};
+
+	activaTab('profile');
+</script>
 
 
     </div>
 </div>
 
-      </div>
     </div>
-    
-  </div>
-  <script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'bistaumanga'; // required: replace example with your forum shortname
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -160,14 +283,13 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     })();
     </script>
+
+
   </body>
 
-  <div class="top-bar pure-g">
-    <div class=pure-u-1-2 align = "center">
-      <h4> Copyright @ <a href = "/">Umanga Bista </a></h4>
-    </div>
-    <div class=pure-u-1-2 align = "center">
-      <h4> Created with <a href = "http://jekyllrb.com/">Jekyll</a>, hosted @ <a href = "https://pages.github.com/"> Github </a> </h4>
-    </div>
-
-    </html>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4"><h5> Copyright @ <a href = "/">Umanga Bista </a></h5></div>
+  <div class="col-sm-4"><h5> Created with <a href = "http://jekyllrb.com/">Jekyll</a>, hosted @ <a href = "https://pages.github.com/"> Github </a> </h5></div>
+</div>
+ 
+  </html>

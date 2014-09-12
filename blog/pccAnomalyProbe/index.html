@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset=utf-8>
-  <meta name=viewport content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name=description content="Personal website and blog of Umanga Bista">
+
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <title>
     
     Principal Component Analysis Based Unsupervised Anomaly Detection | 
     
     Umanga Bista
+
   </title>
+
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -39,85 +46,103 @@
 
   <link rel=stylesheet type=text/css href=/css/github.css>
   <link rel=stylesheet type=text/css href=/css/styles.css>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel=stylesheet type=text/css href=/css/highlight.css>
-  <link rel=stylesheet type=text/css href=/css/pure-min.css>
 
   
 
-</head>
+  </head>
 
-<body>
+  <body>
 
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
+    <div class="container-fluid">
 
-  <div class="top-bar pure-g">
-    <div class=pure-u-1-2>
-      <a href="http://bistaumanga.com.np">
-        <img id="logo" src="/images/logo.svg" alt="" />
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="/"><img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=40" class="img-circle" /></a>
+
+    <div class="navbar-header visible-xs">
+      <a type="button" class="navbar-toggle nav-link" href="https://github.com/bistaumanga" style="color:#000;">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+
+      <a type="button" class="navbar-toggle nav-link" href="https://np.linkedin.com/in/bistaumanga" style="color:#007bb6;">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+      </a>
+
+      <a type="button" class="navbar-toggle nav-link" href="mailto:mail@bistaumanga.com.np" style="color:#6E329D;">
+        <i class="fa fa-envelope fa-2x"></i>
+      </a>
+      
       </a>
     </div>
 
-
-
-    <div class=pure-u-1-2>
-      <div class="pure-menu pure-menu-open pure-menu-horizontal">
-        <ul>
-          <li class="pure-menu-selected"><a href="/"><h4><i class="fa fa-home fa-3x"></i> </h4></a></li>
-          <li class="pure-menu-selected"><a href="/blog"><h4><i class="fa fa-pencil fa-2x"></i> Blog</h4></a></li>
-          <li class="pure-menu-selected"><a href="/publications"><h4><i class="fa fa-file-text fa-2x"></i> Publications</h4></a></li>
-          <li class="pure-menu-selected"><a href="/about"><h4><i class="fa fa-info fa-3x"></i></h4></a></li>
-        </ul>
-      </div>
     </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/"><i class="fa fa-home fa-2x"></i></a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+    
+
   </div>
 
+  </nav>
 
-  <div class="container pure-g">
-    <div class=pure-u-1-5>
-      <div class=author-info>
-    <img src="/images/author-image.jpg" class=author-image />
-    <h1 class=author-name><a href=/>Umanga Bista</a></h1>
-    <h1 class=author-name><a href=/>उमङ्ग बिष्ट</a></h1>
-    <div class=nav>
-        <a href="https://github.com/bistaumanga"><i class="fa fa-github-alt fa-2x" style="color:#000"></i></a>
-        <a href="mailto:mail@bistaumanga.com.np"><i class="fa fa-envelope fa-2x" style="color:#6E329D"></i></a>
-        <a href="https://np.linkedin.com/in/bistaumanga"><i class="fa fa-linkedin-square fa-2x" style="color:#007bb6"></a></i>
-        <a href="https://www.researchgate.net/profile/Umanga_Bista"><i class="fa fa-flask fa-2x" style="color:#CBEE70"></i></a>
-    </div>
+    <div class="col-sm-3 sidebar hidden-xs" style = "height: 100%;">
+        <header class="sidebar-header">
+    <img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=160" class="img-circle" />
+    <h2><a href=/>Umanga Bista<br>(उमङ्ग बिष्ट)</a></h1>
+</header>
     
-    <p class=author-bio>Research Assistant at <a href=http://www.logpoint.com/>LogPoint</a>.<br>
-Formerly, Computer Engineering undergrad at <a href=http://www.ioe.edu.np/>Institute of Engineering, Central Campus</a>.
-</p>
-    
+<!-- 
+<p class=author-bio></p>
+ -->
 
-
-    <br>
-    <br>
-    <a href="https://db.tt/rJjB3Llm"> <i class="fa fa-dropbox fa-2x"></i>  Free Online Storage <br> upto 22GB</a>
+<div class="btn-group btn-group-justified">
+    <a class="btn btn-default btn-sm" href="https://github.com/bistaumanga" style="color:#000;" target="_blank">
+        <i class="fa fa-github-alt fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="https://np.linkedin.com/in/bistaumanga" style="color:#007bb6;" target="_blank">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="mailto:mail@bistaumanga.com.np" style="color:#6E329D;" target="_blank">
+        <i class="fa fa-envelope fa-2x"></i>
+    </a>
 </div>
-    </div>
-    
-    <div class=pure-u-4-5>
-      <div class=right-column>
-        <div class=post>
+
+<br>
+
+<div align=center><a class="btn btn-default btn-sm" href="files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-2x"></i> CV</a>
+<br>
+<br>
+<a class="btn btn-default btn-sm" href="https://db.tt/rJjB3Llm" style="color: #3d9ae8;align: center;" target="_blank"> <i class="fa fa-dropbox fa-2x"></i> Free Online Storage </a></div>
+    </div>  
+
+    <div class="col-xs-18 col-sm-9 col-sm-offset-3" style="padding:1em 1em 1em 2em;">    
+      <div class=post>
     
     <ul class=post-meta>
     
         
     
-    <li class=publish-time><i class=icon-calendar></i>May 29, 2014</li>
+    <li><i class="fa fa-calendar" style="color:#ff2288;"></i>May 29, 2014</li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#anomaly,-ref">#anomaly,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#anomaly,-ref">anomaly,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#principal-component-classifier,-ref">#principal-component-classifier,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#principal-component-classifier,-ref">principal-component-classifier,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#PCA,-ref">#PCA,</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#PCA,-ref">PCA,</a></li>
     
-        <li>&middot;</li>
-        <li><a href="/tags/#unsupervised-ref">#unsupervised</a></li>
+        <li><i class="fa fa-tag" style="color:#28c;"></i><a href="/tags/#unsupervised-ref">unsupervised</a></li>
     
 </ul>
 
@@ -182,26 +207,26 @@ C_x = V \Lambda V^{-1}
 
 <p>I have only selected few columns which were significant for the portsweep. These can be identified with Decision trees. ( rpart  function) or by manual inspection of ditribution of each variables for portsweep and normal data instances (boxlot(V13~V42, data = kdd)).</p>
 
-<div class="highlight"><pre><code class="r">type <span class="o">=</span> <span class="s">&quot;portsweep.&quot;</span>
-cols <span class="o">=</span> c<span class="p">(</span><span class="m">30</span><span class="p">,</span> <span class="m">27</span><span class="p">,</span> <span class="m">33</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">36</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">23</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">type <span class="o">=</span> <span class="s">&quot;portsweep.&quot;</span>
+cols <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span> <span class="m">27</span><span class="p">,</span> <span class="m">33</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">36</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">23</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
 <span class="c1"># type = &quot;ipsweep.&quot;</span>
 <span class="c1"># cols = c(37, 5, 6, 32, 8, 12, 24, 31, 34, 35)</span>
 kdd <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="s">&#39;~/scripts/kddcup.data_10_percent&#39;</span><span class="p">,</span> header <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-kdd.probe <span class="o">&lt;-</span> subset<span class="p">(</span>kdd<span class="p">,</span>V42 <span class="o">==</span>  type <span class="o">|</span> V42<span class="o">==</span><span class="s">&#39;normal.&#39;</span><span class="p">,</span>
+kdd.probe <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>kdd<span class="p">,</span>V42 <span class="o">==</span>  type <span class="o">|</span> V42<span class="o">==</span><span class="s">&#39;normal.&#39;</span><span class="p">,</span>
                     select<span class="o">=</span>cols<span class="p">)</span></code></pre></div>
 
 <h4 id="pca-with-factominer">PCA with FactoMineR</h4>
 
 <p>I will use PCA function of package <a href="">FactoMineR</a>.</p>
 
-<div class="highlight"><pre><code class="r">require<span class="p">(</span><span class="s">&#39;FactoMineR&#39;</span><span class="p">)</span>
-nnn <span class="o">=</span> ncol<span class="p">(</span>kdd.probe<span class="p">)</span> <span class="c1">### number of variables</span>
-pca_result <span class="o">&lt;-</span> PCA<span class="p">(</span>kdd.probe<span class="p">,</span>graph <span class="o">=</span> <span class="k-Variable">F</span><span class="p">,</span> ncp <span class="o">=</span> nnn<span class="p">,</span> scale.unit <span class="o">=</span> <span class="k-Variable">T</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">require</span><span class="p">(</span><span class="s">&#39;FactoMineR&#39;</span><span class="p">)</span>
+nnn <span class="o">=</span> <span class="kp">ncol</span><span class="p">(</span>kdd.probe<span class="p">)</span> <span class="c1">### number of variables</span>
+pca_result <span class="o">&lt;-</span> PCA<span class="p">(</span>kdd.probe<span class="p">,</span>graph <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> ncp <span class="o">=</span> nnn<span class="p">,</span> scale.unit <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
 pca.var <span class="o">&lt;-</span> pca_result<span class="o">$</span>eig<span class="p">[[</span><span class="s">&#39;cumulative percentage of variance&#39;</span><span class="p">]]</span><span class="o">/</span><span class="m">100</span>
 lambda <span class="o">&lt;-</span> pca_result<span class="o">$</span>eig<span class="p">[,</span> <span class="s">&#39;eigenvalue&#39;</span><span class="p">]</span>
 
-require<span class="p">(</span>ggplot2<span class="p">)</span>
-qplot<span class="p">(</span><span class="m">1</span><span class="o">:</span>length<span class="p">(</span>pca.var<span class="p">),</span> pca.var<span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;Cumulative % variance retained&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;No. of Principal Components&quot;</span><span class="p">)</span> <span class="o">+</span> theme_bw<span class="p">()</span> <span class="o">+</span> geom_line<span class="p">(</span>col <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span> <span class="o">+</span> ylim<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span></code></pre></div>
+<span class="kn">require</span><span class="p">(</span>ggplot2<span class="p">)</span>
+qplot<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="kp">length</span><span class="p">(</span>pca.var<span class="p">),</span> pca.var<span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;Cumulative % variance retained&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;No. of Principal Components&quot;</span><span class="p">)</span> <span class="o">+</span> theme_bw<span class="p">()</span> <span class="o">+</span> geom_line<span class="p">(</span>col <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span> <span class="o">+</span> ylim<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span></code></pre></div>
 
 <p><img src="/images/pcc_anomaly/pca.png" alt="plot of chunk pca" /> </p>
 
@@ -233,24 +258,24 @@ qplot<span class="p">(</span><span class="m">1</span><span class="o">:</span>len
 
 <p>For giving the outlier score,we can use above equation.</p>
 
-<div class="highlight"><pre><code class="r"><span class="c1">#anomaly_score &lt;- apply(pca_result$ind$coord, 1, function(x) sum(x ^ 2/lambda))</span>
-anomaly_score <span class="o">=</span> <span class="p">(</span>as.matrix<span class="p">(</span>pca_result<span class="o">$</span>ind<span class="o">$</span>coord<span class="p">)</span> <span class="o">^</span> <span class="m">2</span><span class="p">)</span> <span class="o">%*%</span> <span class="p">(</span><span class="m">1</span> <span class="o">/</span> as.matrix<span class="p">(</span>lambda<span class="p">,</span> ncol <span class="o">=</span> <span class="m">1</span><span class="p">))</span></code></pre></div>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#anomaly_score &lt;- apply(pca_result$ind$coord, 1, function(x) sum(x ^ 2/lambda))</span>
+anomaly_score <span class="o">=</span> <span class="p">(</span><span class="kp">as.matrix</span><span class="p">(</span>pca_result<span class="o">$</span>ind<span class="o">$</span>coord<span class="p">)</span> <span class="o">^</span> <span class="m">2</span><span class="p">)</span> <span class="o">%*%</span> <span class="p">(</span><span class="m">1</span> <span class="o">/</span> <span class="kp">as.matrix</span><span class="p">(</span>lambda<span class="p">,</span> ncol <span class="o">=</span> <span class="m">1</span><span class="p">))</span></code></pre></div>
 
 <p>KDD dataset is labeled, so let me evaluate the performance of algorithm. For that we need threshold for decision of whether an observation is outlier. Since we know that this utlier score is $\chi^2$ distributed with $d$ degree of freedom, i will perform the $\chi^2$ test with various level of significance.</p>
 
-<div class="highlight"><pre><code class="r">significance <span class="o">&lt;-</span> c <span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.925</span><span class="p">,</span> <span class="m">0.95</span><span class="p">,</span> <span class="m">0.96</span><span class="p">,</span> <span class="m">0.97</span><span class="p">,</span> <span class="m">0.975</span><span class="p">,</span> <span class="m">0.98</span><span class="p">,</span> <span class="m">0.985</span><span class="p">,</span> <span class="m">0.9899</span><span class="p">,</span> <span class="m">0.99</span><span class="p">,</span> <span class="m">0.991</span><span class="p">,</span> <span class="m">0.992</span><span class="p">,</span> <span class="m">0.995</span><span class="p">,</span> <span class="m">0.999</span><span class="p">)</span>
-result <span class="o">&lt;-</span> data.frame<span class="p">(</span>matrix<span class="p">(</span>nrow <span class="o">=</span> length<span class="p">(</span>significance<span class="p">),</span> ncol <span class="o">=</span> <span class="m">4</span><span class="p">))</span>
-colnames<span class="p">(</span>result<span class="p">)</span> <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&#39;significance&#39;</span><span class="p">,</span> <span class="s">&#39;precision&#39;</span><span class="p">,</span> <span class="s">&#39;recall&#39;</span><span class="p">,</span> <span class="s">&#39;F_measure&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">significance <span class="o">&lt;-</span> <span class="kt">c</span> <span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.925</span><span class="p">,</span> <span class="m">0.95</span><span class="p">,</span> <span class="m">0.96</span><span class="p">,</span> <span class="m">0.97</span><span class="p">,</span> <span class="m">0.975</span><span class="p">,</span> <span class="m">0.98</span><span class="p">,</span> <span class="m">0.985</span><span class="p">,</span> <span class="m">0.9899</span><span class="p">,</span> <span class="m">0.99</span><span class="p">,</span> <span class="m">0.991</span><span class="p">,</span> <span class="m">0.992</span><span class="p">,</span> <span class="m">0.995</span><span class="p">,</span> <span class="m">0.999</span><span class="p">)</span>
+result <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span><span class="kt">matrix</span><span class="p">(</span>nrow <span class="o">=</span> <span class="kp">length</span><span class="p">(</span>significance<span class="p">),</span> ncol <span class="o">=</span> <span class="m">4</span><span class="p">))</span>
+<span class="kp">colnames</span><span class="p">(</span>result<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;significance&#39;</span><span class="p">,</span> <span class="s">&#39;precision&#39;</span><span class="p">,</span> <span class="s">&#39;recall&#39;</span><span class="p">,</span> <span class="s">&#39;F_measure&#39;</span><span class="p">)</span>
 
-result_expected <span class="o">&lt;-</span> subset<span class="p">(</span>subset<span class="p">(</span>kdd<span class="p">,</span> V42 <span class="o">==</span>  type<span class="o">|</span> V42<span class="o">==</span><span class="s">&#39;normal.&#39;</span><span class="p">),</span> select<span class="o">=</span>c<span class="p">(</span>V42<span class="p">))</span>
+result_expected <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span><span class="kp">subset</span><span class="p">(</span>kdd<span class="p">,</span> V42 <span class="o">==</span>  type<span class="o">|</span> V42<span class="o">==</span><span class="s">&#39;normal.&#39;</span><span class="p">),</span> select<span class="o">=</span><span class="kt">c</span><span class="p">(</span>V42<span class="p">))</span>
 result_expected <span class="o">&lt;-</span> result_expected <span class="o">!=</span> <span class="s">&quot;normal.&quot;</span>
 
-<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span> <span class="o">:</span> length<span class="p">(</span>significance<span class="p">)){</span>
+<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span> <span class="o">:</span> <span class="kp">length</span><span class="p">(</span>significance<span class="p">)){</span>
   sig <span class="o">=</span> significance<span class="p">[</span>i<span class="p">]</span>
   thresh <span class="o">=</span> qchisq<span class="p">(</span>sig<span class="p">,</span> nnn<span class="p">)</span>
   anomaly <span class="o">&lt;-</span> anomaly_score <span class="o">&gt;</span> thresh
-  result_obtained <span class="o">=</span> as.factor<span class="p">(</span>anomaly<span class="p">)</span>
-  crosstable <span class="o">&lt;-</span> table<span class="p">(</span>result_obtained<span class="p">,</span> result_expected<span class="p">)</span>
+  result_obtained <span class="o">=</span> <span class="kp">as.factor</span><span class="p">(</span>anomaly<span class="p">)</span>
+  crosstable <span class="o">&lt;-</span> <span class="kp">table</span><span class="p">(</span>result_obtained<span class="p">,</span> result_expected<span class="p">)</span>
   
   tp <span class="o">&lt;-</span> crosstable<span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span> <span class="c1"># true_positive</span>
   fp <span class="o">&lt;-</span> crosstable<span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">]</span> <span class="c1"># false positive</span>
@@ -259,12 +284,12 @@ result_expected <span class="o">&lt;-</span> result_expected <span class="o">!=<
   precision <span class="o">&lt;-</span> tp<span class="o">/</span><span class="p">(</span>tp<span class="o">+</span>fp<span class="p">)</span>
   recall <span class="o">&lt;-</span> tp<span class="o">/</span><span class="p">(</span>tp<span class="o">+</span>fn<span class="p">)</span>
   f_measure <span class="o">=</span> <span class="m">2</span> <span class="o">*</span> precision <span class="o">*</span> recall <span class="o">/</span><span class="p">(</span>precision <span class="o">+</span> recall<span class="p">)</span>
-  result<span class="p">[</span>i<span class="p">,</span> <span class="p">]</span> <span class="o">=</span> c<span class="p">(</span>sig<span class="p">,</span> precision<span class="p">,</span> recall<span class="p">,</span> f_measure<span class="p">)</span>
+  result<span class="p">[</span>i<span class="p">,</span> <span class="p">]</span> <span class="o">=</span> <span class="kt">c</span><span class="p">(</span>sig<span class="p">,</span> precision<span class="p">,</span> recall<span class="p">,</span> f_measure<span class="p">)</span>
 <span class="p">}</span></code></pre></div>
 
 <p>Now, i will plot the evaluation measures against the level of significance in $\chi^2$ test.</p>
 
-<div class="highlight"><pre><code class="r">p <span class="o">=</span> ggplot<span class="p">(</span>result<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> significance<span class="p">))</span> <span class="o">+</span> 
+<div class="highlight"><pre><code class="language-r" data-lang="r">p <span class="o">=</span> ggplot<span class="p">(</span>result<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> significance<span class="p">))</span> <span class="o">+</span> 
   geom_line<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> recall<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;recall&quot;</span><span class="p">,</span> fill <span class="o">=</span> <span class="s">&quot;recall&quot;</span><span class="p">),</span> 
             lwd <span class="o">=</span> <span class="m">1</span><span class="p">,</span> lty <span class="o">=</span> <span class="s">&#39;longdash&#39;</span><span class="p">)</span> <span class="o">+</span> 
   geom_point<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> recall<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;recall&quot;</span><span class="p">,</span> shape <span class="o">=</span> <span class="s">&quot;recall&quot;</span><span class="p">),</span> size <span class="o">=</span> <span class="m">3</span><span class="p">)</span><span class="o">+</span>
@@ -276,9 +301,9 @@ result_expected <span class="o">&lt;-</span> result_expected <span class="o">!=<
   geom_point<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> precision<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;Precision&quot;</span><span class="p">,</span> shape <span class="o">=</span> <span class="s">&quot;Precision&quot;</span><span class="p">),</span> size <span class="o">=</span> <span class="m">3</span><span class="p">)</span><span class="o">+</span>
   theme_bw<span class="p">()</span><span class="o">+</span>
   xlab<span class="p">(</span><span class="s">&quot;Significance $1 - \alpha$&quot;</span><span class="p">)</span> <span class="o">+</span> ylab<span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span>
-  scale_colour_manual<span class="p">(</span>name<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> values <span class="o">=</span> c<span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">))</span><span class="o">+</span>
-  scale_shape_manual<span class="p">(</span>name<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> values <span class="o">=</span> c<span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">17</span><span class="p">,</span> <span class="m">18</span><span class="p">))</span>
-print<span class="p">(</span>p<span class="p">)</span></code></pre></div>
+  scale_colour_manual<span class="p">(</span>name<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">))</span><span class="o">+</span>
+  scale_shape_manual<span class="p">(</span>name<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">17</span><span class="p">,</span> <span class="m">18</span><span class="p">))</span>
+<span class="kp">print</span><span class="p">(</span>p<span class="p">)</span></code></pre></div>
 
 <p><img src="/images/pcc_anomaly/results.png" alt="plot of chunk results" /> </p>
 
@@ -291,8 +316,8 @@ print<span class="p">(</span>p<span class="p">)</span></code></pre></div>
 <p>To Be continued…</p>
 
 <h2 id="references">References</h2>
-<ol class="bibliography" style="font-size:12pt; text-align:left;"><li><span id="pcc-anomaly">Shyu, M.-L., Chen, S.-C., Sarinnapakorn, K., &amp; Chang, L. W. A Novel Anomaly Detection Scheme based on Principal Component Classifier. Retrieved from http://users.cis.fiu.edu/~chens/PDF/ICDM03_WS.pdf</span></li>
-<li><span id="charuoutlier">Aggarwal, C. C. (2013). <i>Outlier Analysis</i> (3rd ed.). Springer. Retrieved from http://link.springer.com/book/10.1007/978-1-4614-6396-2</span></li></ol>
+<ol class="bibliography" style="font-size:12pt; text-align:left;"><li><span id="charuoutlier">Aggarwal, C. C. (2013). <i>Outlier Analysis</i> (3rd ed.). Springer. Retrieved from http://link.springer.com/book/10.1007/978-1-4614-6396-2</span></li>
+<li><span id="pcc-anomaly">Shyu, M.-L., Chen, S.-C., Sarinnapakorn, K., &amp; Chang, L. W. A Novel Anomaly Detection Scheme based on Principal Component Classifier. Retrieved from http://users.cis.fiu.edu/~chens/PDF/ICDM03_WS.pdf</span></li></ol>
 
 
     <p class=discuss>
@@ -322,12 +347,13 @@ print<span class="p">(</span>p<span class="p">)</span></code></pre></div>
 
     </div>
 
-      </div>
     </div>
-    
-  </div>
-  <script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'bistaumanga'; // required: replace example with your forum shortname
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -357,14 +383,13 @@ print<span class="p">(</span>p<span class="p">)</span></code></pre></div>
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     })();
     </script>
+
+
   </body>
 
-  <div class="top-bar pure-g">
-    <div class=pure-u-1-2 align = "center">
-      <h4> Copyright @ <a href = "/">Umanga Bista </a></h4>
-    </div>
-    <div class=pure-u-1-2 align = "center">
-      <h4> Created with <a href = "http://jekyllrb.com/">Jekyll</a>, hosted @ <a href = "https://pages.github.com/"> Github </a> </h4>
-    </div>
-
-    </html>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4"><h5> Copyright @ <a href = "/">Umanga Bista </a></h5></div>
+  <div class="col-sm-4"><h5> Created with <a href = "http://jekyllrb.com/">Jekyll</a>, hosted @ <a href = "https://pages.github.com/"> Github </a> </h5></div>
+</div>
+ 
+  </html>
