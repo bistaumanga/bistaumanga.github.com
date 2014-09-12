@@ -21,7 +21,7 @@ The data structure accomplishes the operations by representing as tree and thus 
 
 For the detail [see here](http://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/UnionFind.pdf).
 
-A quick aimplementation of Union Find, optimized with lazy unions, path compression and Union By Rank is given here. 
+A quick implementation of Union Find, optimized with lazy unions, path compression and Union By Rank is given here. 
 <script src="https://gist.github.com/bistaumanga/f4ec43701fc5b5552ebd.js"></script>
 
 ## Runtime

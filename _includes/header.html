@@ -1,19 +1,27 @@
-<div class=author-info>
-    <img src="{{ site.author_image_path }}" class=author-image />
-    <h1 class=author-name><a href=/>{{ site.author_name }}</a></h1>
-    <h1 class=author-name><a href=/>उमङ्ग बिष्ट</a></h1>
-    <div class=nav>
-        <a href="{{ site.github_url }}"><i class="fa fa-github-alt fa-2x" style="color:#000"></i></a>
-        <a href="mailto:{{ site.email }}"><i class="fa fa-envelope fa-2x" style="color:#6E329D"></i></a>
-        <a href="{{ site.linkedin_url }}"><i class="fa fa-linkedin-square fa-2x" style="color:#007bb6"></a></i>
-        <a href="{{ site.researchgate_url }}"><i class="fa fa-flask fa-2x" style="color:#CBEE70"></i></a>
-    </div>
-    {% if !(page.homepage == True) %}
-    <p class=author-bio>{{ site.author_bio }}</p>
-    {% endif %}
+<header class="sidebar-header">
+    <img src="http://s.gravatar.com/avatar/{{ site.gravatar }}?s=160" class="img-circle" />
+    <h2><a href=/>{{ site.author_name }}<br>(उमङ्ग बिष्ट)</a></h1>
+</header>
+    
+<!-- {% if !(page.homepage == True) %}
+<p class=author-bio>{{ site.author_bio }}</p>
+{% endif %} -->
 
-
-    <br>
-    <br>
-    <a href="https://db.tt/rJjB3Llm"> <i class="fa fa-dropbox fa-2x"></i>  Free Online Storage <br> upto 22GB</a>
+<div class="btn-group btn-group-justified">
+    <a class="btn btn-default btn-sm" href="{{ site.github_url }}" style="color:#000;" target="_blank">
+        <i class="fa fa-github-alt fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="{{ site.linkedin_url }}" style="color:#007bb6;" target="_blank">
+        <i class="fa fa-linkedin-square fa-2x"></i>
+    </a>
+    <a class="btn btn-default btn-sm" href="mailto:{{ site.email }}" style="color:#6E329D;" target="_blank">
+        <i class="fa fa-envelope fa-2x"></i>
+    </a>
 </div>
+
+<br>
+
+<div align=center><a class="btn btn-default btn-sm" href="files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-2x"></i> CV</a>
+<br>
+<br>
+<a class="btn btn-default btn-sm" href="https://db.tt/rJjB3Llm" style="color: #3d9ae8;align: center;" target="_blank"> <i class="fa fa-dropbox fa-2x"></i> Free Online Storage </a></div>

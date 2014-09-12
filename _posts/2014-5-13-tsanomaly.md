@@ -11,16 +11,17 @@ Identifying the anomalous observations in time series data can be very important
 
 This can be detected by simpler approach such as standard deviation method, i.e. an entry in time-series is anomaly when its not in range **$ [\mu - k * \sigma, \mu + k * \sigma] $**. The typical value of **$ k $** is **3, 3.5, 4**, which has to be set manually. There are three problems with this approach. The problems and the possible solutions are enumerated below:
 
-* the statistics $ \mu $ and $ \sigma $ both are not robust, outliers have huge affect on them.
+<div class="alert alert-danger" role="alert">the statistics $ \mu $ and $ \sigma $ both are not robust, outliers have huge affect on them.</div>
 
 > We have to use roubust statistics such as **$ M_d $**:[Median], **$ IQR $** :[Inter Quartile Range], in favour of **$ \mu $** and **$ \sigma $**. The time series should be smoothened by **[causal][causal]** version of **Moving Median** or **Causal 1-D Moving Median Filter**.
 
-* It does not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.
+<div class="alert alert-danger" role="alert">It does not captures the trend, i.e. What if the distribution of the time-series data is  multimodal.</div>
 
 > We have to capture the trend. One way to do this is smooth the time series signal, and model the residual for anomaly detection. The residual will have $ \mu = 0 $ and some standard deviation.
+
 ![center](/images/tsanomaly/residual_plot.png)
 
-* Anomalous time-series entries have to be identified in real-time, so we cannot use batch algorithms that calculates the parameters *$ \mu, \sigma $* in first pass and filters out the anomalous data in second pass. But this can be solved by streaming algorithm for $ \mu, \sigma $ {% cite knuth2 -l 232 %}.
+<div class="alert alert-danger" role="alert">Anomalous time-series entries have to be identified in real-time, so we cannot use batch algorithms that calculates the parameters *$ \mu, \sigma $* in first pass and filters out the anomalous data in second pass. But this can be solved by streaming algorithm for $ \mu, \sigma $ {% cite knuth2 -l 232 %}.</div>
 
 > But since we are using robust statistics *$ [M_d, IQR] $*, we have to use streaming version of that. Luckily, there exist an awesome algorithms for this : **QDigest** {% cite qdigest %} and **TDigest** {% cite tdigest %}.
 

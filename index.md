@@ -4,36 +4,71 @@ homepage: True
 permalink: /
 ---
 
-### mail [at] [bistaumanga.com.np](bistaumanga.com.np)
 
-{: style="margin-top:0; margin-bottom: 0;"}
-## Research Assistant @[LogPoint](http://www.logpoint.com/en/)
+<ul class="nav nav-tabs" role="tablist" id="myTab">
+  <li class="active"><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
+  <li><a href="#learning" role="tab" data-toggle="tab">Learning</a></li>
+  <li><a href="#toolbox" role="tab" data-toggle="tab">Toolbox</a></li>
+</ul>
 
-{: style="font-weight: normal; margin-top:0.5em; margin-bottom: 0;"}
-#### Lalitpur, Nepal.
+<div class="tab-content">
+  <div class="tab-pane active" id="profile"> 
+  	{% include profile.html %}
+  </div>
 
-{: style="font-weight: normal; margin-top:0.5em; margin-bottom: 0;"}
-#### umanga.bista [at] logpoint.com
+  <div class="tab-pane" id="learning"> 
+	  {% include learning.html %}
+	</div>
 
-###Student @[Coursera](http://www.coursera.org)
+  <div class="tab-pane" id="toolbox"> 
+  	<div class="panel panel-primary">
+  		<div class="panel-heading">Programming</div>
+		  <div class="panel-body">
+		    Python, R, Scala, Java, Octave, C, C++
+		</div>
+  	</div>
+	<div class="panel panel-success">
+		<div class="panel-heading">IDE \ Text Editors</div>
+		  <div class="panel-body">
+		    R Studio, Tex Studio, Eclipse, Sublime Text, Spyder, Mou, Vim
+		</div>
+	</div>
+	<div class="panel panel-info">
+		<div class="panel-heading">Collaboration</div>
+		  <div class="panel-body">
+		    Git (Github, BitBucket), Share Latex, Dropbox
+		</div>
+	</div>
+	<div class="panel panel-warning">
+		<div class="panel-heading">Documentation</div>
+		  <div class="panel-body">
+		    $\LaTeX$, Markdown, R Markdown, HTML, IPython
+		</div>
+	</div>
+	<div class="panel panel-danger">
+		<div class="panel-heading">Data Science</div>
+		  <div class="panel-body">
+		    R, Scipy ecosystem, Hadoop, Spark, SQL, Plotly
+		</div>
+	</div>
 
-I was a computer engineering student at [Institute of Engineering, Central Campus Pulchowk, Lalitpur, Nepal][1].
+	<div class="panel panel-info">
+		<div class="panel-heading">OS and Others</div>
+		  <div class="panel-body">
+		    Ubuntu, OS X, Terminal, Jekyll, VirtualBox, Excel...
+		</div>
+	</div>
+  </div>
+</div>
 
-### Research Interests
+<script>
+ function activaTab(tab){
+    $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+	};
 
-   * Machine Learning, Data analysis and Anomaly Detection
-   * [Streaming Algorithms][2] and [Mining][3]
-   * Algorithms and [Optimization][4]
-   * [Distributed Algorithms][5]
+	activaTab('profile');
+</script>
 
-I'm currently working on distrbuted streaming algorithms for log mining. I work on clustering of log messages in real time, and anomaly detection based on statistical techniques for [SIEM solutions][3].
 
-Previously, I have worked on financial data representation and mining using [XBRL][6] for annual financial statements collected by [Office of Company Registrar, Nepal][7].
 
-[1]: http://ioe.edu.np
-[2]: http://en.wikipedia.org/wiki/Streaming_algorithm
-[3]: http://en.wikipedia.org/wiki/Data_stream_mining
-[4]: http://en.wikipedia.org/wiki/Discrete_optimization‎
-[5]: http://en.wikipedia.org/wiki/Distributed_algorithm‎
-[6]: http://en.wikipedia.org/wiki/XBRL
-[7]: http://www.ocr.gov.np
+
