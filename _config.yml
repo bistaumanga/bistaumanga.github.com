@@ -28,8 +28,8 @@ rel: "canonical"
 source: ./
 destination: ../master
 timezone: Asia/Kathmandu
-# paginate: 3
-# paginate_path: "blog/page:num"
+paginate: 3
+destination: _site/blog
 
 ## Publications and citations
 scholar:

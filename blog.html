@@ -16,7 +16,7 @@ permalink: /blog/
         {{ post.excerpt | markdownify }}
         <!-- <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.path | split:'/' | last | cgi_escape }}">View Comments</a> -->
     {% include post-meta.html %}
-  <p><a class="btn btn-primary btn-sx" role="button">view more</a></p>
+  <p><a class="btn btn-primary btn-sx" role="button" href="{{ post.url }}">view more</a></p>
 </div>
 
     

@@ -1,3 +1,2 @@
 User-agent: * 
-Disallow: /publications/ 
-Disallow: /about/
+Disallow: /publications/
