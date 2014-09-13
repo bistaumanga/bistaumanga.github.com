@@ -1,5 +1,5 @@
 body {
-      padding: 5em 2em 2em 0;
+      padding: 4em 2em 2em 0;
       margin-bottom: 0;
     }
 
@@ -69,7 +69,7 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
 
 
 .sidebar {
-    background-color: #eee;
+    background-color: #fff;
     position: fixed;
     padding-top: 1.5em;
     margin-top: -1.5em;
@@ -84,7 +84,7 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
 .navbar-default {
   background-color: #eee;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 1.2em;
 }
 .navbar-default .navbar-brand {
   color: #4682B4;
