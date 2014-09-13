@@ -1,4 +1,4 @@
-R Python MachineLearning BigData dataStreams
+R Python MachineLearning BigData stream
  DataMining
 Hadoop Spark DataAnalysis
 Scala Java visualization
@@ -6,32 +6,32 @@ ScikitLearn ggplot Ipython
 SQL eclipse
 Mou Vim Shell C C++ Octave Markdown jekyll 
 
-R Python MachineLearning BigData dataStreams
+R Python MachineLearning BigData stream
 LaTeX LaTeX
  Spark Spark
 Scala Java
 ScikitLearn ggplot Ipython
 SQL eclipse
 
-R Python MachineLearning BigData dataStreams
+R Python MachineLearning BigData stream
 LaTeX DataMining
 Hadoop Spark
 Scala Java
  ggplot Ipython
 
-R Python MachineLearning BigData dataStreams
+R Python MachineLearning BigData stream
 LaTeX DataMining
 Hadoop Spark DataAnalysis
 Scala Java visualization
 
-R Python MachineLearning BigData dataStreams
+R Python MachineLearning BigData stream
  
 Hadoop Spark DataAnalysis
 
-R Python MachineLearning BigData dataStreams
+R Python MachineLearning BigData stream
 LaTeX DataMining
 
-R Python MachineLearning BigData dataStreams
+R Python MachineLearning BigData stream
 
 AnomalyDetection AnomalyDetection outliers outliers
 statistics statistics
@@ -81,3 +81,5 @@ Numpy
 Scipy
 d3js
 plotly
+outliers outliers
+Spark

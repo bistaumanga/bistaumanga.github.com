@@ -4,6 +4,9 @@ title: CICLING 2014
 permalink: /archive/cicling/
 ---
 
+<div class = "row" style="padding:1em 0 0 0;">
+  <div class="col-md-8 col-sm-12 col-xs-18" >
+
 <div id="ciclingCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -42,10 +45,23 @@ permalink: /archive/cicling/
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
+<script>
+$('ciclingCarousel').carousel({
+  interval: 2000 // set your desired interval
+})
+</script>
+
 <br>
+</div>
 
-Research Team from <a href="http://www.logpoint.com/en/" target="_blank">LogPoint</a> presented a conference paper at <a href="http://www.cicling.org/2014/" target="_blank">CICLING 2014 </a> on <strong> Clustering algorithm for streams of log messages</strong>. 
 
-Read about the paper <a href="http://link.springer.com/chapter/10.1007%2F978-3-642-54903-8_38" target="_blank">here</a>.
+    <div class="col-md-4 col-sm-12 col-xs-18" >
 
-Our algorithm works in two steps. First, it sketeches the log messages using <a href="http://en.wikipedia.org/wiki/Bloom_filter">Bloom filter</a>, then uses modified version of <a href="http://www.teco.edu/tea/unsup/overview.html#Sequential_Leader_Clustering_Algorithm" target="_blank"> Sequential Leader Clustering</a> to cluster messages based on sketched representation. The notion of similarity used was <a href="http://en.wikipedia.org/wiki/Jaccard_index" target="_blank"> Jaccard similarity</a> for bit-strings.
+<p>Research Team from <a href="http://www.logpoint.com/en/" target="_blank">LogPoint</a> presented a conference paper at <a href="http://www.cicling.org/2014/" target="_blank">CICLING 2014 </a> on <strong> Clustering algorithm for streams of log messages</strong>. </p>
+
+<p>Read about the paper <a href="http://link.springer.com/chapter/10.1007%2F978-3-642-54903-8_38" target="_blank">here</a>.</p>
+
+<p>Our algorithm works in two steps. First, it sketeches the log messages using <a href="http://en.wikipedia.org/wiki/Bloom_filter">Bloom filter</a>, then uses modified version of <a href="http://www.teco.edu/tea/unsup/overview.html#Sequential_Leader_Clustering_Algorithm" target="_blank"> Sequential Leader Clustering</a> to cluster messages based on sketched representation. The notion of similarity used was <a href="http://en.wikipedia.org/wiki/Jaccard_index" target="_blank"> Jaccard similarity</a> for bit-strings.</p>
+
+</div>
+</div>
