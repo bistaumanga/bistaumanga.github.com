@@ -1,35 +1,43 @@
 body {
-      padding: 4em 2em 1em 0;
+      padding: 5em 2em 2em 0;
+      margin-bottom: 0;
     }
 
-
-h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; color:#8B7500 ;}
-article.home h1,
-article.home h2,
-article.home h3,
-article.home h4,
-article.home h5,
-article.home h6 {
-color: #8B7500;
-}
-article.home h1 a,
-article.home h2 a,
-article.home h3 a,
-article.home h4 a {
-color: #8B7500;
-}
-article.home h1 a:hover,
-article.home h2 a:hover,
-article.home h3 a:hover,
-article.home h4 a:hover {
-color: #8B7500;
+a:link {
+    color: #4682B4;
+    text-decoration: none;
 }
 
-.makefixed {
-  height:100%;
-  padding: 2em .5em 0 1em;
-  background-color: #eee;
+a:visited {
+    color: #36648B;
+    text-decoration: none;
+}
 
+a:hover {
+    color: #DC143C;
+    text-decoration: none;
+}
+
+a:active {
+    color: #DC143C;
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 { 
+  font-family: "freight-sans-pro","Helvetica","Avenir","Arial",sans-serif;
+  font-weight: inherit;
+  font-weight: bold;
+  color:#8B7500 ;
+}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+  font-family: "freight-sans-pro","Helvetica","Avenir","Arial",sans-serif;
+  font-weight: inherit;
+}
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover { 
+  font-family: "freight-sans-pro","Helvetica","Avenir","Arial",sans-serif;
+  font-weight: inherit;
+  color:#776500 ;
+  text-decoration: none;
 }
 
 .post-meta {
@@ -61,15 +69,85 @@ color: #8B7500;
 
 
 .sidebar {
-    background-color: #fff;
-    color: #fff;
-    padding-top: 10%;
+    background-color: #eee;
     position: fixed;
-    top: 0;
+    padding-top: 1.5em;
+    margin-top: -1.5em;
 }
 
 .sidebar-header {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     text-align: center;
+}
+
+
+.navbar-default {
+  background-color: #eee;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.navbar-default .navbar-brand {
+  color: #4682B4;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #DC143C;
+}
+.navbar-default .navbar-text {
+  color: #4682B4;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #4682B4;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #DC143C;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #DC143C;
+  background-color: #FFF8DC;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #DC143C;
+  background-color: #FFF8DC;
+}
+.navbar-default .navbar-toggle {
+  border-color: #FFF8DC;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #FFF8DC;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #4682B4;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #4682B4;
+}
+.navbar-default .navbar-link {
+  color: #4682B4;
+}
+.navbar-default .navbar-link:hover {
+  color: #DC143C;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #4682B4;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #DC143C;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #DC143C;
+    background-color: #FFF8DC;
+  }
+}
+
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  background-color: #eee;
 }
 
