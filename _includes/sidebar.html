@@ -1,0 +1,28 @@
+<header class="sidebar-header">
+    <img src="http://s.gravatar.com/avatar/{{ site.gravatar }}?s=160" class="img-circle" />
+    <h3><a href=/>{{ site.author_name }}<br>(उमङ्ग बिष्ट)</a></h3>
+</header>
+<div style = "color:#8B7500;" align = center>  
+{% if !(page.homepage == True) %}
+ {{ site.author_bio }}
+{% endif %}
+</div>
+<br>
+<div align=center>
+    <div class="btn-group">
+        <a class="btn btn-default btn-sm" href="{{ site.github_url }}" style="color:#000;" target="_blank">
+            <i class="fa fa-github-alt fa-2x"></i>
+        </a>
+        <a class="btn btn-default btn-sm" href="{{ site.linkedin_url }}" style="color:#007bb6;" target="_blank">
+            <i class="fa fa-linkedin-square fa-2x"></i>
+        </a>
+        <a class="btn btn-default btn-sm" href="mailto:{{ site.email }}" style="color:#6E329D;" target="_blank">
+            <i class="fa fa-envelope fa-2x"></i>
+        </a>
+    </div>
+    <br><br>
+    <a class="btn btn-default btn-sm" href="files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-lg"></i> CV</a>
+    <br><br>
+    <a class="btn btn-link btn-sm" href="https://db.tt/rJjB3Llm" style="color: #3d9ae8;align: center;" target="_blank"> <i class="fa fa-dropbox fa-lg"></i> Free Online Storage </a>
+
+</div>

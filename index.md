@@ -39,13 +39,13 @@ permalink: /
 		    Git (Github, BitBucket), Share Latex, Dropbox
 		</div>
 	</div>
-	<div class="panel panel-warning">
+	<div class="panel panel-primary">
 		<div class="panel-heading">Documentation</div>
 		  <div class="panel-body">
 		    $\LaTeX$, Markdown, R Markdown, HTML, IPython
 		</div>
 	</div>
-	<div class="panel panel-danger">
+	<div class="panel panel-success">
 		<div class="panel-heading">Data Science</div>
 		  <div class="panel-body">
 		    R, Scipy ecosystem, Hadoop, Spark, SQL, Plotly
