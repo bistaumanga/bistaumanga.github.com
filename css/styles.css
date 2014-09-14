@@ -145,7 +145,8 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
 
 #footer {
   position: fixed;
-  bottom: 0.25em;
+  bottom: 0;
+  padding: .1em .2em .2em .2em;
   width: 100%;
   /* Set the fixed height of the footer here */
   background-color: #eee;
