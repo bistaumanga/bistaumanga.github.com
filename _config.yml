@@ -20,6 +20,9 @@ kramdown:
   smart_quotes: apos,apos,quot,quot
   parse_block_html: false
 
+gems:
+ - jekyll-sitemap
+
 # Site settings
 permalink: /blog/:title/
 relative_permalinks: false
@@ -29,6 +32,10 @@ source: ./
 destination: ../master
 timezone: Asia/Kathmandu
 # paginate: 3
+# paginate_path: "blog/page:num"
+baseurl: ""
+# blogurl: http://bistaumanga.com.np/blog/
+
 # destination: _site/blog
 
 ## Publications and citations
