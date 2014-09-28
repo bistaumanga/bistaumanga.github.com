@@ -15,7 +15,6 @@
     {{ page.title }} | 
     {% endif %}
     {{ site.name }}
-
   </title>
 
   <script type="text/x-mathjax-config">
@@ -62,12 +61,10 @@
         {% include sidebar.html %}
     </div>  
 
-    <div class="col-xs-18 col-sm-9 col-sm-offset-3" style="padding:1em;">    
+    <div class="col-xs-18 col-sm-9 col-sm-offset-3" style="padding:1em;">
       {{ content }}
-      <br><br>
+      {% include footer.html %}
     </div>
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -104,7 +101,8 @@
     })();
     </script>
 
- {% include footer.html %}
+ 
  
 </body>
+
 </html>
