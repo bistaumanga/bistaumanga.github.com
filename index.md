@@ -27,7 +27,3 @@ permalink: /
 
 	activaTab('profile');
 </script>
-
-
-
-
