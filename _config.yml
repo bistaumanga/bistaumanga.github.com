@@ -1,11 +1,11 @@
 name: Umanga Bista
 title: UmB
-description: Personal website and blog of Umanga Bista
+description: Personal website Umanga Bista
 url: "http://bistaumanga.com.np"
 
 # Author info
 author_name: Umanga Bista
-author_bio: "Machine Learning, Distributed Systems and Scalable/Real-time Analytics enthusiast" 
+author_bio: "Machine Learning, Distributed Systems and Scalable/Real-time Analytics enthusiast. Looking for Ph.D opportunities. Loves Functional Programming (scala), wanna learn clojure and haskell, currently learning Reactive programming (akka)."
 
 # External services
 github_url: "https://github.com/bistaumanga"
