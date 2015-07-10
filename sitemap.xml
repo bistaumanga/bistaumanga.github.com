@@ -2,73 +2,28 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   
-  <url>
-    <loc>http://bistaumanga.com.np/blog/ioe_results2071/</loc>
-    
-    <lastmod>2014-08-25T00:00:00+05:45</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://bistaumanga.com.np/blog/unionfind/</loc>
-    
-    <lastmod>2014-08-18T00:00:00+05:45</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://bistaumanga.com.np/blog/pccAnomalyProbe/</loc>
-    
-    <lastmod>2014-05-29T00:00:00+05:45</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://bistaumanga.com.np/blog/lof/</loc>
-    
-    <lastmod>2014-04-21T00:00:00+05:45</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
   
   <url>
     <loc>http://bistaumanga.com.np/404.html</loc>
-    <lastmod>2014-12-22T10:58:23+05:45</lastmod>
+    <lastmod>2015-07-10T19:42:21+05:45</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://bistaumanga.com.np/blog/</loc>
-    <lastmod>2014-12-22T10:58:23+05:45</lastmod>
+    <lastmod>2015-07-10T19:42:21+05:45</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://bistaumanga.com.np/</loc>
-    <lastmod>2014-12-22T10:58:23+05:45</lastmod>
+    <lastmod>2015-07-10T19:42:21+05:45</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
-  <url>
-    <loc>http://bistaumanga.com.np/tags/</loc>
-    <lastmod>2014-12-22T10:58:23+05:45</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
   
-  
-  
-  <url>
-    <loc>http://bistaumanga.com.np/backup/toolbox.html</loc>
-    <lastmod>2014-09-13T13:03:07Z</lastmod>
-    <priority>0.6</priority>
-  </url>
   
 </urlset>
