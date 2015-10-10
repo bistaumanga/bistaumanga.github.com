@@ -3,6 +3,8 @@ script: "./build.sh"
 branches:
   only:
   - jekyll
+before_script:
+  - git update-index --chmod+x ./build.sh
 rvm:
 - 2.1.2
 env:
