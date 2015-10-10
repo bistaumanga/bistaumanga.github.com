@@ -1,0 +1,10 @@
+language: ruby
+script: "./build.sh"
+branches:
+  only:
+  - jekyll
+rvm:
+- 2.1.2
+env:
+  global:
+    secure: m7SzD7b5k4Jc1atNhgeZRQbKfZWe458WqE6OBfYRWitgLdUZ4XpmaQkxETR7/1W7X0bcdxyKmUwvsrQ03DmjxSycvfFWxQ8rNX1vnNJByB8WE2Bcm/YtwcoUX2N5OO3mpAzbDdSKA5WDW4wGCfzJ4xhWpd3bPBP5hg8RC92chyo2tHceMDxWpwFy+hmLlzVTW9NvRFJjX3mwajD3BHWb6DxIR0sRdNl/8mepohzmzJM3CYJX6o8qKluEufKk8WTnsGR625E4GYEO4zI8zOKkpdXIAFY7E+9Xlo758MdLDDrGLtoCOOChOQmXEMday+rk6b/J9NCxGvWLd84uHQ15J0W1YI88/55mmcGKdkMgVPl16HogdlzCzt2jn7Sx3uoKyYQdXEKizuC6QXWVKKBg/ApUU4AQrSTREiNh5kZBIETo/uJw2BprMx+25wgailfvKumBfp3jnJ+CIGJ9+BbFICrJHBJLuDySUssdKrLXIsq4LsPtiEehj8nMCPk/31xl92vhNHvM/LqKsvOL2nAHWYiRLYgOpJ+V2KBcqgc2kVRfwh0mlkQVKkHlukeY+gyurY8x7xbiGW1do9d2KAl5mVnNSDIqqEN8wNZhxxt9H/4NH5RIMja27zUvZNIzmiHqqLQ6JJsxI54ysXcgovVnZDOlzKD8F4reiOtjAZwThHE=
