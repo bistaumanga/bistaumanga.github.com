@@ -30,7 +30,7 @@ relative_permalinks: false
 highlighter: pygments
 rel: "canonical"
 source: ./
-destination: ../master
+destination: ./_site
 timezone: Asia/Kathmandu
 # paginate: 3
 # paginate_path: "blog/page:num"
