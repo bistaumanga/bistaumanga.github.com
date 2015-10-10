@@ -7,8 +7,11 @@
   <meta name=description content="Personal website Umanga Bista">
 
 
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel=stylesheet type=text/css href=/css/bootstrap.min.css>
+  <!-- <link rel=stylesheet href=/css/font-awesome.min.css> -->
+
+  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
   <title>
     
@@ -66,24 +69,28 @@
       <a class="navbar-brand hidden-xs" href="/">UMB</a>
 
        <div class="navbar-header visible-xs" style="padding:0;">
-        <a class="navbar-toggle nav-link" href="#" style="color:#8B7500; margin-right:0.1em;padding:0.2em;">
-          <i class="fa fa-pencil-square fa-lg fa-fw"></i>Blog
+        <a class="navbar-toggle nav-link" href="/tags" style="color:#8B7500; margin-right:0.1em;padding:0.2em;">
+          <i class="fa fa-tags fa-fw"></i>Tags
         </a>
 
-        <a class="navbar-toggle nav-link" href="https://www.twitter.com/bistaumanga" target="_blank" style="color:4099ff;margin-right:0.1em;padding:0.2em;">
+        <a class="navbar-toggle nav-link" href="https://www.twitter.com/bistaumanga" target="_blank" style="color:4099ff;margin-right:0.2em;padding:0.2em;">
         <i class="fa fa-twitter fa-lg"></i>
         </a>
 
-        <a class="navbar-toggle nav-link" href="https://github.com/bistaumanga" target="_blank" style="color:#000;margin-right:1.5em;padding:0.2em;">
+        <a class="navbar-toggle nav-link" href="https://github.com/bistaumanga" target="_blank" style="color:#000;margin-right:0.2em;padding:0.2em;">
           <i class="fa fa-github-square fa-lg"></i>
         </a>
 
-        <a class="navbar-toggle nav-link" href="https://np.linkedin.com/in/bistaumanga" target="_blank" style="color:#007bb6;margin-right:0.1em;padding:0.2em;">
+        <a class="navbar-toggle nav-link" href="https://np.linkedin.com/in/bistaumanga" target="_blank" style="color:#007bb6;margin-right:0.2em;padding:0.2em;">
           <i class="fa fa-linkedin-square fa-lg"></i>
         </a>
 
-        <a class="navbar-toggle nav-link" href="mailto:mail@bistaumanga.com.np" target="_blank" style="color:#6E329D;margin-right:0.1em;padding:0.2em;">
+        <a class="navbar-toggle nav-link" href="mailto:mail@bistaumanga.com.np" target="_blank" style="color:#6E329D;margin-right:0.2em;padding:0.2em;">
           <i class="fa fa-envelope fa-lg"></i>
+        </a>
+
+        <a class="navbar-toggle nav-link" href="/blog" style="color:#8B7500; margin-right:0.1em;padding:0.2em;">
+          <i class="fa fa-pencil-square fa-fw"></i>Blog
         </a>
 
 <!--         <a class="navbar-toggle nav-link" href="/files/cv.pdf" style="color: #DC143C;;margin-right:0.25em;padding:0.2em;" target="_blank">
@@ -98,7 +105,8 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/tags">Tags</a></li>
       </ul>
     </div>
     
@@ -136,6 +144,16 @@
 <!--     <br><br>
     <a class="btn btn-link btn-sm" href="https://db.tt/rJjB3Llm" style="align: center;" target="_blank"> <i class="fa fa-dropbox fa-lg"></i> Free Online Storage </a> -->
 
+    <br>
+    <br>
+    <div>
+        <a href="https://twitter.com/bistaumanga" class="twitter-follow-button" data-show-count="false" data-size="large">
+            Follow @bistaumanga
+        </a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
+    </div>
+
 </div>
     </div>  
 
@@ -152,27 +170,27 @@
   <div class="tab-pane active" id="profile"> 
   	<div class="col-md-7 col-sm-12">
   <br />
-<br />
- <p>I'm <strong> Umanga Bista </strong> from <strong> Kathmandu, Nepal. </strong>I love Machine learning and am interested in Scalable/Real-time data systems. I love to program functionally using scala, and wanna learn clojure and haskell in near future. Currently, I'm leaning reactive programming in scala and akka.</p> 
+  <br />
+  <p>I'm <strong> Umanga Bista </strong> from <strong> Kathmandu, Nepal </strong>. I am interested in scalable Machine learning, data streaming algorithms and distributed systems.</p> 
 
- <p>I'm <strong> Research Assistant @<a href="http://www.logpoint.com/en/" target="_blank">LogPoint</a></strong> Lalitpur, Nepal.</p>
+  <p><i class="fa fa-code fa-lg fa-fw"></i> I'm <strong> Research Assistant @<a href="http://www.logpoint.com/en/" target="_blank">LogPoint</a></strong> Lalitpur, Nepal, a <a href="https://en.wikipedia.org/wiki/Security_information_and_event_management" target="_blank">SIEM product</a>. I primarily work on building statsical analytics in streaming environment and on building scalable (and real time) architecture (using lambda architecture design principles)</p>
 
-<p>I'm also <strong> Student @<a href="http://www.coursera.org" target="_blank">Coursera</a>, <a href="http://www.edx.org" target="_blank">Edx</a></strong>. <button class="btn btn-info" data-toggle="modal" data-target="#learning">
-  Courses
-</button> </p>
-<!-- Button trigger modal -->
+  <p>I'm also <strong> Student @<a href="http://www.coursera.org" target="_blank">Coursera</a>, <a href="http://www.edx.org" target="_blank">Edx</a></strong>. <button class="btn btn-info" data-toggle="modal" data-target="#learning">
+    Courses
+  </button> </p>
+  <!-- Button trigger modal -->
 
 
-<!-- Modal -->
-<div class="modal fade" id="learning" tabindex="-1" role="dialog" aria-labelledby="learning" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="learning">Courses</h4>
-      </div>
-      <div class="modal-body">
-        <div class="panel panel-primary">
+  <!-- Modal -->
+  <div class="modal fade" id="learning" tabindex="-1" role="dialog" aria-labelledby="learning" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="learning">Courses</h4>
+        </div>
+        <div class="modal-body">
+          <div class="panel panel-primary">
   <!-- Default panel contents -->
 <div class="panel-heading">Coursera 2013</div>
 
@@ -230,33 +248,33 @@
 <ul class="list-group">
 <li class="list-group-item"><p><a href="https://courses.edx.org/courses/BerkeleyX/CS100.1x/1T2015/info" target="_blank"><strong>Introduction to Big Data with Apache Spark</strong></a>, <em>University of California, Berkeley</em> <a href="https://verify.edx.org/cert/eb668fb060e8479f9beb68159baebd6c" target="_blank"><i class="fa fa-link fa-lg fa-fw "></i></a></p></li>
 
+<li class="list-group-item"><p><a href="https://courses.edx.org/courses/BerkeleyX/CS190.1x/1T2015/info" target="_blank"><strong>Scalable Machine Learning</strong></a>, <em>University of California, Berkeley</em> <a href="https://verify.edx.org/cert/ac63f473bb424e24aa7a0c0c5db05e87" target="_blank"><i class="fa fa-link fa-lg fa-fw "></i></a></p></li>
+
 
 </ul>
 </div>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<h4>Research Interests</h4>
-<ul>
-<li> Scalable and Real time Analytics and Data systems</li>
-<li> Machine Learning at scale</li>
-</ul>
+  <h4>Research Interests</h4>
+  <ul>
+    <li> Streaming algorithms (at scale)</li>
+    <li> Scalable Machine Learning</li>
+  </ul>
 
 <h4>Skills</h4>
 <ul>
   <li><strong>Programming:</strong> Scala, Python, Java</li>
   <li><strong>Distributed tools:</strong> Mesos, HDFS, Kafka, Zookeeper, Akka, Flume</li>
   <li><strong>Analytics tools:</strong> Spark, R, Scipy + Ipython eco.</li>
-  <li><strong>Others:</strong> Intellij Idea, Latex, Git, Sublime, , MarkDown, Jekyll, Vim</li>
+  <li><strong>Others:</strong> Intellij Idea, $\LaTeX$, Git, Sublime, , MarkDown, Jekyll, Vim</li>
 </ul>
-
-<p>I'm currently working as Research Assistant at LogPoint, a <a href="http://en.wikipedia.org/wiki/Data_stream_mining\" target="_blank">SIEM solutions</a>. I primarily work on building statsical analytics in streaming environment and also on building scalable architecture.</p>
 
 
 <h4>Past</h4>
@@ -264,7 +282,7 @@
 <p><i class="fa fa-briefcase fa-lg fa-fw"></i> Previously, I have worked on financial data representation and mining using <a href="http://en.wikipedia.org/wiki/XBRL" target="_blank">XBRL</a> for annual financial statements collected by <a href="http://www.ocr.gov.np" target="_blank">Office of Company Registrar, Nepal</a> [2012 oct to 2013 sept].</p>
 
 
-</div>  
+</div>
 
 <div class="col-sm-12 col-md-5" style="padding:1em;">
 
@@ -309,6 +327,20 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'bistaumanga'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    </script>
 </body>
 
 </html>
