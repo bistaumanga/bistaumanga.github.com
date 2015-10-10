@@ -23,7 +23,7 @@ cp -R _site/* ../bistaumanga.github.com.master
 
 # commit and push generated content to `master' branch
 # since repository was cloned in write mode with token auth - we can push there
-cd ../eshepelyuk.github.io.master
+cd ../bistaumanga.github.com.master
 git config user.email "bistaumanga@gmail.com"
 git config user.name "bistaumanga"
 git add -A .
