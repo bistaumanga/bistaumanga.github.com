@@ -3,8 +3,8 @@ layout: post
 title: Union Find
 meta: Union Find Data Structure Implementation in Scala
 comments: true
-category: data-structures
-tags: union find, scala, disjoint set
+categories: data-structures
+tags: union-find scala disjoint-set
 published: true
 
 ---
@@ -21,12 +21,12 @@ The data structure accomplishes the operations by representing as tree and thus 
 
 For the detail [see here](http://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/UnionFind.pdf).
 
-A quick implementation of Union Find, optimized with lazy unions, path compression and Union By Rank is given here. 
+A quick implementation of Union Find, optimized with lazy unions, path compression and Union By Rank is given here.
 <script src="https://gist.github.com/bistaumanga/f4ec43701fc5b5552ebd.js"></script>
 
 ## Runtime
 The runtime of Union Find is very hard to analyze. There is a theorem for this by Ullman-HopCroft:
 
-> Starting from an empty data structure, Union By Rank with path compression performs any intermixed sequence of $m \geq n$ FIND and $n – 1$ UNION operations in $\mathcal{O}(m \log^*{n} )$ time. 
- 
+> Starting from an empty data structure, Union By Rank with path compression performs any intermixed sequence of $m \geq n$ FIND and $n – 1$ UNION operations in $\mathcal{O}(m \log^*{n} )$ time.
+
  where $\log^*{n}$ is number of times we need to apply $\log$ before the final result reaches 1.

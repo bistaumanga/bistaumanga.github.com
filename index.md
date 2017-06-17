@@ -10,14 +10,13 @@ permalink: /
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="profile"> 
+  <div class="tab-pane active" id="profile">
   	{% include profile.html %}
   </div>
 
-  <div class="tab-pane" id="publications"> 
+  <div class="tab-pane" id="publications">
 	  {% include publications.html %}
   </div>
-
 </div>
 
 <script>

@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Principal Component Analysis Based Unsupervised Anomaly Detection
-meta: Principal Component Analysis Based Anomaly Detection 
+meta: Principal Component Analysis Based Anomaly Detection
 comments: true
-category: anomaly-detection
-tags: anomaly, principal-component-classifier, PCA, unsupervised
+categories: anomaly-detection
+tags: anomaly principal-component-classifier PCA unsupervised
 published: true
 ---
 
@@ -13,7 +13,7 @@ Unsupervised anomaly detection has its importance in the cases where we need to 
 ## PCA
 [Principal Component Analysis](http://en.wikipedia.org/wiki/Principal_component_analysis) is a technique that transforms observations ($X \in \mathbb{R}^{n \ast d}$) of correlated variables in a higher dimensional space to the orthonormal space of uncorrelated variables. The new axis in the uncorrelated space of variables is given by **eigenvactors** and the amount of variance/energy retained along each eigenvector is given by **eigenvalues** in case of eigenvalue decomposition of **covariance matrix** of dataset. PCA can also be performed based on SVD and other decompositions.
 
-$$ 
+$$
 \mu_i = \frac{1}{n}\sum_{j=1}^{n}X_{ji} \ ,\ for\ each\ i = 1\ to\ d \\
 C_x = Cov(X) = (X-\mu)^T(X-mu) \\
 C_x = V \Lambda V^{-1}
@@ -24,9 +24,9 @@ where, $n$ is number of datapoints, and $d$ is dimensionality of observations.
 $V \in \mathbb{R}^{d \ast d}$ is matrix of Eigen-Vectors of $C_x \in \mathbb{R}^{d \ast d}$, and $\Lambda \in \mathbb{R}^{d \ast d}$ is a diagonal matrix of Eigen-Values of $C_x$.
 
 $$\Lambda = \begin{pmatrix}
-\lambda_1 &0  &. &. &. &0\\ 
-0 &\lambda_2  &. &. &. &0\\ 
- .&  .&  .& & &.\\ 
+\lambda_1 &0  &. &. &. &0\\
+0 &\lambda_2  &. &. &. &0\\
+ .&  .&  .& & &.\\
  .&  .&  & .& &.\\
  .&  .&  & & .&.\\
  .&  .&  .& .& .&\lambda_n\\
@@ -84,7 +84,7 @@ require(ggplot2)
 qplot(1:length(pca.var), pca.var, ylab = "Cumulative % variance retained", xlab = "No. of Principal Components") + theme_bw() + geom_line(col = "blue") + ylim(0, 1)
 {% endhighlight %}
 
-![plot of chunk pca](/images/pcc_anomaly/pca.png) 
+![plot of chunk pca](/images/pcc_anomaly/pca.png)
 
 The plot of cumulative variance retained showed we can retain the must of the infomation among the first few axes.
 
@@ -127,11 +127,11 @@ for(i in 1 : length(significance)){
   anomaly <- anomaly_score > thresh
   result_obtained = as.factor(anomaly)
   crosstable <- table(result_obtained, result_expected)
-  
+
   tp <- crosstable[2, 2] # true_positive
   fp <- crosstable[2, 1] # false positive
   fn <- crosstable[1, 2] # false negative
-  
+
   precision <- tp/(tp+fp)
   recall <- tp/(tp+fn)
   f_measure = 2 * precision * recall /(precision + recall)
@@ -142,15 +142,15 @@ for(i in 1 : length(significance)){
 Now, i will plot the evaluation measures against the level of significance in $\chi^2$ test.
 
 {% highlight r %}
-p = ggplot(result, aes(x = significance)) + 
-  geom_line(aes(y = recall, col = "recall", fill = "recall"), 
-            lwd = 1, lty = 'longdash') + 
+p = ggplot(result, aes(x = significance)) +
+  geom_line(aes(y = recall, col = "recall", fill = "recall"),
+            lwd = 1, lty = 'longdash') +
   geom_point(aes(y = recall, col = "recall", shape = "recall"), size = 3)+
-  geom_line(aes(y = F_measure, col = "F-measure", fill = "F-measure"), 
-            lwd = 1, lty = 'dotdash') + 
+  geom_line(aes(y = F_measure, col = "F-measure", fill = "F-measure"),
+            lwd = 1, lty = 'dotdash') +
   geom_point(aes(y = F_measure, col = "F-measure", shape = "F-measure"), size = 3)+
-  geom_line(aes(y = precision, col = "Precision", fill = "Precision"), 
-            lwd = 1, lty = 'solid') + 
+  geom_line(aes(y = precision, col = "Precision", fill = "Precision"),
+            lwd = 1, lty = 'solid') +
   geom_point(aes(y = precision, col = "Precision", shape = "Precision"), size = 3)+
   theme_bw()+
   xlab("Significance $1 - \alpha$") + ylab("") +
@@ -159,7 +159,7 @@ p = ggplot(result, aes(x = significance)) +
 print(p)
 {% endhighlight %}
 
-![plot of chunk results](/images/pcc_anomaly/results.png) 
+![plot of chunk results](/images/pcc_anomaly/results.png)
 
 We can see the algorithm performs poorly, especially in terms of Precision, which means a lot of False alarm are generated. We would like to improve on this, for this we will explore the **Principal component Classifier method**.
 
