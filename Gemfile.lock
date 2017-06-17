@@ -74,6 +74,7 @@ GEM
     rb-inotify (0.9.4)
       ffi (>= 0.5.0)
     redcarpet (3.1.2)
+    rouge (1.11.1)
     safe_yaml (1.0.3)
     sass (3.3.7)
     timers (1.1.0)
@@ -92,3 +93,7 @@ DEPENDENCIES
   kramdown
   pygments.rb
   redcarpet
+  rouge
+
+BUNDLED WITH
+   1.14.6
