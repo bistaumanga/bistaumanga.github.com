@@ -1,13 +1,15 @@
 language: ruby
+rvm:
+- 2.3.3
+before_script:
+- git update-index --chmod=+x ./build.sh
+- chmod +x ./build.sh
 script: "./build.sh"
 branches:
   only:
   - jekyll
-before_script:
-  - git update-index --chmod=+x ./build.sh
-  - chmod +x ./build.sh
-rvm:
-- 2.1.2
 env:
   global:
-    secure: m7SzD7b5k4Jc1atNhgeZRQbKfZWe458WqE6OBfYRWitgLdUZ4XpmaQkxETR7/1W7X0bcdxyKmUwvsrQ03DmjxSycvfFWxQ8rNX1vnNJByB8WE2Bcm/YtwcoUX2N5OO3mpAzbDdSKA5WDW4wGCfzJ4xhWpd3bPBP5hg8RC92chyo2tHceMDxWpwFy+hmLlzVTW9NvRFJjX3mwajD3BHWb6DxIR0sRdNl/8mepohzmzJM3CYJX6o8qKluEufKk8WTnsGR625E4GYEO4zI8zOKkpdXIAFY7E+9Xlo758MdLDDrGLtoCOOChOQmXEMday+rk6b/J9NCxGvWLd84uHQ15J0W1YI88/55mmcGKdkMgVPl16HogdlzCzt2jn7Sx3uoKyYQdXEKizuC6QXWVKKBg/ApUU4AQrSTREiNh5kZBIETo/uJw2BprMx+25wgailfvKumBfp3jnJ+CIGJ9+BbFICrJHBJLuDySUssdKrLXIsq4LsPtiEehj8nMCPk/31xl92vhNHvM/LqKsvOL2nAHWYiRLYgOpJ+V2KBcqgc2kVRfwh0mlkQVKkHlukeY+gyurY8x7xbiGW1do9d2KAl5mVnNSDIqqEN8wNZhxxt9H/4NH5RIMja27zUvZNIzmiHqqLQ6JJsxI54ysXcgovVnZDOlzKD8F4reiOtjAZwThHE=
+  - secure:
+  - secure: Z7C10eKB0lpPFzQY7RP8SoqpbHiOBMD68oSwzK8gCd6sRmarraiEQPTFqoZMrT5/ujQVCIagQSYbNeshGZVSN0xY5E2wFy8kWWaTPWHMp3GTWH9bvjIJHhb7fH2vPH2rZImzZWHbeovLKegbyv36a0xWvt+6k0EaPorTF425Ey32hdINaMMmAFERs4HJiT89pqrMvv6QyUKAtoTS4GXELqHl69g+Ief10SIvK9UejUL0ovWfBcARniVVtSmdmcrSfJtNDKAC7ITHHzd6OypMhVEOCJ47L6USeAZVTM6/uo5Yb5CAtckmkPmki0SB5T5G8/YZ3+j6ftCO9F8OADBvdPYKv/z+umUZFdBcuugeLwzZc+RyExjViAgT3HLYJ0uDRlg+bMW3IVaEvv0QYDIk2nnfl/BCUOQXIpw8fYfdgA8EHpZ5WJlUDqlIFujfc388JHxyVACjIWDFWPuNpUp7PbV0A97zs3KWgPu1r0T8FxoOP5y9bOtCsp3dI0uGUN295OWraCGh2eeXe02nB2YSCHn+gKgE6JXJHPgpJhXvuVbUi78I7IwrIW5P13/C8nhwfNCykH3A9LbOXtvL7h3nvbZmQCyugyu1HskWIgRsinQsANijOSXpBvjVF5NzYtyiUfmfYMmgbwNT/4SN87yWfvu16cphIHmhDjNvFM2zCqU=
+sudo: false
