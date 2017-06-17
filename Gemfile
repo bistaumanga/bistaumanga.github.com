@@ -4,4 +4,5 @@ gem "jekyll-scholar"
 gem "kramdown"
 gem "redcarpet"
 gem "pygments.rb"
-gem 'jekyll-sitemap'
+gem "jekyll-sitemap"
+gem "rouge"

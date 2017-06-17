@@ -8,14 +8,14 @@
 
 
   <link rel=stylesheet type=text/css href=/css/bootstrap.min.css>
-  <!-- <link rel=stylesheet href=/css/font-awesome.min.css> -->
+  <!-- <link rel=stylesheet type=text/css href=/css/font-awesome.min.css> -->
 
-  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <title>
     
-    Union Find | 
+    Union Find |
     
     Umanga Bista
   </title>
@@ -56,7 +56,7 @@
 
   <body>
 
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
 
     <div class="navbar-header">
@@ -98,7 +98,7 @@
 <!--         <a class="navbar-toggle nav-link" href="/files/cv.pdf" style="color: #DC143C;;margin-right:0.25em;padding:0.2em;" target="_blank">
           <i class="fa fa-download fa-fw"></i>CV</a>
         </a> -->
-        
+
         </a>
       </div>
 
@@ -108,23 +108,24 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
         <li><a href="/blog">Blog</a></li>
-        <li><a href="/tags">Tags</a></li>
+        <!-- <li><a href="/tags">Tags</a></li> -->
       </ul>
     </div>
-    
+
 
   </div>
 
   </nav>
+
 
     <div class="col-sm-3 sidebar hidden-xs" style = "height: 100%;">
         <header class="sidebar-header">
     <img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=160" class="img-circle" />
     <h3><a href=/>Umanga Bista<br>(उमङ्ग बिष्ट)</a></h3>
 </header>
-<div style = "color:#8B7500;" align = center>  
+<div style = "color:#8B7500;" align = center>
 
- Machine Learning, Distributed Systems and Scalable/Real-time Analytics enthusiast. Looking for Ph.D opportunities. Loves Functional Programming (scala), wanna learn clojure and haskell, currently learning Reactive programming (akka).
+ PhD Candidate in Machine Learning at the Australian National University.
 
 </div>
 <br>
@@ -143,10 +144,10 @@
             <i class="fa fa-envelope fa-2x"></i>
         </a>
     </div>
-    <!-- <br><br> -->
-<!--     <a class="btn btn-default btn-sm" href="/files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-lg"></i>CV</a> -->
-<!--     <br><br>
-    <a class="btn btn-link btn-sm" href="https://db.tt/rJjB3Llm" style="align: center;" target="_blank"> <i class="fa fa-dropbox fa-lg"></i> Free Online Storage </a> -->
+    <br><br> 
+    <a class="btn btn-default btn-sm" href="/files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-lg"></i>CV</a>
+    <br><br>
+    <a class="btn btn-link btn-sm" href="https://db.tt/rJjB3Llm" style="align: center;" target="_blank"> <i class="fa fa-dropbox fa-lg"></i> Free Online Storage </a>
 
     <br>
     <br>
@@ -159,7 +160,8 @@
     </div>
 
 </div>
-    </div>  
+
+    </div>
 
     <div class="col-xs-18 col-sm-9 col-sm-offset-3" style="padding:1em;">
       <div class=post>
@@ -170,15 +172,11 @@
     
     <li><i class="fa fa-calendar fa-lg fa-fw" style="color:#ff2288;"></i>August 18, 2014</li>
     
-        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#union-ref">union</a></li>
+        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#union-find-ref">union-find</a></li>
     
-        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#find,-ref">find,</a></li>
+        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#scala-ref">scala</a></li>
     
-        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#scala,-ref">scala,</a></li>
-    
-        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#disjoint-ref">disjoint</a></li>
-    
-        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#set-ref">set</a></li>
+        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#disjoint-set-ref">disjoint-set</a></li>
     
 </ul>
 
@@ -212,14 +210,14 @@
 
 <p>For the detail <a href="http://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/UnionFind.pdf">see here</a>.</p>
 
-<p>A quick implementation of Union Find, optimized with lazy unions, path compression and Union By Rank is given here. 
+<p>A quick implementation of Union Find, optimized with lazy unions, path compression and Union By Rank is given here.
 <script src="https://gist.github.com/bistaumanga/f4ec43701fc5b5552ebd.js"></script></p>
 
 <h2 id="runtime">Runtime</h2>
 <p>The runtime of Union Find is very hard to analyze. There is a theorem for this by Ullman-HopCroft:</p>
 
 <blockquote>
-  <p>Starting from an empty data structure, Union By Rank with path compression performs any intermixed sequence of $m \geq n$ FIND and $n – 1$ UNION operations in $\mathcal{O}(m \log^*{n} )$ time. </p>
+  <p>Starting from an empty data structure, Union By Rank with path compression performs any intermixed sequence of $m \geq n$ FIND and $n – 1$ UNION operations in $\mathcal{O}(m \log^*{n} )$ time.</p>
 </blockquote>
 
 <p>where $\log^*{n}$ is number of times we need to apply $\log$ before the final result reaches 1.</p>

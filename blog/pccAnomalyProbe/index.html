@@ -8,14 +8,14 @@
 
 
   <link rel=stylesheet type=text/css href=/css/bootstrap.min.css>
-  <!-- <link rel=stylesheet href=/css/font-awesome.min.css> -->
+  <!-- <link rel=stylesheet type=text/css href=/css/font-awesome.min.css> -->
 
-  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <title>
     
-    Principal Component Analysis Based Unsupervised Anomaly Detection | 
+    Principal Component Analysis Based Unsupervised Anomaly Detection |
     
     Umanga Bista
   </title>
@@ -56,7 +56,7 @@
 
   <body>
 
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
 
     <div class="navbar-header">
@@ -98,7 +98,7 @@
 <!--         <a class="navbar-toggle nav-link" href="/files/cv.pdf" style="color: #DC143C;;margin-right:0.25em;padding:0.2em;" target="_blank">
           <i class="fa fa-download fa-fw"></i>CV</a>
         </a> -->
-        
+
         </a>
       </div>
 
@@ -108,23 +108,24 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
         <li><a href="/blog">Blog</a></li>
-        <li><a href="/tags">Tags</a></li>
+        <!-- <li><a href="/tags">Tags</a></li> -->
       </ul>
     </div>
-    
+
 
   </div>
 
   </nav>
+
 
     <div class="col-sm-3 sidebar hidden-xs" style = "height: 100%;">
         <header class="sidebar-header">
     <img src="http://s.gravatar.com/avatar/05710f1aef9f9b4aed9b61381cd625db?s=160" class="img-circle" />
     <h3><a href=/>Umanga Bista<br>(उमङ्ग बिष्ट)</a></h3>
 </header>
-<div style = "color:#8B7500;" align = center>  
+<div style = "color:#8B7500;" align = center>
 
- Machine Learning, Distributed Systems and Scalable/Real-time Analytics enthusiast. Looking for Ph.D opportunities. Loves Functional Programming (scala), wanna learn clojure and haskell, currently learning Reactive programming (akka).
+ PhD Candidate in Machine Learning at the Australian National University.
 
 </div>
 <br>
@@ -143,10 +144,10 @@
             <i class="fa fa-envelope fa-2x"></i>
         </a>
     </div>
-    <!-- <br><br> -->
-<!--     <a class="btn btn-default btn-sm" href="/files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-lg"></i>CV</a> -->
-<!--     <br><br>
-    <a class="btn btn-link btn-sm" href="https://db.tt/rJjB3Llm" style="align: center;" target="_blank"> <i class="fa fa-dropbox fa-lg"></i> Free Online Storage </a> -->
+    <br><br> 
+    <a class="btn btn-default btn-sm" href="/files/cv.pdf" style="color: #DC143C;align: center;" target="_blank"><i class="fa fa-download fa-lg"></i>CV</a>
+    <br><br>
+    <a class="btn btn-link btn-sm" href="https://db.tt/rJjB3Llm" style="align: center;" target="_blank"> <i class="fa fa-dropbox fa-lg"></i> Free Online Storage </a>
 
     <br>
     <br>
@@ -159,7 +160,8 @@
     </div>
 
 </div>
-    </div>  
+
+    </div>
 
     <div class="col-xs-18 col-sm-9 col-sm-offset-3" style="padding:1em;">
       <div class=post>
@@ -170,11 +172,11 @@
     
     <li><i class="fa fa-calendar fa-lg fa-fw" style="color:#ff2288;"></i>May 29, 2014</li>
     
-        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#anomaly,-ref">anomaly,</a></li>
+        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#anomaly-ref">anomaly</a></li>
     
-        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#principal-component-classifier,-ref">principal-component-classifier,</a></li>
+        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#principal-component-classifier-ref">principal-component-classifier</a></li>
     
-        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#PCA,-ref">PCA,</a></li>
+        <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#PCA-ref">PCA</a></li>
     
         <li><i class="fa fa-tag fa-lg fa-fw" style="color:#28c;"></i><a href="/tags/#unsupervised-ref">unsupervised</a></li>
     
@@ -198,7 +200,7 @@
 <h2 id="pca">PCA</h2>
 <p><a href="http://en.wikipedia.org/wiki/Principal_component_analysis">Principal Component Analysis</a> is a technique that transforms observations ($X \in \mathbb{R}^{n \ast d}$) of correlated variables in a higher dimensional space to the orthonormal space of uncorrelated variables. The new axis in the uncorrelated space of variables is given by <strong>eigenvactors</strong> and the amount of variance/energy retained along each eigenvector is given by <strong>eigenvalues</strong> in case of eigenvalue decomposition of <strong>covariance matrix</strong> of dataset. PCA can also be performed based on SVD and other decompositions.</p>
 
-<script type="math/tex; mode=display"> 
+<script type="math/tex; mode=display">
 \mu_i = \frac{1}{n}\sum_{j=1}^{n}X_{ji} \ ,\ for\ each\ i = 1\ to\ d \\
 C_x = Cov(X) = (X-\mu)^T(X-mu) \\
 C_x = V \Lambda V^{-1}
@@ -210,9 +212,9 @@ C_x = V \Lambda V^{-1}
 
 <script type="math/tex; mode=display">% <![CDATA[
 \Lambda = \begin{pmatrix}
-\lambda_1 &0  &. &. &. &0\\ 
-0 &\lambda_2  &. &. &. &0\\ 
- .&  .&  .& & &.\\ 
+\lambda_1 &0  &. &. &. &0\\
+0 &\lambda_2  &. &. &. &0\\
+ .&  .&  .& & &.\\
  .&  .&  & .& &.\\
  .&  .&  & & .&.\\
  .&  .&  .& .& .&\lambda_n\\
@@ -243,28 +245,28 @@ C_x = V \Lambda V^{-1}
 
 <p>I have only selected few columns which were significant for the portsweep. These can be identified with Decision trees. ( rpart  function) or by manual inspection of ditribution of each variables for portsweep and normal data instances (boxlot(V13~V42, data = kdd)).</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r">type <span class="o">=</span> <span class="s">&quot;portsweep.&quot;</span>
-cols <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span> <span class="m">27</span><span class="p">,</span> <span class="m">33</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">36</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">23</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-<span class="c1"># type = &quot;ipsweep.&quot;</span>
-<span class="c1"># cols = c(37, 5, 6, 32, 8, 12, 24, 31, 34, 35)</span>
-kdd <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="s">&#39;~/scripts/kddcup.data_10_percent&#39;</span><span class="p">,</span> header <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-kdd.probe <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>kdd<span class="p">,</span>V42 <span class="o">==</span>  type <span class="o">|</span> V42<span class="o">==</span><span class="s">&#39;normal.&#39;</span><span class="p">,</span>
-                    select<span class="o">=</span>cols<span class="p">)</span></code></pre></div>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"portsweep."</span><span class="w">
+</span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">27</span><span class="p">,</span><span class="w"> </span><span class="m">33</span><span class="p">,</span><span class="w"> </span><span class="m">34</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="m">36</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">40</span><span class="p">,</span><span class="w"> </span><span class="m">23</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+</span><span class="c1"># type = "ipsweep."
+# cols = c(37, 5, 6, 32, 8, 12, 24, 31, 34, 35)
+</span><span class="n">kdd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s1">'~/scripts/kddcup.data_10_percent'</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+</span><span class="n">kdd.probe</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">subset</span><span class="p">(</span><span class="n">kdd</span><span class="p">,</span><span class="n">V</span><span class="m">42</span><span class="w"> </span><span class="o">==</span><span class="w">  </span><span class="n">type</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">V</span><span class="m">42</span><span class="o">==</span><span class="s1">'normal.'</span><span class="p">,</span><span class="w">
+                    </span><span class="n">select</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span></code></pre></div>
 
 <h4 id="pca-with-factominer">PCA with FactoMineR</h4>
 
 <p>I will use PCA function of package <a href="">FactoMineR</a>.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">require</span><span class="p">(</span><span class="s">&#39;FactoMineR&#39;</span><span class="p">)</span>
-nnn <span class="o">=</span> <span class="kp">ncol</span><span class="p">(</span>kdd.probe<span class="p">)</span> <span class="c1">### number of variables</span>
-pca_result <span class="o">&lt;-</span> PCA<span class="p">(</span>kdd.probe<span class="p">,</span>graph <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> ncp <span class="o">=</span> nnn<span class="p">,</span> scale.unit <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
-pca.var <span class="o">&lt;-</span> pca_result<span class="o">$</span>eig<span class="p">[[</span><span class="s">&#39;cumulative percentage of variance&#39;</span><span class="p">]]</span><span class="o">/</span><span class="m">100</span>
-lambda <span class="o">&lt;-</span> pca_result<span class="o">$</span>eig<span class="p">[,</span> <span class="s">&#39;eigenvalue&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">require</span><span class="p">(</span><span class="s1">'FactoMineR'</span><span class="p">)</span><span class="w">
+</span><span class="n">nnn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ncol</span><span class="p">(</span><span class="n">kdd.probe</span><span class="p">)</span><span class="w"> </span><span class="c1">### number of variables
+</span><span class="n">pca_result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">PCA</span><span class="p">(</span><span class="n">kdd.probe</span><span class="p">,</span><span class="n">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">F</span><span class="p">,</span><span class="w"> </span><span class="n">ncp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nnn</span><span class="p">,</span><span class="w"> </span><span class="n">scale.unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">T</span><span class="p">)</span><span class="w">
+</span><span class="n">pca.var</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pca_result</span><span class="o">$</span><span class="n">eig</span><span class="p">[[</span><span class="s1">'cumulative percentage of variance'</span><span class="p">]]</span><span class="o">/</span><span class="m">100</span><span class="w">
+</span><span class="n">lambda</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pca_result</span><span class="o">$</span><span class="n">eig</span><span class="p">[,</span><span class="w"> </span><span class="s1">'eigenvalue'</span><span class="p">]</span><span class="w">
 
-<span class="kn">require</span><span class="p">(</span>ggplot2<span class="p">)</span>
-qplot<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="kp">length</span><span class="p">(</span>pca.var<span class="p">),</span> pca.var<span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;Cumulative % variance retained&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;No. of Principal Components&quot;</span><span class="p">)</span> <span class="o">+</span> theme_bw<span class="p">()</span> <span class="o">+</span> geom_line<span class="p">(</span>col <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span> <span class="o">+</span> ylim<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span></code></pre></div>
+</span><span class="n">require</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">qplot</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">pca.var</span><span class="p">),</span><span class="w"> </span><span class="n">pca.var</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % variance retained"</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"No. of Principal Components"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_line</span><span class="p">(</span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ylim</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span></code></pre></div>
 
-<p><img src="/images/pcc_anomaly/pca.png" alt="plot of chunk pca" /> </p>
+<p><img src="/images/pcc_anomaly/pca.png" alt="plot of chunk pca" /></p>
 
 <p>The plot of cumulative variance retained showed we can retain the must of the infomation among the first few axes.</p>
 
@@ -294,54 +296,54 @@ qplot<span class="p">(</span><span class="m">1</span><span class="o">:</span><sp
 
 <p>For giving the outlier score,we can use above equation.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#anomaly_score &lt;- apply(pca_result$ind$coord, 1, function(x) sum(x ^ 2/lambda))</span>
-anomaly_score <span class="o">=</span> <span class="p">(</span><span class="kp">as.matrix</span><span class="p">(</span>pca_result<span class="o">$</span>ind<span class="o">$</span>coord<span class="p">)</span> <span class="o">^</span> <span class="m">2</span><span class="p">)</span> <span class="o">%*%</span> <span class="p">(</span><span class="m">1</span> <span class="o">/</span> <span class="kp">as.matrix</span><span class="p">(</span>lambda<span class="p">,</span> ncol <span class="o">=</span> <span class="m">1</span><span class="p">))</span></code></pre></div>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#anomaly_score &lt;- apply(pca_result$ind$coord, 1, function(x) sum(x ^ 2/lambda))
+</span><span class="n">anomaly_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">as.matrix</span><span class="p">(</span><span class="n">pca_result</span><span class="o">$</span><span class="n">ind</span><span class="o">$</span><span class="n">coord</span><span class="p">)</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">as.matrix</span><span class="p">(</span><span class="n">lambda</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">))</span></code></pre></div>
 
 <p>KDD dataset is labeled, so let me evaluate the performance of algorithm. For that we need threshold for decision of whether an observation is outlier. Since we know that this utlier score is $\chi^2$ distributed with $d$ degree of freedom, i will perform the $\chi^2$ test with various level of significance.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r">significance <span class="o">&lt;-</span> <span class="kt">c</span> <span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.925</span><span class="p">,</span> <span class="m">0.95</span><span class="p">,</span> <span class="m">0.96</span><span class="p">,</span> <span class="m">0.97</span><span class="p">,</span> <span class="m">0.975</span><span class="p">,</span> <span class="m">0.98</span><span class="p">,</span> <span class="m">0.985</span><span class="p">,</span> <span class="m">0.9899</span><span class="p">,</span> <span class="m">0.99</span><span class="p">,</span> <span class="m">0.991</span><span class="p">,</span> <span class="m">0.992</span><span class="p">,</span> <span class="m">0.995</span><span class="p">,</span> <span class="m">0.999</span><span class="p">)</span>
-result <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span><span class="kt">matrix</span><span class="p">(</span>nrow <span class="o">=</span> <span class="kp">length</span><span class="p">(</span>significance<span class="p">),</span> ncol <span class="o">=</span> <span class="m">4</span><span class="p">))</span>
-<span class="kp">colnames</span><span class="p">(</span>result<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;significance&#39;</span><span class="p">,</span> <span class="s">&#39;precision&#39;</span><span class="p">,</span> <span class="s">&#39;recall&#39;</span><span class="p">,</span> <span class="s">&#39;F_measure&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">significance</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="p">(</span><span class="m">0.9</span><span class="p">,</span><span class="w"> </span><span class="m">0.925</span><span class="p">,</span><span class="w"> </span><span class="m">0.95</span><span class="p">,</span><span class="w"> </span><span class="m">0.96</span><span class="p">,</span><span class="w"> </span><span class="m">0.97</span><span class="p">,</span><span class="w"> </span><span class="m">0.975</span><span class="p">,</span><span class="w"> </span><span class="m">0.98</span><span class="p">,</span><span class="w"> </span><span class="m">0.985</span><span class="p">,</span><span class="w"> </span><span class="m">0.9899</span><span class="p">,</span><span class="w"> </span><span class="m">0.99</span><span class="p">,</span><span class="w"> </span><span class="m">0.991</span><span class="p">,</span><span class="w"> </span><span class="m">0.992</span><span class="p">,</span><span class="w"> </span><span class="m">0.995</span><span class="p">,</span><span class="w"> </span><span class="m">0.999</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">matrix</span><span class="p">(</span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">significance</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">))</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'significance'</span><span class="p">,</span><span class="w"> </span><span class="s1">'precision'</span><span class="p">,</span><span class="w"> </span><span class="s1">'recall'</span><span class="p">,</span><span class="w"> </span><span class="s1">'F_measure'</span><span class="p">)</span><span class="w">
 
-result_expected <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span><span class="kp">subset</span><span class="p">(</span>kdd<span class="p">,</span> V42 <span class="o">==</span>  type<span class="o">|</span> V42<span class="o">==</span><span class="s">&#39;normal.&#39;</span><span class="p">),</span> select<span class="o">=</span><span class="kt">c</span><span class="p">(</span>V42<span class="p">))</span>
-result_expected <span class="o">&lt;-</span> result_expected <span class="o">!=</span> <span class="s">&quot;normal.&quot;</span>
+</span><span class="n">result_expected</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">subset</span><span class="p">(</span><span class="n">subset</span><span class="p">(</span><span class="n">kdd</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="m">42</span><span class="w"> </span><span class="o">==</span><span class="w">  </span><span class="n">type</span><span class="o">|</span><span class="w"> </span><span class="n">V</span><span class="m">42</span><span class="o">==</span><span class="s1">'normal.'</span><span class="p">),</span><span class="w"> </span><span class="n">select</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">V</span><span class="m">42</span><span class="p">))</span><span class="w">
+</span><span class="n">result_expected</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">result_expected</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"normal."</span><span class="w">
 
-<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span> <span class="o">:</span> <span class="kp">length</span><span class="p">(</span>significance<span class="p">)){</span>
-  sig <span class="o">=</span> significance<span class="p">[</span>i<span class="p">]</span>
-  thresh <span class="o">=</span> qchisq<span class="p">(</span>sig<span class="p">,</span> nnn<span class="p">)</span>
-  anomaly <span class="o">&lt;-</span> anomaly_score <span class="o">&gt;</span> thresh
-  result_obtained <span class="o">=</span> <span class="kp">as.factor</span><span class="p">(</span>anomaly<span class="p">)</span>
-  crosstable <span class="o">&lt;-</span> <span class="kp">table</span><span class="p">(</span>result_obtained<span class="p">,</span> result_expected<span class="p">)</span>
-  
-  tp <span class="o">&lt;-</span> crosstable<span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span> <span class="c1"># true_positive</span>
-  fp <span class="o">&lt;-</span> crosstable<span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">]</span> <span class="c1"># false positive</span>
-  fn <span class="o">&lt;-</span> crosstable<span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span> <span class="c1"># false negative</span>
-  
-  precision <span class="o">&lt;-</span> tp<span class="o">/</span><span class="p">(</span>tp<span class="o">+</span>fp<span class="p">)</span>
-  recall <span class="o">&lt;-</span> tp<span class="o">/</span><span class="p">(</span>tp<span class="o">+</span>fn<span class="p">)</span>
-  f_measure <span class="o">=</span> <span class="m">2</span> <span class="o">*</span> precision <span class="o">*</span> recall <span class="o">/</span><span class="p">(</span>precision <span class="o">+</span> recall<span class="p">)</span>
-  result<span class="p">[</span>i<span class="p">,</span> <span class="p">]</span> <span class="o">=</span> <span class="kt">c</span><span class="p">(</span>sig<span class="p">,</span> precision<span class="p">,</span> recall<span class="p">,</span> f_measure<span class="p">)</span>
-<span class="p">}</span></code></pre></div>
+</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">significance</span><span class="p">)){</span><span class="w">
+  </span><span class="n">sig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">significance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w">
+  </span><span class="n">thresh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">qchisq</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span><span class="w"> </span><span class="n">nnn</span><span class="p">)</span><span class="w">
+  </span><span class="n">anomaly</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">anomaly_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">thresh</span><span class="w">
+  </span><span class="n">result_obtained</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">anomaly</span><span class="p">)</span><span class="w">
+  </span><span class="n">crosstable</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">table</span><span class="p">(</span><span class="n">result_obtained</span><span class="p">,</span><span class="w"> </span><span class="n">result_expected</span><span class="p">)</span><span class="w">
+
+  </span><span class="n">tp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">crosstable</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="c1"># true_positive
+</span><span class="w">  </span><span class="n">fp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">crosstable</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="c1"># false positive
+</span><span class="w">  </span><span class="n">fn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">crosstable</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="c1"># false negative
+</span><span class="w">
+  </span><span class="n">precision</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tp</span><span class="o">/</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fp</span><span class="p">)</span><span class="w">
+  </span><span class="n">recall</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tp</span><span class="o">/</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fn</span><span class="p">)</span><span class="w">
+  </span><span class="n">f_measure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">precision</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">recall</span><span class="w"> </span><span class="o">/</span><span class="p">(</span><span class="n">precision</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">recall</span><span class="p">)</span><span class="w">
+  </span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="p">,</span><span class="w"> </span><span class="n">recall</span><span class="p">,</span><span class="w"> </span><span class="n">f_measure</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span></code></pre></div>
 
 <p>Now, i will plot the evaluation measures against the level of significance in $\chi^2$ test.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r">p <span class="o">=</span> ggplot<span class="p">(</span>result<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> significance<span class="p">))</span> <span class="o">+</span> 
-  geom_line<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> recall<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;recall&quot;</span><span class="p">,</span> fill <span class="o">=</span> <span class="s">&quot;recall&quot;</span><span class="p">),</span> 
-            lwd <span class="o">=</span> <span class="m">1</span><span class="p">,</span> lty <span class="o">=</span> <span class="s">&#39;longdash&#39;</span><span class="p">)</span> <span class="o">+</span> 
-  geom_point<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> recall<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;recall&quot;</span><span class="p">,</span> shape <span class="o">=</span> <span class="s">&quot;recall&quot;</span><span class="p">),</span> size <span class="o">=</span> <span class="m">3</span><span class="p">)</span><span class="o">+</span>
-  geom_line<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> F_measure<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;F-measure&quot;</span><span class="p">,</span> fill <span class="o">=</span> <span class="s">&quot;F-measure&quot;</span><span class="p">),</span> 
-            lwd <span class="o">=</span> <span class="m">1</span><span class="p">,</span> lty <span class="o">=</span> <span class="s">&#39;dotdash&#39;</span><span class="p">)</span> <span class="o">+</span> 
-  geom_point<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> F_measure<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;F-measure&quot;</span><span class="p">,</span> shape <span class="o">=</span> <span class="s">&quot;F-measure&quot;</span><span class="p">),</span> size <span class="o">=</span> <span class="m">3</span><span class="p">)</span><span class="o">+</span>
-  geom_line<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> precision<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;Precision&quot;</span><span class="p">,</span> fill <span class="o">=</span> <span class="s">&quot;Precision&quot;</span><span class="p">),</span> 
-            lwd <span class="o">=</span> <span class="m">1</span><span class="p">,</span> lty <span class="o">=</span> <span class="s">&#39;solid&#39;</span><span class="p">)</span> <span class="o">+</span> 
-  geom_point<span class="p">(</span>aes<span class="p">(</span>y <span class="o">=</span> precision<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;Precision&quot;</span><span class="p">,</span> shape <span class="o">=</span> <span class="s">&quot;Precision&quot;</span><span class="p">),</span> size <span class="o">=</span> <span class="m">3</span><span class="p">)</span><span class="o">+</span>
-  theme_bw<span class="p">()</span><span class="o">+</span>
-  xlab<span class="p">(</span><span class="s">&quot;Significance $1 - \alpha$&quot;</span><span class="p">)</span> <span class="o">+</span> ylab<span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span>
-  scale_colour_manual<span class="p">(</span>name<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">))</span><span class="o">+</span>
-  scale_shape_manual<span class="p">(</span>name<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">17</span><span class="p">,</span> <span class="m">18</span><span class="p">))</span>
-<span class="kp">print</span><span class="p">(</span>p<span class="p">)</span></code></pre></div>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ggplot</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">significance</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_line</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">recall</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"recall"</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"recall"</span><span class="p">),</span><span class="w">
+            </span><span class="n">lwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'longdash'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">recall</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"recall"</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"recall"</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_line</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">F_measure</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"F-measure"</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"F-measure"</span><span class="p">),</span><span class="w">
+            </span><span class="n">lwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'dotdash'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">F_measure</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"F-measure"</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"F-measure"</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_line</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">precision</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Precision"</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Precision"</span><span class="p">),</span><span class="w">
+            </span><span class="n">lwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'solid'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">precision</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Precision"</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Precision"</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">theme_bw</span><span class="p">()</span><span class="o">+</span><span class="w">
+  </span><span class="n">xlab</span><span class="p">(</span><span class="s2">"Significance $1 - \alpha$"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ylab</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">scale_colour_manual</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">))</span><span class="o">+</span><span class="w">
+  </span><span class="n">scale_shape_manual</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="m">17</span><span class="p">,</span><span class="w"> </span><span class="m">18</span><span class="p">))</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></code></pre></div>
 
-<p><img src="/images/pcc_anomaly/results.png" alt="plot of chunk results" /> </p>
+<p><img src="/images/pcc_anomaly/results.png" alt="plot of chunk results" /></p>
 
 <p>We can see the algorithm performs poorly, especially in terms of Precision, which means a lot of False alarm are generated. We would like to improve on this, for this we will explore the <strong>Principal component Classifier method</strong>.</p>
 
