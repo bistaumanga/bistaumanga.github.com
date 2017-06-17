@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- 2.3.3
+- 2.0.0
 before_script:
 - git update-index --chmod=+x ./build.sh
 - chmod +x ./build.sh
