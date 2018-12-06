@@ -6,3 +6,4 @@ gem "redcarpet"
 gem "pygments.rb"
 gem "jekyll-sitemap"
 gem "rouge"
+gem 'jekyll-twitter-plugin'
