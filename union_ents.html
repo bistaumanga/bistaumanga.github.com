@@ -1,0 +1,124 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1024;
+            height: 720;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+        #config {
+            float: left;
+            width: 400px;
+            height: 600px;
+        }
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<div id = "config"></div>
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "blue", "id": 0, "label": "Acre", "shape": "star", "title": "Acre", "value": 1.174894534342018}, {"color": "blue", "id": 34, "label": "India", "shape": "star", "title": "India", "value": 2.909509798476362}, {"color": "blue", "id": 76, "label": "Telangana", "shape": "star", "title": "Telangana", "value": 1.174894534342018}, {"color": "blue", "id": 84, "label": "Village", "shape": "star", "title": "Village", "value": 2.0437864021492618}, {"color": "blue", "id": 88, "label": "slaughterhouse", "shape": "star", "title": "slaughterhouse", "value": 3.149669250719655}, {"color": "red", "id": 1, "label": "Act_of_Parliament", "shape": "dot", "title": "Act_of_Parliament", "value": 2.385539477550441}, {"color": "red", "id": 3, "label": "Adulterant", "shape": "dot", "title": "Adulterant", "value": 1.1849840729150825}, {"color": "red", "id": 7, "label": "Bombay_High_Court", "shape": "dot", "title": "Bombay_High_Court", "value": 1.679454269238511}, {"color": "red", "id": 20, "label": "Customs_Act", "shape": "dot", "title": "Customs_Act", "value": 1.1849840729150825}, {"color": "red", "id": 27, "label": "Foreign_Exchange_Management_Act", "shape": "dot", "title": "Foreign_Exchange_Management_Act", "value": 1.1849840729150825}, {"color": "red", "id": 33, "label": "Hydrocarbon", "shape": "dot", "title": "Hydrocarbon", "value": 1.1849840729150825}, {"color": "green", "id": 47, "label": "Maharashtra", "shape": "dot", "title": "Maharashtra", "value": 2.315288081646067}, {"color": "red", "id": 58, "label": "Psychotropic_Substances_Act_(United_States)", "shape": "dot", "title": "Psychotropic_Substances_Act_(United_States)", "value": 1.1849840729150825}, {"color": "red", "id": 83, "label": "Veto", "shape": "dot", "title": "Veto", "value": 1.1849840729150825}, {"color": "red", "id": 87, "label": "Wildlife_Protection_Act,_1972", "shape": "dot", "title": "Wildlife_Protection_Act,_1972", "value": 1.1849840729150825}, {"color": "red", "id": 2, "label": "Activism", "shape": "dot", "title": "Activism", "value": 1.1849840729150825}, {"color": "green", "id": 6, "label": "Beef", "shape": "star", "title": "Beef", "value": 0.24657441694266924}, {"color": "green", "id": 11, "label": "Cattle", "shape": "dot", "title": "Cattle", "value": 1.046483422438231}, {"color": "red", "id": 38, "label": "Judge", "shape": "dot", "title": "Judge", "value": 3.4040866083058847}, {"color": "red", "id": 44, "label": "Lawyer", "shape": "dot", "title": "Lawyer", "value": 1.1849840729150825}, {"color": "red", "id": 57, "label": "Privacy", "shape": "dot", "title": "Privacy", "value": 2.6730349421162685}, {"color": "red", "id": 68, "label": "Statute", "shape": "dot", "title": "Statute", "value": 1.1849840729150825}, {"color": "red", "id": 4, "label": "Agrawal", "shape": "dot", "title": "Agrawal", "value": 1.1849840729150825}, {"color": "red", "id": 31, "label": "High_Court_of_Justice", "shape": "dot", "title": "High_Court_of_Justice", "value": 1.1849840729150825}, {"color": "red", "id": 43, "label": "Law", "shape": "dot", "title": "Law", "value": 1.1849840729150825}, {"color": "red", "id": 45, "label": "List_of_The_Sarah_Jane_Adventures_minor_characters", "shape": "dot", "title": "List_of_The_Sarah_Jane_Adventures_minor_characters", "value": 1.1849840729150825}, {"color": "blue", "id": 5, "label": "Australia", "shape": "star", "title": "Australia", "value": 1.174894534342018}, {"color": "blue", "id": 42, "label": "Lakh", "shape": "star", "title": "Lakh", "value": 2.650117971360717}, {"color": "red", "id": 10, "label": "Calcutta_High_Court", "shape": "dot", "title": "Calcutta_High_Court", "value": 1.679454269238511}, {"color": "red", "id": 15, "label": "Christian_revival", "shape": "dot", "title": "Christian_revival", "value": 1.1849840729150825}, {"color": "red", "id": 16, "label": "Common_law", "shape": "dot", "title": "Common_law", "value": 1.679454269238511}, {"color": "red", "id": 17, "label": "Computer-aided_software_engineering", "shape": "dot", "title": "Computer-aided_software_engineering", "value": 1.1849840729150825}, {"color": "red", "id": 18, "label": "Cornerstone", "shape": "dot", "title": "Cornerstone", "value": 1.1849840729150825}, {"color": "red", "id": 24, "label": "Diet_(nutrition)", "shape": "dot", "title": "Diet_(nutrition)", "value": 1.679454269238511}, {"color": "red", "id": 30, "label": "Hebrew_calendar", "shape": "dot", "title": "Hebrew_calendar", "value": 1.1849840729150825}, {"color": "blue", "id": 32, "label": "Hindu", "shape": "star", "title": "Hindu", "value": 2.0437864021492618}, {"color": "red", "id": 35, "label": "Indira_Jaising", "shape": "dot", "title": "Indira_Jaising", "value": 1.1849840729150825}, {"color": "red", "id": 36, "label": "Indra", "shape": "dot", "title": "Indra", "value": 1.1849840729150825}, {"color": "blue", "id": 37, "label": "Islam", "shape": "star", "title": "Islam", "value": 1.174894534342018}, {"color": "blue", "id": 46, "label": "Lynching", "shape": "star", "title": "Lynching", "value": 1.174894534342018}, {"color": "green", "id": 48, "label": "Meat", "shape": "star", "title": "Meat", "value": 0.5778242633341246}, {"color": "blue", "id": 50, "label": "Muhammad", "shape": "star", "title": "Muhammad", "value": 1.174894534342018}, {"color": "red", "id": 55, "label": "Police", "shape": "dot", "title": "Police", "value": 1.679454269238511}, {"color": "red", "id": 62, "label": "Scheduled_Castes_and_Scheduled_Tribes", "shape": "dot", "title": "Scheduled_Castes_and_Scheduled_Tribes", "value": 1.679454269238511}, {"color": "red", "id": 63, "label": "Senior_Counsel", "shape": "dot", "title": "Senior_Counsel", "value": 1.679454269238511}, {"color": "red", "id": 65, "label": "Sikri", "shape": "dot", "title": "Sikri", "value": 1.1849840729150825}, {"color": "blue", "id": 66, "label": "Slaughterhouse", "shape": "star", "title": "Slaughterhouse", "value": 2.3651234027823036}, {"color": "red", "id": 67, "label": "Society", "shape": "dot", "title": "Society", "value": 1.679454269238511}, {"color": "red", "id": 69, "label": "Stratum", "shape": "dot", "title": "Stratum", "value": 1.1849840729150825}, {"color": "red", "id": 74, "label": "Supreme_Court_of_India", "shape": "dot", "title": "Supreme_Court_of_India", "value": 1.679454269238511}, {"color": "red", "id": 77, "label": "Times_Higher_Education", "shape": "dot", "title": "Times_Higher_Education", "value": 1.1849840729150825}, {"color": "blue", "id": 78, "label": "Tonne", "shape": "star", "title": "Tonne", "value": 1.6651305016977207}, {"color": "red", "id": 80, "label": "Ummah", "shape": "dot", "title": "Ummah", "value": 1.1849840729150825}, {"color": "blue", "id": 85, "label": "Water_buffalo", "shape": "star", "title": "Water_buffalo", "value": 1.174894534342018}, {"color": "red", "id": 8, "label": "Bovinae", "shape": "dot", "title": "Bovinae", "value": 1.1849840729150825}, {"color": "red", "id": 13, "label": "Chief_Justice_of_India", "shape": "dot", "title": "Chief_Justice_of_India", "value": 1.1849840729150825}, {"color": "red", "id": 70, "label": "Subcutaneous_tissue", "shape": "dot", "title": "Subcutaneous_tissue", "value": 1.1849840729150825}, {"color": "blue", "id": 9, "label": "Brazil", "shape": "star", "title": "Brazil", "value": 1.174894534342018}, {"color": "red", "id": 56, "label": "Police_officer", "shape": "dot", "title": "Police_officer", "value": 1.1849840729150825}, {"color": "blue", "id": 12, "label": "Chandpur_District", "shape": "star", "title": "Chandpur_District", "value": 1.174894534342018}, {"color": "blue", "id": 39, "label": "Kamal_Haasan", "shape": "star", "title": "Kamal_Haasan", "value": 1.174894534342018}, {"color": "blue", "id": 81, "label": "Unnao_district", "shape": "star", "title": "Unnao_district", "value": 1.6651305016977207}, {"color": "blue", "id": 82, "label": "Uttar_Pradesh", "shape": "star", "title": "Uttar_Pradesh", "value": 2.650117971360717}, {"color": "blue", "id": 14, "label": "Chief_Minister", "shape": "star", "title": "Chief_Minister", "value": 1.174894534342018}, {"color": "blue", "id": 21, "label": "Delhi", "shape": "star", "title": "Delhi", "value": 1.174894534342018}, {"color": "blue", "id": 28, "label": "Frozen_food", "shape": "star", "title": "Frozen_food", "value": 1.174894534342018}, {"color": "blue", "id": 22, "label": "Demon", "shape": "star", "title": "Demon", "value": 1.174894534342018}, {"color": "blue", "id": 52, "label": "Muslim", "shape": "star", "title": "Muslim", "value": 1.6651305016977207}, {"color": "blue", "id": 59, "label": "Raking_fire", "shape": "star", "title": "Raking_fire", "value": 1.174894534342018}, {"color": "blue", "id": 23, "label": "Dharma", "shape": "star", "title": "Dharma", "value": 1.174894534342018}, {"color": "blue", "id": 41, "label": "Khattar", "shape": "star", "title": "Khattar", "value": 1.174894534342018}, {"color": "blue", "id": 60, "label": "Religion", "shape": "star", "title": "Religion", "value": 1.6651305016977207}, {"color": "blue", "id": 73, "label": "Sunny_Baudelaire", "shape": "star", "title": "Sunny_Baudelaire", "value": 1.174894534342018}, {"color": "blue", "id": 26, "label": "English_language", "shape": "star", "title": "English_language", "value": 1.174894534342018}, {"color": "blue", "id": 79, "label": "Translation", "shape": "star", "title": "Translation", "value": 1.174894534342018}, {"color": "red", "id": 29, "label": "Gujarat", "shape": "dot", "title": "Gujarat", "value": 1.1849840729150825}, {"color": "red", "id": 49, "label": "Mirzapur", "shape": "dot", "title": "Mirzapur", "value": 1.1849840729150825}, {"color": "red", "id": 40, "label": "Kharak_Singh", "shape": "dot", "title": "Kharak_Singh", "value": 1.1849840729150825}, {"color": "blue", "id": 61, "label": "Satara_district", "shape": "star", "title": "Satara_district", "value": 1.174894534342018}, {"color": "blue", "id": 75, "label": "Tehsil", "shape": "star", "title": "Tehsil", "value": 1.174894534342018}, {"color": "blue", "id": 51, "label": "Mumbai", "shape": "star", "title": "Mumbai", "value": 1.174894534342018}, {"color": "blue", "id": 64, "label": "Shammi_Kapoor", "shape": "star", "title": "Shammi_Kapoor", "value": 1.174894534342018}, {"color": "blue", "id": 72, "label": "Sunil_Gavaskar", "shape": "star", "title": "Sunil_Gavaskar", "value": 1.174894534342018}, {"color": "blue", "id": 53, "label": "Muzaffarnagar_district", "shape": "star", "title": "Muzaffarnagar_district", "value": 1.174894534342018}, {"color": "blue", "id": 54, "label": "Nur_(name)", "shape": "star", "title": "Nur_(name)", "value": 1.6651305016977207}, {"color": "blue", "id": 71, "label": "Sunil_(actor)", "shape": "star", "title": "Sunil_(actor)", "value": 1.174894534342018}]);
+        edges = new vis.DataSet([{"from": 0, "to": 34}, {"from": 0, "to": 76}, {"from": 0, "to": 84}, {"from": 0, "to": 88}, {"from": 1, "to": 3}, {"from": 1, "to": 7}, {"from": 1, "to": 20}, {"from": 1, "to": 27}, {"from": 1, "to": 33}, {"from": 1, "to": 47}, {"from": 1, "to": 58}, {"from": 1, "to": 83}, {"from": 1, "to": 87}, {"from": 2, "to": 6}, {"from": 2, "to": 7}, {"from": 2, "to": 11}, {"from": 2, "to": 38}, {"from": 2, "to": 44}, {"from": 2, "to": 47}, {"from": 2, "to": 57}, {"from": 2, "to": 68}, {"from": 3, "to": 20}, {"from": 3, "to": 27}, {"from": 3, "to": 33}, {"from": 3, "to": 47}, {"from": 3, "to": 58}, {"from": 3, "to": 87}, {"from": 4, "to": 31}, {"from": 4, "to": 43}, {"from": 4, "to": 45}, {"from": 5, "to": 42}, {"from": 6, "to": 7}, {"from": 6, "to": 10}, {"from": 6, "to": 11}, {"from": 6, "to": 15}, {"from": 6, "to": 16}, {"from": 6, "to": 17}, {"from": 6, "to": 18}, {"from": 6, "to": 24}, {"from": 6, "to": 30}, {"from": 6, "to": 32}, {"from": 6, "to": 34}, {"from": 6, "to": 35}, {"from": 6, "to": 36}, {"from": 6, "to": 37}, {"from": 6, "to": 38}, {"from": 6, "to": 42}, {"from": 6, "to": 44}, {"from": 6, "to": 46}, {"from": 6, "to": 47}, {"from": 6, "to": 48}, {"from": 6, "to": 50}, {"from": 6, "to": 55}, {"from": 6, "to": 57}, {"from": 6, "to": 62}, {"from": 6, "to": 63}, {"from": 6, "to": 65}, {"from": 6, "to": 66}, {"from": 6, "to": 67}, {"from": 6, "to": 68}, {"from": 6, "to": 69}, {"from": 6, "to": 74}, {"from": 6, "to": 77}, {"from": 6, "to": 78}, {"from": 6, "to": 80}, {"from": 6, "to": 85}, {"from": 7, "to": 11}, {"from": 7, "to": 38}, {"from": 7, "to": 44}, {"from": 7, "to": 47}, {"from": 7, "to": 57}, {"from": 7, "to": 68}, {"from": 7, "to": 83}, {"from": 8, "to": 13}, {"from": 8, "to": 38}, {"from": 8, "to": 70}, {"from": 9, "to": 34}, {"from": 9, "to": 42}, {"from": 9, "to": 78}, {"from": 10, "to": 16}, {"from": 10, "to": 18}, {"from": 11, "to": 38}, {"from": 11, "to": 44}, {"from": 11, "to": 47}, {"from": 11, "to": 48}, {"from": 11, "to": 56}, {"from": 11, "to": 57}, {"from": 11, "to": 68}, {"from": 11, "to": 85}, {"from": 12, "to": 39}, {"from": 12, "to": 81}, {"from": 12, "to": 82}, {"from": 12, "to": 84}, {"from": 12, "to": 88}, {"from": 13, "to": 38}, {"from": 13, "to": 70}, {"from": 14, "to": 82}, {"from": 15, "to": 16}, {"from": 15, "to": 17}, {"from": 15, "to": 38}, {"from": 15, "to": 47}, {"from": 15, "to": 65}, {"from": 15, "to": 74}, {"from": 15, "to": 77}, {"from": 16, "to": 17}, {"from": 16, "to": 18}, {"from": 16, "to": 38}, {"from": 16, "to": 47}, {"from": 16, "to": 65}, {"from": 16, "to": 74}, {"from": 16, "to": 77}, {"from": 17, "to": 38}, {"from": 17, "to": 47}, {"from": 17, "to": 65}, {"from": 17, "to": 74}, {"from": 17, "to": 77}, {"from": 20, "to": 27}, {"from": 20, "to": 33}, {"from": 20, "to": 47}, {"from": 20, "to": 58}, {"from": 20, "to": 87}, {"from": 21, "to": 28}, {"from": 22, "to": 52}, {"from": 22, "to": 59}, {"from": 23, "to": 41}, {"from": 23, "to": 60}, {"from": 23, "to": 73}, {"from": 24, "to": 62}, {"from": 24, "to": 67}, {"from": 24, "to": 69}, {"from": 24, "to": 80}, {"from": 26, "to": 66}, {"from": 26, "to": 79}, {"from": 26, "to": 82}, {"from": 27, "to": 33}, {"from": 27, "to": 47}, {"from": 27, "to": 58}, {"from": 27, "to": 87}, {"from": 29, "to": 49}, {"from": 30, "to": 36}, {"from": 30, "to": 55}, {"from": 30, "to": 57}, {"from": 30, "to": 63}, {"from": 31, "to": 43}, {"from": 31, "to": 45}, {"from": 32, "to": 34}, {"from": 32, "to": 66}, {"from": 33, "to": 47}, {"from": 33, "to": 58}, {"from": 33, "to": 87}, {"from": 34, "to": 37}, {"from": 34, "to": 42}, {"from": 34, "to": 66}, {"from": 34, "to": 76}, {"from": 34, "to": 78}, {"from": 34, "to": 84}, {"from": 34, "to": 88}, {"from": 35, "to": 38}, {"from": 35, "to": 47}, {"from": 35, "to": 74}, {"from": 36, "to": 55}, {"from": 36, "to": 57}, {"from": 36, "to": 63}, {"from": 37, "to": 66}, {"from": 38, "to": 40}, {"from": 38, "to": 44}, {"from": 38, "to": 47}, {"from": 38, "to": 57}, {"from": 38, "to": 63}, {"from": 38, "to": 65}, {"from": 38, "to": 68}, {"from": 38, "to": 70}, {"from": 38, "to": 74}, {"from": 38, "to": 77}, {"from": 39, "to": 81}, {"from": 39, "to": 82}, {"from": 39, "to": 84}, {"from": 39, "to": 88}, {"from": 40, "to": 57}, {"from": 40, "to": 63}, {"from": 41, "to": 60}, {"from": 41, "to": 73}, {"from": 42, "to": 78}, {"from": 43, "to": 45}, {"from": 44, "to": 47}, {"from": 44, "to": 57}, {"from": 44, "to": 68}, {"from": 46, "to": 50}, {"from": 47, "to": 48}, {"from": 47, "to": 56}, {"from": 47, "to": 57}, {"from": 47, "to": 58}, {"from": 47, "to": 61}, {"from": 47, "to": 65}, {"from": 47, "to": 68}, {"from": 47, "to": 74}, {"from": 47, "to": 75}, {"from": 47, "to": 77}, {"from": 47, "to": 83}, {"from": 47, "to": 87}, {"from": 47, "to": 88}, {"from": 48, "to": 52}, {"from": 48, "to": 56}, {"from": 48, "to": 85}, {"from": 51, "to": 64}, {"from": 51, "to": 72}, {"from": 52, "to": 59}, {"from": 53, "to": 54}, {"from": 53, "to": 82}, {"from": 53, "to": 84}, {"from": 53, "to": 88}, {"from": 54, "to": 71}, {"from": 54, "to": 82}, {"from": 54, "to": 84}, {"from": 54, "to": 88}, {"from": 55, "to": 57}, {"from": 55, "to": 63}, {"from": 57, "to": 63}, {"from": 57, "to": 68}, {"from": 58, "to": 87}, {"from": 60, "to": 73}, {"from": 61, "to": 75}, {"from": 61, "to": 88}, {"from": 62, "to": 67}, {"from": 62, "to": 69}, {"from": 62, "to": 80}, {"from": 64, "to": 72}, {"from": 65, "to": 74}, {"from": 65, "to": 77}, {"from": 66, "to": 79}, {"from": 66, "to": 82}, {"from": 67, "to": 69}, {"from": 67, "to": 80}, {"from": 69, "to": 80}, {"from": 74, "to": 77}, {"from": 75, "to": 88}, {"from": 76, "to": 84}, {"from": 76, "to": 88}, {"from": 79, "to": 82}, {"from": 81, "to": 82}, {"from": 81, "to": 84}, {"from": 81, "to": 88}, {"from": 82, "to": 84}, {"from": 82, "to": 88}, {"from": 84, "to": 88}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": true,
+        "filter": [
+            "physics"
+        ]
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        // default to using dot shape for nodes
+        options.nodes = {
+            shape: "dot"
+        }
+        
+        // if this network requires displaying the configure window,
+        // put it in its div
+        options.configure["container"] = document.getElementById("config");
+        
+
+        network = new vis.Network(container, data, options);
+
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
