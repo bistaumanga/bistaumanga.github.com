@@ -1,0 +1,156 @@
+/* Dark mode override for Blue Penguin theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    header {
+        background-color: #2d2d2d;
+        border-bottom: 1px solid #404040;
+    }
+
+    header h1 a,
+    header nav a {
+        color: #e0e0e0;
+    }
+
+    header nav a:hover {
+        color: #4a9eff;
+    }
+
+    article {
+        background-color: #242424;
+        border: 1px solid #404040;
+    }
+
+    article header h1 a,
+    article header h2 a {
+        color: #4a9eff;
+    }
+
+    article a {
+        color: #4a9eff;
+    }
+
+    article a:hover {
+        color: #6bb3ff;
+    }
+
+    pre {
+        background-color: #1e1e1e;
+        border: 1px solid #404040;
+    }
+
+    code {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+    }
+
+    blockquote {
+        background-color: #2d2d2d;
+        border-left: 3px solid #4a9eff;
+    }
+
+    footer {
+        background-color: #2d2d2d;
+        border-top: 1px solid #404040;
+        color: #a0a0a0;
+    }
+
+    footer a {
+        color: #4a9eff;
+    }
+
+    /* Pagination */
+    .pagination a {
+        color: #4a9eff;
+    }
+
+    /* Archive/Category lists */
+    .hfeed li {
+        border-bottom: 1px solid #404040;
+    }
+
+    /* Tags */
+    .tag-cloud a {
+        color: #4a9eff;
+    }
+}
+
+/* Force dark mode - uncomment if you want dark mode always on */
+/*
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: #2d2d2d;
+    border-bottom: 1px solid #404040;
+}
+
+header h1 a,
+header nav a {
+    color: #e0e0e0;
+}
+
+header nav a:hover {
+    color: #4a9eff;
+}
+
+article {
+    background-color: #242424;
+    border: 1px solid #404040;
+}
+
+article header h1 a,
+article header h2 a {
+    color: #4a9eff;
+}
+
+article a {
+    color: #4a9eff;
+}
+
+article a:hover {
+    color: #6bb3ff;
+}
+
+pre {
+    background-color: #1e1e1e;
+    border: 1px solid #404040;
+}
+
+code {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+blockquote {
+    background-color: #2d2d2d;
+    border-left: 3px solid #4a9eff;
+}
+
+footer {
+    background-color: #2d2d2d;
+    border-top: 1px solid #404040;
+    color: #a0a0a0;
+}
+
+footer a {
+    color: #4a9eff;
+}
+
+.pagination a {
+    color: #4a9eff;
+}
+
+.hfeed li {
+    border-bottom: 1px solid #404040;
+}
+
+.tag-cloud a {
+    color: #4a9eff;
+}
+*/

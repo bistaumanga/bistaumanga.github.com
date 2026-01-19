@@ -1,4 +1,26 @@
-_site/
-vendor
-.jekyll-cache
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Pelican
+output/
+*.pid
+.cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Build artifacts
+*.log
