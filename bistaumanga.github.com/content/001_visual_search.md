@@ -5,7 +5,7 @@ Status: published
 save_as: 001_visual_search.html
 tags: RAG, search, embeddings
 category: demo
-url:
+url: 001_visual_search.html
 
 # Building a Multimodal Visual Search System with DINO, SigLIP, and USearch
 

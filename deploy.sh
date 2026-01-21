@@ -13,7 +13,6 @@ cd ..
 echo "Publishing to GitHub Pages..."
 
 # Install ghp-import if not already installed
-pip install ghp-import
 
 # Push the output directory to gh-pages branch
 # The -n adds a .nojekyll file to tell GitHub Pages not to process with Jekyll

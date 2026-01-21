@@ -71,10 +71,10 @@ LOCALE = ['en_AU']
 # DISPLAY_MENU = True
 
 # Archives and categories
-ARCHIVES_URL = 'archives'
-ARCHIVES_SAVE_AS = 'archives/index.html'
-CATEGORIES_URL = 'categories'
-CATEGORIES_SAVE_AS = 'categories/index.html'
+# ARCHIVES_URL = 'archives'
+# ARCHIVES_SAVE_AS = 'archives/index.html'
+# CATEGORIES_URL = 'categories'
+# CATEGORIES_SAVE_AS = 'categories/index.html'
 # THEME = 'themes/custom'  # We'll create this
 
 # Plugins (install with: pip install pelican-plugins)
