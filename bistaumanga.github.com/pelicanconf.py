@@ -5,7 +5,7 @@ SITEDESCRIPTION = 'Personal website and blog of Umanga Bista - AI/ML researcher 
 
 PATH = "content"
 
-TIMEZONE = 'Asia/Kathmandu'
+TIMEZONE = 'Australia/Melbourne'
 
 DEFAULT_LANG = 'en'
 
@@ -20,7 +20,7 @@ AUTHOR_FEED_RSS = None
 SOCIAL = (
     ('Twitter', 'https://www.twitter.com/bistaumanga'),
     ('GitHub', 'https://github.com/bistaumanga'),
-    ('LinkedIn', 'https://np.linkedin.com/in/bistaumanga'),
+    ('LinkedIn', 'https://au.linkedin.com/in/bistaumanga'),
     ('Email', 'mailto:mail@bistaumanga.com.np'),
 )
 
@@ -57,6 +57,9 @@ DISPLAY_CATEGORIES_ON_MENU = False
 MENUITEMS = [
     ('Blog', '/blog/'),
 ]
+
+LOCALE = ['en_AU']
+
 
 # Theme and appearance
 # THEME = '../themes/blue-penguin'  # Commented out - using default theme

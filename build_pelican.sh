@@ -10,7 +10,7 @@ cd bistaumanga.github.com
 source ../.venv/bin/activate
 
 # Build the site for production
-pelican content -s publishconf.py
+pelican content -s publishconf.py $@
 
 echo "Build complete! Output is in ../output/"
 echo "To preview locally, run: pelican --listen"

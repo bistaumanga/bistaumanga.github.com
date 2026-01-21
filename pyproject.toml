@@ -1,0 +1,17 @@
+[project]
+name = "ghpage"
+version = "0.1.0"
+description = "github-pages-website"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+tool.uv.package = true
+
+dependencies = [
+    "pelican[markdown]>=4.8.0",
+    "ghp-import>=2.1.0"
+]
+
+
+
+
+

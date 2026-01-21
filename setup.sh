@@ -32,8 +32,8 @@ source .venv/bin/activate
 # Install requirements
 echo ""
 echo "Installing Python packages..."
-pip install --upgrade pip
-pip install -r requirements.txt
+pip install --upgrade pip uv
+uv sync
 
 echo ""
 echo "========================================="
