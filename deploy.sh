@@ -6,4 +6,4 @@ REPO_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 "$REPO_DIR/.venv/bin/python" "$REPO_DIR/scripts/check_site.py" "$REPO_DIR/output"
 cd "$REPO_DIR"
 "$REPO_DIR/.venv/bin/ghp-import" -n -p -b gh-pages output
-echo "Published to gh-pages: https://bistaumanga.com.np"
+echo "Published to gh-pages: https://www.bistaumanga.com.np"

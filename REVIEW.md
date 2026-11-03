@@ -39,7 +39,7 @@ Pelican reads Markdown from `bistaumanga.github.com/content/` and renders the lo
 - Browser review at desktop size and a 390-pixel mobile viewport covered the homepage, writing index, article navigation, code layout, and both loaded demo images. The mobile article's document width matches its viewport.
 - Shell scripts pass syntax checks. Source changes pass `git diff --check`.
 
-External service availability, authenticated LinkedIn details, and execution of the ML examples are outside these checks. No live deployment was performed. The explicit `./deploy.sh` command rebuilds and validates before publishing.
+External service availability, authenticated LinkedIn details, and execution of the ML examples are outside these checks. The reviewed changes were subsequently published to GitHub Pages. The configured `www.bistaumanga.com.np` host serves the new site over HTTPS; the bare domain failed TLS hostname verification during the deployment checks. Canonical URLs and the sitemap use the working `www` host. The explicit `./deploy.sh` command rebuilds and validates before publishing.
 
 ## Future content maintenance
 

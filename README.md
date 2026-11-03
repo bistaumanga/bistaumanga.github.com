@@ -1,6 +1,6 @@
 # Umanga Bista — personal website
 
-A Pelican static site hosted on GitHub Pages at [bistaumanga.com.np](https://bistaumanga.com.np).
+A Pelican static site hosted on GitHub Pages at [bistaumanga.com.np](https://www.bistaumanga.com.np).
 The source is in `bistaumanga.github.com/`; generated files go in the repository's ignored `output/` directory.
 
 ## Setup and preview

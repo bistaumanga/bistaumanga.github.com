@@ -49,7 +49,7 @@ def check(root):
         pages[file] = page
         if page.h1s != 1 or not page.description or not page.lang or not page.stylesheet:
             errors.append(f'{file.relative_to(root)}: missing metadata, stylesheet, language, or single h1')
-        if len(page.canonicals) != 1 or not page.canonicals[0].startswith('https://bistaumanga.com.np/'):
+        if len(page.canonicals) != 1 or not page.canonicals[0].startswith('https://www.bistaumanga.com.np/'):
             errors.append(f'{file.relative_to(root)}: invalid canonical URL')
         if page.images_without_alt:
             errors.append(f'{file.relative_to(root)}: image missing alt text')
