@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bistaumanga.com.np/sitemap.xml
+Sitemap: https://www.bistaumanga.com.np/sitemap.xml
