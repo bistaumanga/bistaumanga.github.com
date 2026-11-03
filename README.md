@@ -65,7 +65,7 @@ To publish the reviewed result explicitly:
 ./deploy.sh
 ```
 
-This rebuilds, runs the checker, and pushes generated files to `gh-pages`. Configure GitHub Pages to serve that branch from its root. `CNAME` preserves the custom domain. The script does not force-push. `make github` and the optional Invoke `gh-pages` task delegate to the same script; neither targets the source branch.
+Publication requires [Gitleaks](https://github.com/gitleaks/gitleaks) v8.30.1 or later on PATH. This rebuilds, runs the site checker, scans Git history, pending tracked changes, and generated output for secrets with fully redacted findings, and pushes generated files to `gh-pages` only if all checks pass. Missing Gitleaks or a detected secret stops publication. You can run the scan separately with `bash scripts/check_secrets.sh`; `GITLEAKS_BIN` can point to an installed scanner executable. Secret scanners reduce risk but cannot guarantee that every credential format is detected. Configure GitHub Pages to serve that branch from its root. `CNAME` preserves the custom domain. The script does not force-push. `make github` and the optional Invoke `gh-pages` task delegate to the same script; neither targets the source branch.
 
 See [REVIEW.md](REVIEW.md) for findings and verification notes.
 

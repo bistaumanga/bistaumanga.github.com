@@ -24,3 +24,22 @@ Thumbs.db
 
 # Build artifacts
 *.log
+
+# Local credentials and secret material (never commit these)
+.env
+.env.*
+!.env.example
+!.env.*.example
+.aws/
+.ssh/
+.netrc
+.npmrc
+.pypirc
+credentials.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
