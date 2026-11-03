@@ -4,11 +4,11 @@ PELICANOPTS=
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/output
+OUTPUTDIR=$(abspath $(BASEDIR)/../output)
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-GITHUB_PAGES_BRANCH=main
+GITHUB_PAGES_BRANCH=gh-pages
 GITHUB_PAGES_COMMIT_MESSAGE=Generate Pelican site
 
 
@@ -72,9 +72,8 @@ devserver-global:
 publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
-github: publish
-	ghp-import -m "$(GITHUB_PAGES_COMMIT_MESSAGE)" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)" --no-jekyll
-	git push origin $(GITHUB_PAGES_BRANCH)
+github:
+	../deploy.sh
 
 
 .PHONY: html help clean regenerate serve serve-global devserver devserver-global publish github

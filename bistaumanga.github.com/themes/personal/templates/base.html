@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  {% set document_title %}{% block title %}{{ SITENAME }}{% endblock %}{% endset %}
+  {% set description %}{% block description %}{{ SITEDESCRIPTION }}{% endblock %}{% endset %}
+  {% set canonical_path %}{% block canonical_path %}{% endblock %}{% endset %}
+  <title>{{ document_title|striptags|e }}</title>
+  <meta name="description" content="{{ description|striptags|trim|e }}">
+  <link rel="canonical" href="{{ CANONICAL_SITEURL }}/{{ canonical_path|trim }}">
+  <meta property="og:title" content="{{ document_title|striptags|e }}">
+  <meta property="og:description" content="{{ description|striptags|trim|e }}">
+  <meta property="og:url" content="{{ CANONICAL_SITEURL }}/{{ canonical_path|trim }}">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/site.css">
+  {% if FEED_ALL_ATOM %}<link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} — Writing" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">{% endif %}
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="{{ SITEURL }}/">Umanga Bista<span class="wordmark-dot" aria-hidden="true">.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="{{ SITEURL }}/" {% if page is defined and page.slug == 'index' %}aria-current="page"{% endif %}>About</a>
+      <a href="{{ SITEURL }}/blog/" {% if articles_page is defined and tag is not defined and category is not defined and author is not defined %}aria-current="page"{% endif %}>Writing</a>
+      <a href="https://github.com/bistaumanga">GitHub ↗</a>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <p>Umanga Bista <span aria-hidden="true">/</span> Melbourne, Australia</p>
+    <nav aria-label="Footer"><a href="mailto:bistaumanga@outlook.com">Email</a><a href="https://scholar.google.com/citations?user=zfNw5-8AAAAJ&amp;hl=en">Scholar</a>{% if FEED_ALL_ATOM %}<a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">Atom feed</a>{% endif %}</nav>
+  </footer>
+</body>
+</html>

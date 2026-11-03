@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{ article.title }} · {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.summary }}{% endblock %}
+{% block canonical_path %}{{ article.url }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block content %}
+<article class="prose blog-article">
+  <header class="article-header"><a href="{{ SITEURL }}/blog/">← All writing</a><p class="eyebrow"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time> · {{ article.author }}</p><h1>{{ article.title }}</h1>
+    {% if article.tags %}<nav class="tag-list" aria-label="Article tags">{% for t in article.tags %}<a href="{{ SITEURL }}/{{ t.url }}">{{ t }}</a>{% endfor %}</nav>{% endif %}
+  </header>
+  {{ article.content }}
+</article>
+{% endblock %}

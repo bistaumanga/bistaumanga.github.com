@@ -1,59 +1,54 @@
-Title: Home
-Date: 2024-01-01 10:00
+Title: Umanga Bista
 Slug: index
-Status: published
-save_as: index.html
-url:
+Save_as: index.html
+URL:
+Template: home
+Summary: Machine learning researcher and applied scientist in Melbourne, working on NLP, language models, retrieval, and practical AI systems.
 
-# Umanga Bista (उमङ्ग बिष्ट)
+<p class="eyebrow">Machine learning · Language · Applied AI</p>
 
-I'm **Umanga Bista**, based in Melbourne, Australia, originally from [Lamjung, Nepal](https://en.wikipedia.org/wiki/Lamjung_District).
+# Umanga Bista <span class="native-name" lang="ne">उमङ्ग बिष्ट</span>
 
-I am interested in applying Machine Learning and Natural Language Processing, and also in analyzing web and social media data.
+<p class="intro">I research and build machine learning systems, from understanding language to making AI useful in practice.</p>
 
-## Senior Applied Scientist of Artificial Intelligence at Oracle [May 2021 - now]
+I'm an applied scientist based in **Melbourne, Australia**, originally from **Lamjung, Nepal**. My work brings together natural language processing, representation learning, retrieval, and the evaluation of language models.
 
-I joined Oracle in Melbourne, Australia as Applied AI Scientist. Currently i work in applying AI to solve problems in clinical/medical domains using Gen AI, RAG, etc. I previously worked in Natural Language Processing for building Conversational AI, and building Oracle Agents platform.
+<nav class="profile-links" aria-label="Find me online"><a href="mailto:bistaumanga@outlook.com">Email ↗</a><a href="https://github.com/bistaumanga">GitHub ↗</a><a href="https://au.linkedin.com/in/bistaumanga">LinkedIn ↗</a><a href="https://scholar.google.com/citations?user=zfNw5-8AAAAJ&amp;hl=en">Google Scholar ↗</a></nav>
 
-## Australian National University [Mar 2017-Apr 2021]
+## About my work
 
-I did PhD at the **[Computational Media Lab](http://cm.cecs.anu.edu.au)**, **[Australian National University](http://anu.edu.au)**. My thesis title is **"Comparative Summarization of Document Collections"**.
+I'm a **Senior Applied Scientist at Oracle Health & AI**, working on language models and AI systems for enterprise and clinical applications. My experience spans research, experimentation, and production engineering, including earlier work at ANU and LogPoint.
 
-My PhD supervisors were [Prof. Lexing Xie](http://users.cecs.anu.edu.au/~xlx/), [Dr. Aditya Menon](https://akmenon.github.io/), [Dr. Alexander Mathews](http://users.cecs.anu.edu.au/~u4534172/) and [Dr. Lizhen Qu](https://researchers.anu.edu.au/researchers/qu-l).
+I’m particularly interested in model intelligence, efficient inference, autonomous experimentation, and building capable models under real-world system constraints.
 
-I was also a **Casual Research Engineer** in Computational Media Lab, developing and maintaining 24x7 scalable data collection and preprocessing pipelines.
+I completed my **PhD in Machine Learning at the Australian National University (2021)**, researching *Comparative Summarization of Document Collections*, advised by Lexing Xie, Aditya Menon, and Alexander Mathews. I also hold a bachelor's degree in Computer Engineering from the Institute of Engineering, Pulchowk, Nepal.
 
-**Tutoring:** Programming for Data Scientists [2020], Intro to Machine Learning [2020], Document Analysis [2017, 2018]
+## Selected research
 
-## Publications
+My doctoral research explored how to select information that represents a collection of documents while highlighting what is new or different.
 
-- **Umanga Bista**, Alexander Mathews, Aditya Krishna Menon, Lexing Xie. (2020).
-  **SupMMD: A Sentence Importance Model for Extractive Summarization using Maximum Mean Discrepancy**. 
-  *In Findings of ACL: EMNLP 2020*
-  [[arxiv link]](https://arxiv.org/abs/2010.02568)
-  [[Code]](https://github.com/computationalmedia/supmmd)
+- **[SupMMD: A Sentence Importance Model for Extractive Summarization using Maximum Mean Discrepancy](https://aclanthology.org/2020.findings-emnlp.367/)**<br>
+  **Umanga Bista**, Alexander Mathews, Aditya Menon, Lexing Xie. *Findings of EMNLP, 2020.*<br>
+  [Paper](https://aclanthology.org/2020.findings-emnlp.367/) · [Code](https://github.com/computationalmedia/supmmd)
 
-- **Umanga Bista**, Alexander Mathews, Minjeong Shin, Aditya Krishna Menon, Lexing Xie. (2019).
-  **Comparative Document Collection via Classification**. 
-  *In Associations of Advancements in Artificial Intelligence (AAAI)*
-  [[arxiv link]](https://arxiv.org/abs/1812.02171)
-  [[Code + Dataset]](https://github.com/computationalmedia/compsumm)
-  [[Supplementary Info]](https://github.com/computationalmedia/compsumm/blob/master/appendix.pdf)
+- **[Comparative Document Summarisation via Classification](https://ojs.aaai.org/index.php/AAAI/article/view/3764)**<br>
+  **Umanga Bista**, Alexander Mathews, Minjeong Shin, Aditya Krishna Menon, Lexing Xie. *AAAI, 2019.*<br>
+  [Preprint](https://arxiv.org/abs/1812.02171) · [Code & dataset](https://github.com/computationalmedia/compsumm)
 
-- Aditya Mogadala, **Umanga Bista**, Lexing Xie, Achim Rettinger. (2018).
-  **Knowledge Guided Attention and Inference for Describing Images Containing Unseen Objects.**
-  *In European Semantic Web Conference*
-  [[Link]](https://link.springer.com/chapter/10.1007/978-3-319-93417-4_27)
+- **Visualizing Graph Differences from Social Media Streams**<br>
+  Minjeong Shin, Dongwoo Kim, Jae Hee Lee, **Umanga Bista**, Lexing Xie. *WSDM, 2019, demo.*<br>
+  [Publication](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zfNw5-8AAAAJ&citation_for_view=zfNw5-8AAAAJ:mB3voiENLucC)
 
-- M Shin, D Kim, JH Lee, **U Bista**, L Xie. (2019).
-  **Visualizing Graph Differences from Social Media Streams**
-  *International Conference of Web and Social Media (WSDM) Demo*
-  [[PDF]](http://cm.cecs.anu.edu.au/documents/shin_wsdm2019_demo.pdf)
+- **[Knowledge Guided Attention and Inference for Describing Images Containing Unseen Objects](https://link.springer.com/chapter/10.1007/978-3-319-93417-4_27)**<br>
+  Aditya Mogadala, **Umanga Bista**, Lexing Xie, Achim Rettinger. *ESWC, 2018.*
 
-[Complete list on Google scholar](https://scholar.google.com/citations?hl=en&user=zfNw5-8AAAAJ&view_op=list_works&sortby=pubdate)
+[All publications on Google Scholar ↗](https://scholar.google.com/citations?user=zfNw5-8AAAAJ&hl=en)
 
-## Past
+## Selected patents & applications
 
-- I was working as Research Engineer at [LogPoint](http://www.logpoint.com/en/) [Oct 2013 - Feb 2017].
-- I was a computer engineering student at [Institute of Engineering, Central Campus Pulchowk, Lalitpur, Nepal](http://ioe.edu.np) [Nov 2009 - Sep 2013].
-- Previously, I have worked on a project for financial data representation and mining using [XBRL](http://en.wikipedia.org/wiki/XBRL) with [Office of Company Registrar, Nepal](http://www.ocr.gov.np) [Oct 2012 - Sep 2013].
+- **[Contextual Query Rewriting](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zfNw5-8AAAAJ&citation_for_view=zfNw5-8AAAAJ:M3NEmzRMIkIC)** — co-inventor; US patent application, published 2025.
+- **[Training data generation to facilitate fine-tuning embedding models](https://patents.google.com/patent/US12423530B2/en)** — co-inventor; US Patent 12,423,530, granted 2025.
+
+## Teaching & service
+
+At ANU, I tutored Document Analysis, Introduction to Machine Learning, and Programming for Data Scientists (2017–2020). I have reviewed for The Web Conference and the Asian Conference on Machine Learning.

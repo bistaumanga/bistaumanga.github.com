@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% set SITEURL = CANONICAL_SITEURL %}
+{% block title %}Page not found · {{ SITENAME }}{% endblock %}
+{% block canonical_path %}404.html{% endblock %}
+{% block extra_head %}<meta name="robots" content="noindex">{% endblock %}
+{% block content %}<p class="eyebrow">404</p><h1>Page not found</h1><p>The page may have moved. <a href="{{ CANONICAL_SITEURL }}/">Visit my homepage</a> or <a href="{{ CANONICAL_SITEURL }}/blog/">browse my writing</a>.</p>{% endblock %}

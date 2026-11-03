@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{{ listing_title|default('Writing') }} · {{ SITENAME }}{% endblock %}
+{% block canonical_path %}{{ articles_page.url }}{% endblock %}
+{% block content %}
+<section aria-labelledby="listing-title">
+  <p class="eyebrow">Notes from research & practice</p><h1 id="listing-title">{{ listing_title|default('Writing') }}</h1>
+  {% for item in articles_page.object_list %}
+  <article class="post-preview"><p class="eyebrow"><time datetime="{{ item.date.isoformat() }}">{{ item.locale_date }}</time></p><h2><a href="{{ SITEURL }}/{{ item.url }}">{{ item.title }}</a></h2><div>{{ item.summary }}</div><a href="{{ SITEURL }}/{{ item.url }}">Read article →</a></article>
+  {% endfor %}
+  {% if articles_page.has_other_pages() %}<nav class="pagination" aria-label="Writing pages">{% if articles_page.has_previous() %}<a href="{{ SITEURL }}/{{ articles_previous_page.url }}">← Newer</a>{% endif %}<span>Page {{ articles_page.number }} of {{ articles_paginator.num_pages }}</span>{% if articles_page.has_next() %}<a href="{{ SITEURL }}/{{ articles_next_page.url }}">Older →</a>{% endif %}</nav>{% endif %}
+</section>
+{% endblock %}

@@ -1,103 +1,72 @@
-# Personal Website and Blog
+# Umanga Bista — personal website
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fbistaumanga.com.np)](https://bistaumanga.com.np)
+A Pelican static site hosted on GitHub Pages at [bistaumanga.com.np](https://bistaumanga.com.np).
+The source is in `bistaumanga.github.com/`; generated files go in the repository's ignored `output/` directory.
 
-My personal website and blog hosted on [GitHub Pages](https://pages.github.com) at [bistaumanga.com.np](https://bistaumanga.com.np).
+## Setup and preview
 
-Built with [Pelican](https://getpelican.com) (Python static site generator) and [Bootstrap](https://getbootstrap.com).
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run:
 
----
-
-## 🚀 Quick Start
-
-### First-Time Setup
 ```bash
 ./setup.sh
-```
-
-### Preview Locally
-```bash
-cd bistaumanga.github.com
-source ../.venv/bin/activate
-pelican --listen
-```
-Visit: http://localhost:8000
-
-### Build Site
-```bash
 ./build_pelican.sh
+.venv/bin/python scripts/check_site.py
+.venv/bin/python -m http.server 8000 --bind 127.0.0.1 --directory output
 ```
 
-### Deploy to GitHub Pages
+Open <http://127.0.0.1:8000>. Stop the server with Ctrl-C. The build uses the locked Python dependencies, including Python 3.13.
+
+For automatic regeneration while editing, run this from the repository root instead of the static server:
+
 ```bash
-./deploy.sh
+.venv/bin/pelican -lr -s bistaumanga.github.com/pelicanconf.py -b 127.0.0.1
 ```
 
----
+The production build uses relative links for local preview and absolute production URLs for canonical metadata, the sitemap, and Atom entries.
 
-## 📁 Project Structure
+## Editing
 
-```
-bistaumanga.github.com/
-├── bistaumanga.github.com/     # Pelican source
-│   ├── content/                # Markdown content
-│   │   ├── pages/             # Static pages
-│   │   ├── *.md               # Blog posts
-│   │   ├── images/            # Images
-│   │   ├── files/             # Files (PDFs, etc.)
-│   │   └── extra/             # CSS, CNAME, etc.
-│   ├── pelicanconf.py         # Dev config
-│   └── publishconf.py         # Production config
-├── output/                     # Generated site
-├── build_pelican.sh            # Build script
-├── deploy.sh                   # Deploy script
-├── setup.sh                    # Setup script
-└── requirements.txt            # Python dependencies
-```
+- Homepage: `bistaumanga.github.com/content/pages/index.md`
+- Articles: `bistaumanga.github.com/content/*.md`
+- Downloads and article images: `bistaumanga.github.com/content/files/`
+- Templates: `bistaumanga.github.com/themes/personal/templates/`
+- Styles: `bistaumanga.github.com/themes/personal/static/css/site.css`
+- Site settings: `bistaumanga.github.com/pelicanconf.py`
+- Production settings: `bistaumanga.github.com/publishconf.py`
 
----
+The local theme uses system fonts, semantic HTML, responsive CSS, and automatic light/dark appearance. No frontend framework, external font service, or JavaScript is required.
 
-## 📝 Adding Content
-
-### New Blog Post
-
-Create `bistaumanga.github.com/content/my-post.md`:
+New article example:
 
 ```markdown
-Title: My Post Title
-Date: 2024-01-20 10:00
-Tags: python, data-science
-Slug: my-post-slug
+Title: My article
+Date: 2026-11-04 10:00
+Slug: my-article
+Tags: machine-learning
+Summary: A short description for listings and search previews.
 
-Your content here...
+Article text here. The template supplies the main heading.
 ```
 
-Then build and deploy:
+New articles use `/blog/my-article/`. The existing visual-search article retains `/001_visual_search.html` so published links keep working.
+
+## Checks and publication
+
 ```bash
 ./build_pelican.sh
+.venv/bin/python scripts/check_site.py
+```
+
+The checker validates generated local links and fragments, one main heading per page, essential metadata, stylesheet links, image alt text, sitemap targets, and required output files. It does not test external services or execute code examples in articles.
+
+To publish the reviewed result explicitly:
+
+```bash
 ./deploy.sh
 ```
 
----
+This rebuilds, runs the checker, and pushes generated files to `gh-pages`. Configure GitHub Pages to serve that branch from its root. `CNAME` preserves the custom domain. The script does not force-push. `make github` and the optional Invoke `gh-pages` task delegate to the same script; neither targets the source branch.
 
-## 📚 Documentation
+See [REVIEW.md](REVIEW.md) for findings and verification notes.
 
-- **[QUICK_REF.md](QUICK_REF.md)** - Quick command reference
-
----
-
-## 🛠️ Technology Stack
-
-- **[Pelican](https://getpelican.com)** - Static site generator (Python)
-- **[Bootstrap](https://getbootstrap.com)** - CSS framework
-- **[Font Awesome](https://fontawesome.com)** - Icons
-- **[GitHub Pages](https://pages.github.com)** - Hosting
-- **[MathJax](https://www.mathjax.org)** - Math rendering
-
----
-
-## 📜 License
-
-Content is copyrighted. Code is open source.
-
----
+Content is copyrighted by its author.

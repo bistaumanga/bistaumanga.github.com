@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% block title %}Categories · {{ SITENAME }}{% endblock %}
+{% block canonical_path %}{{ CATEGORIES_URL }}{% endblock %}
+{% block content %}<h1>Categories</h1><ul class="archive-list">{% for c, items in categories %}<li><a href="{{ SITEURL }}/{{ c.url }}">{{ c }}</a> ({{ items|count }})</li>{% endfor %}</ul>{% endblock %}

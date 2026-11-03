@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% block title %}Authors · {{ SITENAME }}{% endblock %}
+{% block canonical_path %}{{ AUTHORS_URL }}{% endblock %}
+{% block content %}<h1>Authors</h1><ul class="archive-list">{% for a, items in authors %}<li><a href="{{ SITEURL }}/{{ a.url }}">{{ a }}</a> ({{ items|count }})</li>{% endfor %}</ul>{% endblock %}

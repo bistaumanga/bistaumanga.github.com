@@ -1,2 +1,4 @@
-User-agent: * 
-Disallow: /archive/*
+User-agent: *
+Allow: /
+
+Sitemap: https://bistaumanga.com.np/sitemap.xml

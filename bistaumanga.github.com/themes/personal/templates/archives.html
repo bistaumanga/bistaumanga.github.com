@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% block title %}Archives · {{ SITENAME }}{% endblock %}
+{% block canonical_path %}{{ ARCHIVES_URL }}{% endblock %}
+{% block content %}<h1>Writing archive</h1><ul class="archive-list">{% for item in dates %}<li><time datetime="{{ item.date.isoformat() }}">{{ item.locale_date }}</time> <a href="{{ SITEURL }}/{{ item.url }}">{{ item.title }}</a></li>{% endfor %}</ul>{% endblock %}

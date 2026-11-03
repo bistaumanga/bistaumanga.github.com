@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block description %}{{ page.summary }}{% endblock %}
+{% block content %}
+<article class="profile prose">{{ page.content }}</article>
+<section class="latest-writing" aria-labelledby="writing-title">
+  <div class="section-heading"><h2 id="writing-title">Projects & writing</h2><a href="{{ SITEURL }}/blog/">All writing →</a></div>
+  {% for item in articles[:3] %}
+  <article class="post-preview">
+    <p class="eyebrow"><time datetime="{{ item.date.isoformat() }}">{{ item.locale_date }}</time></p>
+    <h3><a href="{{ SITEURL }}/{{ item.url }}">{{ item.title }}</a></h3>
+    <div>{{ item.summary }}</div>
+    <a href="{{ SITEURL }}/{{ item.url }}">Read article →</a>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

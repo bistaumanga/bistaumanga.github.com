@@ -1,24 +1,9 @@
 #!/bin/bash
-# Deploy script for GitHub Pages
-# This publishes the content from output/ directory to GitHub Pages
-
-set -e
-
-echo "Building site with production config..."
-cd bistaumanga.github.com
-source ../.venv/bin/activate
-pelican content -s publishconf.py
-cd ..
-
-echo "Publishing to GitHub Pages..."
-
-# Install ghp-import if not already installed
-
-# Push the output directory to gh-pages branch
-# The -n adds a .nojekyll file to tell GitHub Pages not to process with Jekyll
-# The -p pushes to GitHub
-# The -f forces the push
-ghp-import -n -p -f output
-
-echo "Deployment complete! Your site should be live at https://bistaumanga.com.np"
-echo "Note: It may take a few minutes for changes to appear."
+# Explicit publication command. Build and validate locally before running.
+set -euo pipefail
+REPO_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+"$REPO_DIR/build_pelican.sh"
+"$REPO_DIR/.venv/bin/python" "$REPO_DIR/scripts/check_site.py" "$REPO_DIR/output"
+cd "$REPO_DIR"
+"$REPO_DIR/.venv/bin/ghp-import" -n -p -b gh-pages output
+echo "Published to gh-pages: https://bistaumanga.com.np"

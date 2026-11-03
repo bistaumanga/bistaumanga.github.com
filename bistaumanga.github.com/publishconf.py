@@ -1,24 +1,11 @@
-# This file is only used if you use `make publish` or
-# explicitly specify it as your config file.
-
-import os
 import sys
+from pathlib import Path
 
-sys.path.append(os.curdir)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pelicanconf import *
 
-# If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = "https://bistaumanga.com.np"
+SITEURL = CANONICAL_SITEURL
 RELATIVE_URLS = True
-LOCALE = ['en_AU']  # On Unix/Linux
-TIMEZONE = 'Australia/Melbourne'
-
-FEED_ALL_ATOM = "feeds/all.atom.xml"
-CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
-
+FEED_DOMAIN = CANONICAL_SITEURL
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
 DELETE_OUTPUT_DIRECTORY = True
-
-# Following items are often useful when publishing
-
-# DISQUS_SITENAME = ""
-# GOOGLE_ANALYTICS = ""

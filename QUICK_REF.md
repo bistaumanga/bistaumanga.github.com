@@ -1,100 +1,18 @@
-# Quick Reference - Pelican Commands
+# Quick reference
 
-## Daily Usage
+Run from the repository root:
 
-### Preview Locally
-```bash
-cd bistaumanga.github.com
-source ../.venv/bin/activate
-pelican --listen
-```
-Visit: http://localhost:8000
+| Task | Command |
+| --- | --- |
+| Install locked dependencies | `./setup.sh` |
+| Build production output | `./build_pelican.sh` |
+| Check generated pages | `.venv/bin/python scripts/check_site.py` |
+| Preview production output | `.venv/bin/python -m http.server 8000 --bind 127.0.0.1 --directory output` |
+| Rebuild and preview while editing | `.venv/bin/pelican -lr -s bistaumanga.github.com/pelicanconf.py -b 127.0.0.1` |
+| Publish reviewed changes | `./deploy.sh` |
 
-### Build Site
-```bash
-./build_pelican.sh
-```
+Open <http://127.0.0.1:8000> after starting a preview. Stop it with Ctrl-C.
 
-### Deploy to GitHub Pages
-```bash
-./deploy.sh
-```
+Edit Markdown under `bistaumanga.github.com/content/`, templates under `bistaumanga.github.com/themes/personal/templates/`, and CSS under `bistaumanga.github.com/themes/personal/static/css/`. Do not edit generated `output/` files.
 
-## Adding Content
-
-### New Blog Post
-```bash
-cd bistaumanga.github.com/content
-nano my-new-post.md
-```
-
-Template:
-```markdown
-Title: My Post Title
-Date: 2024-01-20 10:00
-Tags: python, data-science, machine-learning
-Slug: my-post-slug
-
-Your content in Markdown here...
-```
-
-### New Page
-```bash
-cd bistaumanga.github.com/content/pages
-nano about.md
-```
-
-## File Locations
-
-- **Blog posts**: `bistaumanga.github.com/content/*.md`
-- **Pages**: `bistaumanga.github.com/content/pages/*.md`
-- **Images**: `bistaumanga.github.com/content/images/`
-- **Files (PDFs, etc)**: `bistaumanga.github.com/content/files/`
-- **CSS**: `bistaumanga.github.com/content/extra/css/`
-- **Config**: `bistaumanga.github.com/pelicanconf.py`
-- **Output**: `output/` (generated, don't edit)
-
-## Troubleshooting
-
-### "Command not found: pelican"
-```bash
-source .venv/bin/activate
-```
-
-### CSS/Images missing after build
-Check files are in:
-- `content/extra/css/`
-- `content/images/`
-Then rebuild.
-
-### Deploy fails
-```bash
-source .venv/bin/activate
-pip install ghp-import
-./deploy.sh
-```
-
-## Helpful Pelican Commands
-
-```bash
-# Build with different config
-pelican content -s publishconf.py
-
-# Clean output directory
-pelican content -d
-
-# Auto-reload on changes
-pelican --listen --autoreload
-
-# Verbose output for debugging
-pelican content -v
-```
-
-## GitHub Branches
-
-- **main**: Pelican source files (this is what you edit)
-- **gh-pages**: Generated HTML (created by `deploy.sh`)
-
-## More Help
-
-See: [MIGRATION_SUMMARY.md](MIGRATION_SUMMARY.md)
+For setup problems, rerun `./setup.sh`. See [README.md](README.md) for the full workflow.

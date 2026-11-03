@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>{{ CANONICAL_SITEURL }}/</loc></url>
+<url><loc>{{ CANONICAL_SITEURL }}/blog/</loc></url>
+{% for item in articles %}<url><loc>{{ CANONICAL_SITEURL }}/{{ item.url|e }}</loc></url>{% endfor %}
+{% for p in pages if p.slug != 'index' %}<url><loc>{{ CANONICAL_SITEURL }}/{{ p.url|e }}</loc></url>{% endfor %}
+</urlset>
